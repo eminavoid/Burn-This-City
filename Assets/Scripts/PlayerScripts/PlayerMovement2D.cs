@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement2D : MonoBehaviour
 {
-    [SerializeField] private InputActionReference Move, Intereact, PointerPosition;
+    [SerializeField] private InputActionReference Move, PointerPosition;
     [SerializeField] private float moveSpeed = 7f;
     private Vector2 pointerInput, movementInput;
 
