@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,14 +10,23 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     private Vector2 pointerInput, movementInput;
 
+    private Animator animator;
     private Rigidbody2D rb;
 
     private float moveInputHorizontal = 0f;
+    private bool isFacingRight = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
+
+    private void Update()
+    {
+        FlipSprite();
+    }
+
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         Vector2 inputVector = Move.action.ReadValue<Vector2>();
@@ -48,6 +58,19 @@ public class PlayerMovement2D : MonoBehaviour
     {
         Vector2 targetVelocity = new Vector2(moveInputHorizontal * moveSpeed, rb.linearVelocity.y);
 
+        
         rb.linearVelocity = targetVelocity;
+        animator.SetFloat("xVelocity", rb.linearVelocity.x);
+    }
+
+    private void FlipSprite()
+    {
+        if (isFacingRight && moveInputHorizontal < 0f || !isFacingRight && moveInputHorizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
+        }
     }
 }
