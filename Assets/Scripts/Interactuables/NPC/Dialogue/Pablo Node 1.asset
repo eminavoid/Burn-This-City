@@ -16,5 +16,32 @@ MonoBehaviour:
   npcText: Hola soy pablo
   choices:
   - playerText: ola
-    nextNode: {fileID: 11400000, guid: ad36e57e54d04654ea70b431bdb4ce26, type: 2}
-    rewards: []
+    defaultNode: {fileID: 11400000, guid: ad36e57e54d04654ea70b431bdb4ce26, type: 2}
+    grantedReward:
+    - statType: 0
+      amount: 5
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: CHAU
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
