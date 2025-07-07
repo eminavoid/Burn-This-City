@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
   m_Name: Pablo Node 2
   m_EditorClassIdentifier: 
+  npcName: Pablo
   npcText: tenes q
   choices:
   - playerText: oka

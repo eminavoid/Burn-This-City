@@ -7,14 +7,20 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     [Header("UI References")]
-    public TMP_Text npcText;
-    public TMP_Text npcName;
-    public Button[] choiceButtons; // size must be 3
+    [Tooltip("Shows the NPC’s name")]
+    public TMP_Text npcNameText;
 
-    public void Show(string text, List<(string optionText, int optionIndex)> options)
+    [Tooltip("Shows what the NPC actually says")]
+    public TMP_Text dialogueText;
+
+    [Tooltip("Exactly 3 buttons here")]
+    public Button[] choiceButtons; // size = 3
+
+    public void Show(string npcName, string text, List<(string optionText, int optionIndex)> options)
     {
         gameObject.SetActive(true);
-        npcText.text = text;
+        npcNameText.text = npcName;
+        dialogueText.text = text;
 
         for (int i = 0; i < choiceButtons.Length; i++)
         {
@@ -29,7 +35,8 @@ public class DialogueUI : MonoBehaviour
                 label.text = options[i].optionText;
 
                 int idx = options[i].optionIndex;
-                btn.onClick.AddListener(() => {
+                btn.onClick.AddListener(() => 
+                {
                     var runner = FindFirstObjectByType<DialogueRunner>();
                     runner?.Choose(idx);
                 });

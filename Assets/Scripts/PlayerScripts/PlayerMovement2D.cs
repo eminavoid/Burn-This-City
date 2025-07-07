@@ -15,6 +15,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     private float moveInputHorizontal = 0f;
     private bool isFacingRight = false;
+    private bool canMove = true;
+
 
     private void Awake()
     {
@@ -24,27 +26,35 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void Update()
     {
-        FlipSprite();
+        if (canMove)
+            FlipSprite();
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
-        Vector2 inputVector = Move.action.ReadValue<Vector2>();
-        moveInputHorizontal = inputVector.x;
+        if (!canMove) return;
+        Vector2 input = Move.action.ReadValue<Vector2>();
+        moveInputHorizontal = input.x;
     }
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
+        if (!canMove) return;
         moveInputHorizontal = 0f;
     }
     private void OnEnable()
     {
+        DialogueRunner.DialogueStarted += OnDialogueStarted;
+        DialogueRunner.DialogueEnded += OnDialogueEnded;
+
         Move.action.Enable();
         Move.action.performed += OnMovePerformed;
-
         Move.action.canceled += OnMoveCanceled;
     }
     private void OnDisable()
     {
+        DialogueRunner.DialogueStarted -= OnDialogueStarted;
+        DialogueRunner.DialogueEnded -= OnDialogueEnded;
+
         if (Move.action != null) 
         {
 
@@ -54,18 +64,34 @@ public class PlayerMovement2D : MonoBehaviour
             Move.action.canceled -= OnMoveCanceled;
         }
     }
-    private void FixedUpdate()
+    private void OnDialogueStarted()
     {
-        Vector2 targetVelocity = new Vector2(moveInputHorizontal * moveSpeed, rb.linearVelocity.y);
+        canMove = false;
+        moveInputHorizontal = 0f;
 
-        
-        rb.linearVelocity = targetVelocity;
-        animator.SetFloat("xVelocity", rb.linearVelocity.x);
+        if (animator != null)
+            animator.SetFloat("xVelocity", 0f);
     }
 
+    private void OnDialogueEnded()
+    {
+        canMove = true;
+    }
+    private void FixedUpdate()
+    {
+        float vx = canMove ? moveInputHorizontal * moveSpeed : 0f;
+        rb.linearVelocity = new Vector2(vx, rb.linearVelocity.y);
+
+        if (animator != null)
+            animator.SetFloat("xVelocity", rb.linearVelocity.x);
+    }
     private void FlipSprite()
     {
-        if (isFacingRight && moveInputHorizontal < 0f || !isFacingRight && moveInputHorizontal > 0f)
+        bool shouldFaceRight = moveInputHorizontal > 0f;
+        bool shouldFaceLeft = moveInputHorizontal < 0f;
+
+        if ((isFacingRight && shouldFaceLeft) ||
+            (!isFacingRight && shouldFaceRight))
         {
             isFacingRight = !isFacingRight;
             Vector3 ls = transform.localScale;
