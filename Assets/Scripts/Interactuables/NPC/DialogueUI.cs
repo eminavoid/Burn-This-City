@@ -8,6 +8,7 @@ public class DialogueUI : MonoBehaviour
 {
     [Header("UI References")]
     public TMP_Text npcText;
+    public TMP_Text npcName;
     public Button[] choiceButtons; // size must be 3
 
     public void Show(string text, List<(string optionText, int optionIndex)> options)
@@ -15,7 +16,6 @@ public class DialogueUI : MonoBehaviour
         gameObject.SetActive(true);
         npcText.text = text;
 
-        // Loop over all 3 buttons
         for (int i = 0; i < choiceButtons.Length; i++)
         {
             var btn = choiceButtons[i];
@@ -25,7 +25,6 @@ public class DialogueUI : MonoBehaviour
 
             if (has)
             {
-                // set label
                 var label = btn.GetComponentInChildren<TMP_Text>();
                 label.text = options[i].optionText;
 

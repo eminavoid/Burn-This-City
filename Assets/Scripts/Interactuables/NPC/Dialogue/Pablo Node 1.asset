@@ -15,5 +15,5 @@ MonoBehaviour:
   npcText: Hola soy pablo
   choices:
   - playerText: ola
+    nextNode: {fileID: 11400000, guid: ad36e57e54d04654ea70b431bdb4ce26, type: 2}
     rewards: []
-    nextNode: {fileID: 0}
