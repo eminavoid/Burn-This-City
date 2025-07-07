@@ -32,16 +32,6 @@ public class DialogueRunner : MonoBehaviour
                              .ToList();
         ui.Show(current.npcName, current.npcText, options);
     }
-    //public void Choose(int index)
-    //{
-    //    var choice = current.choices[index];
-    //    if (choice.rewards != null)
-    //        foreach (var r in choice.rewards)
-    //            StatManager.Instance.IncrementStat(r.statType, r.amount);
-
-    //    current = choice.nextNode;
-    //    Advance();
-    //}
     public void Choose(int index)
     {
         var choice = current.choices[index];
