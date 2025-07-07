@@ -5,68 +5,73 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField]
-    private InputActionReference Intereact;
-    StatManager statManager = StatManager.Instance;
-    private List<Interactable> nearbyInteractables = new List<Interactable>();
+    [SerializeField] private InputActionReference interact;
+    private StatManager statManager;
+    private List<IInteractable> nearbyInteractables = new List<IInteractable>();
 
-
+    private void Start()
+    {
+        statManager = StatManager.Instance;
+    }
     private void OnEnable()
     {
-        Intereact.action.Enable();
-        Intereact.action.performed += OnInteractActionPerformed;
+        interact.action.Enable();
+        interact.action.started += OnInteractActionPerformed;
     }
 
     private void OnDisable()
-    {   
-        Intereact.action.Disable();
-        Intereact.action.performed -= OnInteractActionPerformed;
+    {
+        interact.action.Disable();
+        interact.action.started -= OnInteractActionPerformed;
     }
+    // ——— 2D trigger callbacks ———
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger entered: " + other.name); 
+        var interactable = other
+            .GetComponents<MonoBehaviour>()
+            .OfType<IInteractable>()
+            .FirstOrDefault();
+        if (interactable == null || nearbyInteractables.Contains(interactable))
+            return;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Interactable interactable = other.GetComponent<Interactable>();
-        if (interactable != null)
-        {
-            if (!nearbyInteractables.Contains(interactable))
-            {
-                nearbyInteractables.Add(interactable);
-            }
-            Debug.Log("ITEM");
-        }
+        nearbyInteractables.Add(interactable);
+        Debug.Log("addITEM");
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        Interactable interactable = other.GetComponent<Interactable>();
-        if (interactable != null)
-        {
-            nearbyInteractables.Remove(interactable);
-        }
+        Debug.Log("Trigger exited: " + other.name);
+        var interactable = other
+            .GetComponents<MonoBehaviour>()
+            .OfType<IInteractable>()
+            .FirstOrDefault();
+
+        if (interactable != null && nearbyInteractables.Remove(interactable))
+            Debug.Log("removeITEM");
     }
     private void OnInteractActionPerformed(InputAction.CallbackContext context)
     {
         InteractWithNearest();
+        Debug.Log("Interact action performed.");
     }
     private void InteractWithNearest()
     {
-        IInteractable targetInteractable = nearbyInteractables.FirstOrDefault();
-        if (statManager != null)
+        var target = nearbyInteractables.FirstOrDefault();
+        if (target == null)
         {
-            if (targetInteractable.CanInteract(statManager))
-            {
-                targetInteractable.Interact(statManager);
-            }
-            else
-            {
-                Debug.Log("No tienes los requisitos para interactuar con este objeto.");
-                // Optionally, show a message to the player about the missing requirements.
-            }
+            Debug.Log("No hay ningún objeto cercano con el que interactuar.");
+            return;
         }
-        else
+        if (statManager == null)
         {
-            Debug.LogError("No se encontró la instancia del StatManager.");
+            Debug.LogError("No se encontró la instancia de StatManager.");
+            return;
         }
-
+        if (!target.CanInteract(statManager))
+        {
+            Debug.Log("No tienes los requisitos para interactuar con este objeto.");
+            return;
+        }
+        target.Interact(statManager);
     }
-
 }

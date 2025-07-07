@@ -9,12 +9,10 @@ public class SampleInteractableDoor : Interactable
         if (CanInteract(statManager))
         {
             Debug.Log($"Has interactuado con el objeto: {itemName}.");
-            this.gameObject.SetActive(false);
         }
         else
         {
             Debug.Log($"No tienes los requisitos para interactuar con {itemName}.");
-            // Opcionalmente, mostrar un mensaje específico sobre los requerimientos faltantes
         }
     }
 

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 public class StatManager : MonoBehaviour
 {
     public static StatManager Instance { get; private set; }
-
-    public Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
     public enum StatType
     {
         Strength,
@@ -15,32 +13,82 @@ public class StatManager : MonoBehaviour
         Wisdom,
         Charisma
     }
+    [System.Serializable]
+    public struct StatEntry
+    {
+        public StatType statType;
+        public int value;
+    }
+
+    [SerializeField]
+    private List<StatEntry> statEntries = new List<StatEntry>();
+    private Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
     private void Awake()
     {
-        // Implementación del Singleton
+        // Singleton implementation
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Evita que este GameObject se destruya al cargar nuevas escenas
+            DontDestroyOnLoad(gameObject);
+
+            // Initialize default entries if empty
+            if (statEntries.Count == 0)
+            {
+                foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
+                {
+                    statEntries.Add(new StatEntry { statType = stat, value = 1 });
+                }
+            }
+
+            SyncDictFromList();
         }
         else
         {
-            Destroy(gameObject); // Si ya existe otra instancia, destrúyela
+            Destroy(gameObject);
         }
+    }
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        SyncDictFromList();
+    }
+#endif
+    private void SyncDictFromList()
+    {
+        stats.Clear();
+        foreach (var entry in statEntries)
+        {
+            stats[entry.statType] = entry.value;
+        }
+    }
+    private void UpdateOrAddEntry(StatType type, int value)
+    {
+        for (int i = 0; i < statEntries.Count; i++)
+        {
+            if (statEntries[i].statType == type)
+            {
+                statEntries[i] = new StatEntry { statType = type, value = value };
+                return;
+            }
+        }
+        statEntries.Add(new StatEntry { statType = type, value = value });
     }
     public void SetStat(StatType type, int value)
     {
-        if (stats.ContainsKey(type))
-        {
-            stats[type] = value;
-        }
-        else
-        {
-            stats.Add(type, value);
-        }
+        stats[type] = value;
+        UpdateOrAddEntry(type, value);
     }
     public int GetStat(StatType type)
     {
-        return stats.ContainsKey(type) ? stats[type] : 0;
+        if (stats.TryGetValue(type, out int value))
+            return value;
+
+        Debug.LogWarning($"Stat '{type}' not found, returning 0.");
+        return 0;
+    }
+    public void IncrementStat(StatType type, int amount)
+    {
+        int newValue = Mathf.Max(0, GetStat(type) + amount);
+        SetStat(type, newValue);
     }
 }

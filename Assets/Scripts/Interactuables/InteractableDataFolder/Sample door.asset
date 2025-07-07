@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionType: 2
   requirements:
-  - statType: 1
+  - statType: 0
     comparisonType: 0
     requiredAmount: 0
   interactionPrompt: Press (E) to open

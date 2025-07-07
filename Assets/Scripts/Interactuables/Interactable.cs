@@ -17,24 +17,9 @@ public class Interactable : MonoBehaviour, IInteractable
         foreach (InteractionRequirement requirement in interactableData.requirements)
         {
             int currentStat = statManager.GetStat(requirement.statType);
-
-            switch (requirement.comparisonType)
+            if (!requirement.IsMet(currentStat))
             {
-                case InteractionRequirement.ComparisonType.GreaterThan:
-                    if (currentStat <= requirement.requiredAmount) return false;
-                    break;
-                case InteractionRequirement.ComparisonType.LessThan:
-                    if (currentStat >= requirement.requiredAmount) return false;
-                    break;
-                case InteractionRequirement.ComparisonType.EqualTo:
-                    if (currentStat != requirement.requiredAmount) return false;
-                    break;
-                case InteractionRequirement.ComparisonType.GreaterOrEqualTo:
-                    if (currentStat < requirement.requiredAmount) return false;
-                    break;
-                case InteractionRequirement.ComparisonType.LessOrEqualTo:
-                    if (currentStat > requirement.requiredAmount) return false;
-                    break;
+                return false;
             }
         }
 
