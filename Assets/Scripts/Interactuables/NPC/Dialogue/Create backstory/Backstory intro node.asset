@@ -23,7 +23,12 @@ MonoBehaviour:
   choices:
   - playerText: Search for a door
     defaultNode: {fileID: 11400000, guid: 552e1111dc0d8b84ba5b0bdd3e3bb646, type: 2}
-    grantedReward: []
+    grantedReward:
+    - statType: 0
+      amount: 3
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []
@@ -37,7 +42,12 @@ MonoBehaviour:
         m_Calls: []
   - playerText: sit and wait
     defaultNode: {fileID: 11400000, guid: 552e1111dc0d8b84ba5b0bdd3e3bb646, type: 2}
-    grantedReward: []
+    grantedReward:
+    - statType: 1
+      amount: 3
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []
@@ -51,7 +61,12 @@ MonoBehaviour:
         m_Calls: []
   - playerText: call out for help
     defaultNode: {fileID: 11400000, guid: 552e1111dc0d8b84ba5b0bdd3e3bb646, type: 2}
-    grantedReward: []
+    grantedReward:
+    - statType: 2
+      amount: 3
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: test1
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: hola soy
+  choices:
+  - playerText: oka
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 11400000, guid: 6bbdcefaa0b1665459967be6b065d98e, type: 2}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

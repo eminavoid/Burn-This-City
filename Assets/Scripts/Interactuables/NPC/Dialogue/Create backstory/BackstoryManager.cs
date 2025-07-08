@@ -12,7 +12,7 @@ public class BackstoryManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueRunner.Begin(startingNode);
+        dialogueRunner.Begin(startingNode, null);
         DialogueRunner.DialogueEnded += OnBackstoryComplete;
     }
 
