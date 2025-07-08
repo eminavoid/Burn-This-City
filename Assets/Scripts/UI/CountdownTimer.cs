@@ -18,6 +18,17 @@ public class CountdownTimer : MonoBehaviour
     {
         ResetTimer();
     }
+    private void OnEnable()
+    {
+        DialogueRunner.DialogueStarted += () => running = false;
+        DialogueRunner.DialogueEnded += () => running = true;
+    }
+
+    private void OnDisable()
+    {
+        DialogueRunner.DialogueStarted -= () => running = false;
+        DialogueRunner.DialogueEnded -= () => running = true;
+    }
     public void ResetTimer()
     {
         remainingTime = duration;
