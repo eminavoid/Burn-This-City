@@ -13,24 +13,31 @@ MonoBehaviour:
   m_Name: test1
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: hola soy
+  npcText: este nodo da la llave
   choices:
   - playerText: oka
     defaultNode: {fileID: 0}
     grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: 75e3e804f6b254546b04dea435691135, type: 2}
+      amount: 4
     nextStartingNodeDefault: {fileID: 11400000, guid: 6bbdcefaa0b1665459967be6b065d98e, type: 2}
     onTalked:
       m_PersistentCalls:
         m_Calls: []
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     onSuccess:
       m_PersistentCalls:
         m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     onFailure:
       m_PersistentCalls:
