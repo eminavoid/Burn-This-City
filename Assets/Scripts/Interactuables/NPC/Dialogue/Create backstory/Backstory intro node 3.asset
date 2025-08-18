@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Backstory intro node 3
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "En la vida, siempre llega un momento en el que los j\xF3venes se convierten
+    en hombres. Normalmente esta transici\xF3n es marcada por un evento pivotal en
+    la vida de uno."
+  choices:
+  - playerText: "Tuve que defender a mi hermano de unos pandilleros a los que les
+      deb\xEDa dinero. Desde aquel dia tuve siempre un ojo abierto ante posibles
+      amenazas."
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - statType: 3
+      amount: 2
+    - statType: 0
+      amount: 2
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "El municipio me contrato para arreglar una fuga de diesel que corria
+      el riesgo de explotar. Todav\xEDa recuerdo los vitoreos cuando anunciaron que
+      lo hab\xEDa conseguido."
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - statType: 2
+      amount: 5
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "Venia de una mala \xE9poca, por lo que decidi unirme a una banda
+      criminal. Por suerte no dure mucho entre ellos, pero me di cuenta de que tenia
+      un talento natural para abrir puertas\u2026 si tan solo no hubiese sido para
+      facilitar allanamientos.\r"
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - statType: 1
+      amount: 5
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

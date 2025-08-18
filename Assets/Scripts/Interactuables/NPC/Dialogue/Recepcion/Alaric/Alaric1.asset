@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Alaric1
+  m_EditorClassIdentifier: 
+  npcName: Alaric
+  npcText: "\xBFQu-qui\xE9n anda ah\xED? Oh, que susto \xA1Casi te confundo por un
+    soldado!"
+  choices:
+  - playerText: Tenes suerte de que no sea uno
+    defaultNode: {fileID: 11400000, guid: 97bccc9646f0ac642bec4b5fb6004619, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11500000, guid: d5b763ac238e91d4f866ef569f69807c, type: 3}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: Y yo a vos amigo mio, no es buena idea andar a los gritos con desconocidos.
+    defaultNode: {fileID: 11400000, guid: 97bccc9646f0ac642bec4b5fb6004619, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "No te conf\xEDes, viejo, puedo ser algo mucho peor."
+    defaultNode: {fileID: 11400000, guid: 97bccc9646f0ac642bec4b5fb6004619, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

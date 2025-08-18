@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Alaric8
+  m_EditorClassIdentifier: 
+  npcName: Alaric
+  npcText: "\xA1Buena pregunta! Veras camarada, el viejo due\xF1o del Pist\xF3n era
+    un hombre muy paranoico. Invirti\xF3 un dineral en la puerta del almacen y solo
+    mando a hacer una llave. Por lo que al menos que un mec\xE1nico veterano la haya
+    desarmado o un maestro ladr\xF3n haya conseguido forzarla, dudo que esa puerta
+    haya sido abierta."
+  choices:
+  - playerText: "Espera un momento. \xBFSolo una llave? Si el due\xF1o era tan paranoico,
+      \xBFPorque que vos tenes la \xFAnica llave"
+    defaultNode: {fileID: 11400000, guid: 99a68343ce8ef574eb51135f7dc0e77c, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: Esta bien, tenes un trato. Te consigo esas medicinas y a cambio vos
+      me das la llave.
+    defaultNode: {fileID: 11400000, guid: 5027471a18eec2d4c9826dc1be3983c4, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: No hay trato. Ya encontrare otra manera de abrir esa puerta. No necesito
+      tu ayuda.
+    defaultNode: {fileID: 11400000, guid: 076def52e94e0fc4a9d6a30787b69946, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

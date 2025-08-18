@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: MisilStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "La imagen enfrente tuyo es surreal. Un misil del Reich yace incrustado
+    en el piso de la habitaci\xF3n. Como si una oda a la destrucci\xF3n hubiese quedado
+    congelada en el tiempo. Es tan terror\xEDfico como fascinante. Sin embargo, el
+    peligro de la situacion te devuelve a la realidad. Lo racional seria abandonar
+    esta habitaci\xF3n y rezar porque el misil se mantenga inactivo. Pero la curiosidad
+    de verlo mas de cerca es innegable."
+  choices:
+  - playerText: No hay suficientes cupones de raciones en Diesmark como para convencerme
+      a acercarme a esa cosa.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "Podr\xEDa darle un vistazo r\xE1pido, la curiosidad nunca mato a
+      nadie."
+    defaultNode: {fileID: 11400000, guid: 1df20e65e7987454e80e14d3d73afd1b, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

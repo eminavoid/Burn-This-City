@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: MesaStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Enfrente tuyo se encuentra un escritorio polvoriento al que ya se le
+    notan los a\xF1os. Esta lleno de escombros y basura, pero quien sabe, quiz\xE1
+    haya algo de valor, oculto a simple vista."
+  choices:
+  - playerText: Mejor no perder el tiempo. Dudo que haya quedado algo de valor tan
+      cerca de la entrada.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: No pierdo nada echando un vistazo
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 3
+      comparisonType: 3
+      requiredAmount: 5
+    successNode: {fileID: 11400000, guid: e8f6fe20269cffc4b9bad3d1ec0450b7, type: 2}
+    successRewards:
+    - statType: 3
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 1fde527301a6e5c4a95787b64f67ee91, type: 2}
+    failureRewards:
+    - statType: 3
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

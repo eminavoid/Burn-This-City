@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/createCharacter.unity
     guid: 50de498edf3733946a40950d59a4ac8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test Scene emi.unity
     guid: 8a9d2fc30dd2f444f8e0f078b08489bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/recepcion.unity
     guid: 3ac6a72d8df185545bfab83dc7c5a73a
   - enabled: 1
     path: Assets/Scenes/depto.unity
     guid: e2ad959d7a18c194fa0b6551f6035ba7
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 72ce7dc0131fd5748b4daf9ecc11420b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

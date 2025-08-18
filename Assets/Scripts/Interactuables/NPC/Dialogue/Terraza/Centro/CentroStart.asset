@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: CentroStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "El atardecer pinta la ciudad de un naranja casi melanc\xF3lico. Si cerras
+    los ojos todav\xEDa podes imaginarte el viejo horizonte. Antes de las ruinas,
+    antes del humo, antes de la ocupaci\xF3n. Diesmark era una hermosa ciudad, verla
+    en el estado en el que la dejo el Rauchreich despierta un fuego en tu interior."
+  choices:
+  - playerText: "Mejor no so\xF1ar despierto, prefiero recordar la ciudad por lo
+      que fue."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: Optar por la nostalgia
+    defaultNode: {fileID: 11400000, guid: cb2f25228a626434188dbe392545ec23, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: SangreStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Esta habitaci\xF3n esta cubierta de sangre, vayas donde vayas, pases
+    por donde pases, es imposible no notarla. Lo preocupante es que parece relativamente
+    fresca, mejor andarse con cuidado. Parece haber un botiqu\xEDn al fonde de la
+    habitaci\xF3n, quiz\xE1 all\xED haya suministros."
+  choices:
+  - playerText: En esta ciudad no hay lugar para la cobardia. Mejor seguir adelante,
+      cuanto antes termine con esto mejor.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: '*Analizar la sangre.*'
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 3
+      comparisonType: 3
+      requiredAmount: 4
+    successNode: {fileID: 11400000, guid: 03eb7e744e4df9f4c9d1db75fe0d91ea, type: 2}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 46a44f07aa50de94d9dbb84b0d136a44, type: 2}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

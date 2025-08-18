@@ -10,7 +10,7 @@ public class DialogueChoice
     [Header("Default with no requirement")]
     public DialogueNode defaultNode;
     public List<DialogueReward> grantedReward;
-    [Tooltip("If set, the NPC’s startingNode will be replaced with this after choosing.")]
+    [Tooltip("If set, the NPCâ€™s startingNode will be replaced with this after choosing.")]
     public DialogueNode nextStartingNodeDefault;
     public UnityEvent onTalked;
 

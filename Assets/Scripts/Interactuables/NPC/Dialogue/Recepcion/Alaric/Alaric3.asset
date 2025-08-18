@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Alaric3
+  m_EditorClassIdentifier: 
+  npcName: Alaric
+  npcText: "\xA1Asi es camarada! Estas hablando con el viejo recepcio\u2026 digo,
+    \xA1Gerente! Del Pist\xF3n Rojo: Alaric Drusso, a tu servicio. Perdoname camarada,
+    pero no has respondido mi pregunta. \xBFQue te trae al Pist\xF3n Rojo?"
+  choices:
+  - playerText: "\xBFAsi que el gerente eh? Quiz\xE1 si seas de ayuda despu\xE9s
+      de todo. Estoy buscando un objeto muy particular: una caja de Destilados Lumerios,
+      etiqueta azul. Escuche que este hotel los tenia."
+    defaultNode: {fileID: 11400000, guid: 05342750f0fba64439ddd5c82a438289, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: Que te importa, viejo entrometido, mantene tu nariz fuera de mis
+      asuntos.
+    defaultNode: {fileID: 11400000, guid: 66d907743b02ee743820f151c0e41d36, type: 2}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

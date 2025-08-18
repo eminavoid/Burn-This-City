@@ -17,6 +17,8 @@ public class PlayerMovement2D : MonoBehaviour
     private bool isFacingRight = false;
     private bool canMove = true;
 
+    public bool hasKey = false;
+
 
     private void Awake()
     {
