@@ -27,7 +27,6 @@ public class PlayerInteraction : MonoBehaviour
     // ——— 2D trigger callbacks ———
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger entered: " + other.name); 
         var interactable = other
             .GetComponents<MonoBehaviour>()
             .OfType<IInteractable>()
@@ -36,18 +35,15 @@ public class PlayerInteraction : MonoBehaviour
             return;
 
         nearbyInteractables.Add(interactable);
-        Debug.Log("addITEM");
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Trigger exited: " + other.name);
         var interactable = other
             .GetComponents<MonoBehaviour>()
             .OfType<IInteractable>()
             .FirstOrDefault();
 
-        if (interactable != null && nearbyInteractables.Remove(interactable))
-            Debug.Log("removeITEM");
+        nearbyInteractables.Remove(interactable);
     }
     private void OnInteractActionPerformed(InputAction.CallbackContext context)
     {

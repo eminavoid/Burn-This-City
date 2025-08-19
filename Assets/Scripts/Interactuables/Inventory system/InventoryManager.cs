@@ -13,9 +13,10 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
 
+    public event Action OnInventoryChanged;
+
     [Header("Contenido actual del inventario")]
     [SerializeField] private List<InventoryEntry> inventoryEntries = new List<InventoryEntry>();
-
     private Dictionary<InventoryItem, int> counts = new Dictionary<InventoryItem, int>();
 
     private void Awake()
@@ -23,15 +24,12 @@ public class InventoryManager : MonoBehaviour
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
         SyncDictFromList();
+        OnInventoryChanged?.Invoke();
     }
 
 #if UNITY_EDITOR
-    private void OnValidate()
-    {
-        SyncDictFromList();
-    }
+    private void OnValidate() { SyncDictFromList(); OnInventoryChanged?.Invoke(); }
 #endif
 
     private void SyncDictFromList()
@@ -48,30 +46,45 @@ public class InventoryManager : MonoBehaviour
     {
         inventoryEntries.Clear();
         foreach (var kvp in counts)
-        {
             inventoryEntries.Add(new InventoryEntry { item = kvp.Key, amount = kvp.Value });
-        }
     }
 
     public int GetCount(InventoryItem item)
-    {
-        return (item != null && counts.TryGetValue(item, out var v)) ? v : 0;
-    }
+        => (item != null && counts.TryGetValue(item, out var v)) ? v : 0;
 
     public void Add(InventoryItem item, int amount)
     {
         if (item == null || amount <= 0) return;
         counts[item] = GetCount(item) + amount;
         SyncListFromDict();
+        OnInventoryChanged?.Invoke();
+    }
+
+    public void AddMany(List<ItemAmount> list)
+    {
+        if (list == null || list.Count == 0) return;
+
+        // Agregamos todo primero sin spamear eventos
+        bool changed = false;
+        foreach (var ia in list)
+        {
+            if (ia == null || ia.item == null || ia.amount <= 0) continue;
+            counts[ia.item] = GetCount(ia.item) + ia.amount;
+            changed = true;
+        }
+
+        if (changed)
+        {
+            SyncListFromDict();
+            OnInventoryChanged?.Invoke(); // un solo evento por lote
+        }
     }
 
     public bool CanConsume(List<ItemAmount> list)
     {
         if (list == null || list.Count == 0) return true;
         foreach (var ia in list)
-        {
             if (ia.item == null || GetCount(ia.item) < ia.amount) return false;
-        }
         return true;
     }
 
@@ -84,12 +97,27 @@ public class InventoryManager : MonoBehaviour
             if (counts[ia.item] <= 0) counts.Remove(ia.item);
         }
         SyncListFromDict();
+        OnInventoryChanged?.Invoke();
         return true;
     }
 
-    public void AddMany(List<ItemAmount> list)
+    // —— Consultas para UI ——
+    public List<InventoryEntry> GetEntriesByCategory(ItemCategory cat)
     {
-        if (list == null) return;
-        foreach (var ia in list) Add(ia.item, ia.amount);
+        var result = new List<InventoryEntry>();
+        foreach (var kvp in counts)
+            if (kvp.Key != null && kvp.Key.category == cat)
+                result.Add(new InventoryEntry { item = kvp.Key, amount = kvp.Value });
+        return result;
+    }
+
+    public List<InventoryEntry> GetAllEntries()
+    {
+        var result = new List<InventoryEntry>();
+        foreach (var kvp in counts)
+            if (kvp.Key != null)
+                result.Add(new InventoryEntry { item = kvp.Key, amount = kvp.Value });
+        return result;
     }
 }
+

@@ -54,7 +54,10 @@ public class DialogueRunner : MonoBehaviour
 
             // Items
             if (choice.defaultItemRewards != null && InventoryManager.Instance != null)
+            {
                 InventoryManager.Instance.AddMany(choice.defaultItemRewards);
+                InventoryUI.RefreshIfAnyOpen(); 
+            }
 
             choice.onTalked?.Invoke();
 
@@ -81,7 +84,10 @@ public class DialogueRunner : MonoBehaviour
         {
             // Consumir requisitos de items si corresponde (ej: "entregar ingredientes")
             if (hasItemReqs && choice.consumeRequirementsOnSuccess && InventoryManager.Instance != null)
+            {
                 InventoryManager.Instance.Consume(choice.itemRequirements);
+                InventoryUI.RefreshIfAnyOpen();
+            }
 
             // Recompensas de éxito (stats)
             if (choice.successRewards != null)
@@ -90,7 +96,10 @@ public class DialogueRunner : MonoBehaviour
 
             // Recompensas de éxito (items)
             if (choice.successItemRewards != null && InventoryManager.Instance != null)
+            {
                 InventoryManager.Instance.AddMany(choice.successItemRewards);
+                InventoryUI.RefreshIfAnyOpen();
+            }
 
             choice.onSuccess?.Invoke();
 
@@ -108,7 +117,10 @@ public class DialogueRunner : MonoBehaviour
 
             // Recompensas de fallo (items)
             if (choice.failureItemRewards != null && InventoryManager.Instance != null)
+            {
                 InventoryManager.Instance.AddMany(choice.failureItemRewards);
+                InventoryUI.RefreshIfAnyOpen();
+            }
 
             choice.onFailure?.Invoke();
 
