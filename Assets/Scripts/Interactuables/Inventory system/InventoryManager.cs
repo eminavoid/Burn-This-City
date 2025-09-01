@@ -87,6 +87,19 @@ public class InventoryManager : MonoBehaviour
             if (ia.item == null || GetCount(ia.item) < ia.amount) return false;
         return true;
     }
+    public bool Remove(InventoryItem item, int amount)
+    {
+        if (item == null || amount <= 0) return false;
+        int have = GetCount(item);
+        if (have < amount) return false;
+
+        counts[item] = have - amount;
+        if (counts[item] <= 0) counts.Remove(item);
+
+        SyncListFromDict();
+        OnInventoryChanged?.Invoke();
+        return true;
+    }
 
     public bool Consume(List<ItemAmount> list)
     {

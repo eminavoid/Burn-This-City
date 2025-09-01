@@ -35,10 +35,12 @@ public class InventoryUI : MonoBehaviour
     private readonly List<ItemSlotUI> splitContainerSlots = new();
 
     private Container currentContainer;
+    public Container CurrentContainer => currentContainer;
 
     public bool IsBackpackOpen => backpackRoot != null && backpackRoot.activeSelf;
     public bool IsSplitOpen => splitRoot != null && splitRoot.activeSelf;
 
+    
     public static void RefreshIfAnyOpen()
     {
         if (Instance == null) return;
@@ -91,12 +93,21 @@ public class InventoryUI : MonoBehaviour
 
     private void OnToggleBackpack(InputAction.CallbackContext _)
     {
-        // Si está en modo split (cofre abierto), ignorá la tecla I para esta demo
-        if (IsSplitOpen) return;
+        if (IsSplitOpen)
+        {
+            CloseAll();
+            return;
+        }
 
-        if (IsBackpackOpen) CloseAll();
-        else OpenBackpack();
+        if (IsBackpackOpen)
+        {
+            CloseAll();
+            return;
+        }
+
+        OpenBackpack();
     }
+
 
     // -------- API PÚBLICA --------
 
@@ -116,25 +127,43 @@ public class InventoryUI : MonoBehaviour
     {
         currentContainer = container;
 
-        backpackRoot.SetActive(false);
+        if (backpackSplitGridParent != null)
+        {
+            var bz = backpackSplitGridParent.GetComponent<ItemDropZone>();
+            if (bz == null) bz = backpackSplitGridParent.gameObject.AddComponent<ItemDropZone>();
+            bz.kind = ItemDropZone.DropKind.Backpack;
+        }
+
+        if (containerGridParent != null)
+        {
+            var cz = containerGridParent.GetComponent<ItemDropZone>();
+            if (cz == null) cz = containerGridParent.gameObject.AddComponent<ItemDropZone>();
+            cz.kind = ItemDropZone.DropKind.Container;
+        }
+
+        if (backpackRoot != null) backpackRoot.SetActive(false);
+        if (splitRoot != null) splitRoot.SetActive(true);
+
         WireSplitButtons();
 
-        splitRoot.SetActive(true);
         RefreshBackpackSplit();
         RefreshContainer(container);
     }
 
-    public void CloseAll() => HideAll();
+
+    public void CloseAll()
+    {
+        if (backpackRoot) backpackRoot.SetActive(false);
+        if (splitRoot) splitRoot.SetActive(false);
+        currentContainer = null;
+    }
 
     public void RefreshContainer(Container container)
     {
-        // Limpiar grid derecha
         foreach (var s in splitContainerSlots) if (s) Destroy(s.gameObject);
         splitContainerSlots.Clear();
 
         if (!IsSplitOpen || container == null || container.contents == null) return;
-
-        Debug.Log($"[InventoryUI] RefreshContainer: splitOpen={IsSplitOpen} containerNull={container == null} contentsCount={(container?.contents?.Count ?? -1)}");
 
         for (int i = 0; i < container.contents.Count; i++)
         {
@@ -144,14 +173,23 @@ public class InventoryUI : MonoBehaviour
 
             slot.Set(ia.item, ia.amount, () =>
             {
-                // Click en tile del cofre => loot de ese stack
-                container.LootOne(capturedIndex);
-                // Al lootear, se refresca container y mochila (en Container.LootOne ya lo hacemos, pero redundar es barato)
+                bool ctrl = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+                if (ctrl && ia.amount > 1)
+                    container.LootPartial(capturedIndex, 1);
+                else
+                    container.LootOne(capturedIndex);
+
                 RefreshBackpackSplit();
                 RefreshContainer(container);
             });
-
             splitContainerSlots.Add(slot);
+
+            var drag = slot.GetComponent<ItemSlotDrag>();
+            if (drag == null) drag = slot.gameObject.AddComponent<ItemSlotDrag>();
+
+            var iconImage = slot.IconImage;
+
+            drag.InitFromContainer(container, capturedIndex, ia.item, ia.amount, iconImage);
         }
     }
 
@@ -182,20 +220,29 @@ public class InventoryUI : MonoBehaviour
         foreach (var s in splitBackpackSlots) if (s) Destroy(s.gameObject);
         splitBackpackSlots.Clear();
 
-        var entries = InventoryManager.Instance != null
+        var entries = (InventoryManager.Instance != null)
             ? InventoryManager.Instance.GetAllEntries()
             : new List<InventoryEntry>();
 
         foreach (var e in entries)
         {
             var slot = Instantiate(backpackSplitSlotPrefab, backpackSplitGridParent);
+
             slot.Set(e.item, e.amount, () =>
             {
-                Debug.Log($"Usar/Click SPLIT: {e.item.displayName}");
+                Debug.Log($"[Backpack SPLIT] Click on {e.item.displayName}");
             });
             splitBackpackSlots.Add(slot);
+
+            var drag = slot.GetComponent<ItemSlotDrag>();
+            if (drag == null) drag = slot.gameObject.AddComponent<ItemSlotDrag>();
+
+            var iconImage = slot.IconImage;
+
+            drag.InitFromInventory(e.item, e.amount, iconImage);
         }
     }
+
 
     private void WireBackpackSoloButtons()
     {
