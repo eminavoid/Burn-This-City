@@ -3396,8 +3396,8 @@ GameObject:
   - component: {fileID: 1780242131}
   - component: {fileID: 1780242130}
   - component: {fileID: 1780242129}
-  - component: {fileID: 1780242133}
   - component: {fileID: 1780242134}
+  - component: {fileID: 1780242135}
   m_Layer: 5
   m_Name: Container split view
   m_TagString: Untagged
@@ -3486,7 +3486,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780242127}
   m_CullTransparentMesh: 1
---- !u!114 &1780242133
+--- !u!114 &1780242134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780242127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6398eddd1ef7fa4f8658b9dd898c239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundContainer: {fileID: 0}
+--- !u!114 &1780242135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3500,18 +3513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridParent: {fileID: 1780242128}
   slotPrefab: {fileID: 8457473980194023213}
---- !u!114 &1780242134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780242127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6398eddd1ef7fa4f8658b9dd898c239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1807668743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,7 +5096,7 @@ PrefabInstance:
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: containerGridUI
       value: 
-      objectReference: {fileID: 1780242133}
+      objectReference: {fileID: 1780242135}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: splitCloseButton
       value: 
