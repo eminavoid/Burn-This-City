@@ -1,8 +1,9 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
-using System.Linq;
 
 [Serializable] public class SlotState { public InventoryItem item; public int amount; }
 [Serializable] public class ModuleState { public List<SlotState> slots = new(); }
@@ -261,6 +262,37 @@ public void AddMany(System.Collections.Generic.List<ItemAmount> items)
             return true;
         }
         return false;
+    }
+    public int RemoveFromSlot(int moduleIndex, int slotIndex, int amount)
+    {
+        var mod = GetModule(moduleIndex);
+        if (mod == null || amount <= 0) return 0;
+        if (slotIndex < 0 || slotIndex >= mod.slots.Count) return 0;
+
+        var s = mod.slots[slotIndex];
+        if (s.item == null || s.amount <= 0) return 0;
+
+        int take = Mathf.Min(amount, s.amount);
+        s.amount -= take;
+        if (s.amount <= 0) { s.item = null; s.amount = 0; }
+
+        OnInventoryChanged?.Invoke();
+        return take;
+    }
+    public bool PeekSlot(int moduleIndex, int slotIndex, out InventoryItem item, out int amount)
+    {
+        item = null; amount = 0;
+
+        if (moduleIndex < 0 || moduleIndex >= modules.Count) return false;
+        var mod = modules[moduleIndex];                    // tu estructura de módulo
+        if (slotIndex < 0 || slotIndex >= mod.slots.Count) return false;
+
+        var s = mod.slots[slotIndex];                      // tu tipo de slot
+        if (s == null || s.item == null || s.amount <= 0) return false;
+
+        item = s.item;
+        amount = s.amount;
+        return true;
     }
 }
 

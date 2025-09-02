@@ -48,24 +48,20 @@ public class PlayerInteraction : MonoBehaviour
     private void OnInteractActionPerformed(InputAction.CallbackContext context)
     {
         InteractWithNearest();
-        Debug.Log("Interact action performed.");
     }
     private void InteractWithNearest()
     {
         var target = nearbyInteractables.FirstOrDefault();
         if (target == null)
         {
-            Debug.Log("No hay ningún objeto cercano con el que interactuar.");
             return;
         }
         if (statManager == null)
         {
-            Debug.LogError("No se encontró la instancia de StatManager.");
             return;
         }
         if (!target.CanInteract(statManager))
         {
-            Debug.Log("No tienes los requisitos para interactuar con este objeto.");
             return;
         }
         target.Interact(statManager);

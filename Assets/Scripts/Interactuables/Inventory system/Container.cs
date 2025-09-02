@@ -10,10 +10,8 @@ public class Container : MonoBehaviour, IInteractable
     public bool CanInteract(StatManager stats) => true;
 
     public event System.Action OnChanged;
-    private void NotifyChanged()
-    {
-        OnChanged?.Invoke();
-    }
+    private void NotifyChanged() => OnChanged?.Invoke();
+
     public void Interact(StatManager stats)
     {
         // Log para ver qué tiene el cofre al momento de abrir
@@ -35,7 +33,6 @@ public class Container : MonoBehaviour, IInteractable
         if (contents == null || index < 0 || index >= contents.Count) return;
         var ia = contents[index];
         if (ia == null || ia.item == null || ia.amount <= 0) return;
-
         InventoryManager.Instance.Add(ia.item, ia.amount);
         contents.RemoveAt(index);
         NotifyChanged();
@@ -65,17 +62,22 @@ public class Container : MonoBehaviour, IInteractable
     public void AddItem(InventoryItem item, int amount)
     {
         if (item == null || amount <= 0) return;
+
+        // ¿ya había un stack del mismo item?
         for (int i = 0; i < contents.Count; i++)
         {
             if (contents[i]?.item == item)
             {
                 contents[i].amount += amount;
-                NotifyChanged();
+                Debug.Log($"[Container] AddItem MERGE '{item.name}' +{amount} -> stack={contents[i].amount}; stacks={contents.Count}");
+                OnChanged?.Invoke();
                 return;
             }
         }
+
         contents.Add(new ItemAmount { item = item, amount = amount });
-        NotifyChanged();
+        Debug.Log($"[Container] AddItem NEW '{item.name}' +{amount}; stacks={contents.Count}");
+        OnChanged?.Invoke();
     }
 
     public bool TryReceiveFromInventory(InventoryItem item, int amount)
@@ -84,7 +86,6 @@ public class Container : MonoBehaviour, IInteractable
         AddItem(item, amount); // AddItem ya hace NotifyChanged()
         return true;
     }
-
     public bool RemoveAt(int index, int amount)
     {
         if (contents == null || index < 0 || index >= contents.Count) return false;
@@ -96,8 +97,26 @@ public class Container : MonoBehaviour, IInteractable
         if (ia.amount <= 0) contents.RemoveAt(index);
         else contents[index] = ia;
 
-        OnChanged?.Invoke();
+        NotifyChanged();
         return true;
     }
+    public void AddItemDirect(InventoryItem item, int amount)
+    {
+        if (contents == null) contents = new List<ItemAmount>();
+        if (item == null || amount <= 0) { Debug.LogWarning("[Container] AddItemDirect ignorado (item null o amount <= 0)"); return; }
 
+        int idx = contents.FindIndex(x => x != null && x.item == item);
+        if (idx >= 0)
+        {
+            contents[idx].amount += amount;
+            Debug.Log($"[Container] AddItemDirect MERGE '{item.name}' +{amount} -> stack={contents[idx].amount}; stacks={contents.Count}");
+        }
+        else
+        {
+            contents.Add(new ItemAmount { item = item, amount = amount });
+            Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
+        }
+
+        NotifyChanged();
+    }
 }
