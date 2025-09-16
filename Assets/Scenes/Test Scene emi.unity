@@ -836,6 +836,91 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &335279260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335279262}
+  - component: {fileID: 335279261}
+  m_Layer: 0
+  m_Name: survivalManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &335279261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335279260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f3ab12d71493a5499c44511ef82d5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  tickRateSeconds: 1
+  useUnscaledTime: 0
+  autoPauseWhenTimescaleZero: 1
+  hp:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0
+  food:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.3
+  water:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.6
+  sanity:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.1
+  hpDecaysWhenOtherStatsEmpty: 1
+  hpExtraDecayPerEmptyStat: 1
+  OnStatChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStatZero:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTickingChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  syncFromInspectorInPlayMode: 0
+  hpCurrent: 100
+  foodCurrent: 100
+  waterCurrent: 100
+  sanityCurrent: 100
+  isTicking: 0
+  pauseReasons: []
+--- !u!4 &335279262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335279260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.0412703, y: 0.5809601, z: -0.01827722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &386946668 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9142530989182401519, guid: c4f9a75abc4f20a4d9e811ecced78aaf, type: 3}
@@ -5438,3 +5523,4 @@ SceneRoots:
   - {fileID: 1772641689644026695}
   - {fileID: 1069883988680777736}
   - {fileID: 4874015735547573023}
+  - {fileID: 335279262}
