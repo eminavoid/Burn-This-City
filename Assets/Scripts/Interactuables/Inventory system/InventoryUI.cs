@@ -13,21 +13,21 @@ public class InventoryUI : MonoBehaviour
 
     [Header("Roots")]
     [SerializeField] private GameObject backpackRoot;  // panel padre de la mochila
-    [SerializeField] private GameObject splitRoot;      // panel del cofre (si lo us·s)
+    [SerializeField] private GameObject splitRoot;      // panel del cofre (si lo us√°s)
 
-    [Header("Pocket Buttons (selector estÈtico)")]
+    [Header("Pocket Buttons (selector est√©tico)")]
     [SerializeField] private GameObject pocketButtonsRoot;   // contenedor de los 4 botones
     [SerializeField] private UnityEngine.UI.Button[] pocketButtons = new UnityEngine.UI.Button[4];
 
-    [Header("Pocket Panels (uno por mÛdulo)")]
+    [Header("Pocket Panels (uno por m√≥dulo)")]
     // Cada pocket es el GameObject que contiene el ModuleGridUI correspondiente
     [SerializeField] private GameObject[] pocketPanels = new GameObject[4];
 
-    [Header("Visual de botÛn deshabilitado")]
+    [Header("Visual de bot√≥n deshabilitado")]
     [SerializeField, Range(0f, 1f)] private float disabledAlpha = 0.5f;
 
     [Header("Split (derecha/cofre)")]
-    [SerializeField] private ContainerGridUI containerGridUI; // opcional, si us·s cofre
+    [SerializeField] private ContainerGridUI containerGridUI; // opcional, si us√°s cofre
     public ContainerGridUI ContainerGridUI => containerGridUI;
 
     public bool IsBackpackOpen => backpackRoot && backpackRoot.activeSelf;
@@ -42,11 +42,11 @@ public class InventoryUI : MonoBehaviour
         if (backpackRoot) backpackRoot.SetActive(false);
         if (splitRoot) splitRoot.SetActive(false);
 
-        // Por estÈtica: ocultar los pockets y mostrar sÛlo los botones al abrir
+        // Por est√©tica: ocultar los pockets y mostrar s√≥lo los botones al abrir
         SetAllPockets(false);
         if (pocketButtonsRoot) pocketButtonsRoot.SetActive(false);
 
-        // Wire autom·tico de botones si est·n asignados
+        // Wire autom√°tico de botones si est√°n asignados
         for (int i = 0; i < pocketButtons.Length; i++)
         {
             int idx = i;
@@ -178,17 +178,8 @@ public class InventoryUI : MonoBehaviour
 
             bool isOpen = (i < pocketPanels.Length && pocketPanels[i] != null && pocketPanels[i].activeSelf);
 
-            // deshabilitar click cuando est· abierto
+            // deshabilitar click cuando est√° abierto
             btn.interactable = !isOpen;
-
-            // oscurecer visualmente el que est· abierto
-            var g = btn.targetGraphic;
-            if (g != null)
-            {
-                var c = g.color;
-                c.a = isOpen ? disabledAlpha : 1f;
-                g.color = c;
-            }
         }
     }
     // Helpers de compatibilidad
