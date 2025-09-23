@@ -60,7 +60,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!114 &4823101997724713605
 MonoBehaviour:
@@ -194,8 +194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46056fc1afc76b5448d9adaa40b4e1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportDestination: {fileID: 0}
   requiresKey: 0
+  useSceneTransition: 0
+  sceneToLoad: 
+  teleportDestination: {fileID: 0}
+  interactPrompt: F para interactuar
+  lockedPrompt: "Necesit\xE1s una llave"
   promptUI: {fileID: 3073482994217243901}
   promptText: {fileID: 2966289121772951346}
 --- !u!1 &6390141030023723283
@@ -232,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 13}
+  m_AnchoredPosition: {x: -12.9, y: 13}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &847101552534723797
@@ -297,8 +301,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

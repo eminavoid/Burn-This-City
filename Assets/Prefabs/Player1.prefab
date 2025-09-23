@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4613898652628337763}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.63, y: -3.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61993, y: 0.61993, z: 0.61993}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,8 +81,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 815424164945274260, guid: 2b36ad2f2e3579d45a3d3b2d0fcc39bd, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 0d80c786f6c0a744eac9a18d69aba351, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   Move: {fileID: -1680190386980627800, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   PointerPosition: {fileID: -5869922234229235299, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   moveSpeed: 2
+  hasKey: 0
 --- !u!114 &2056417417308748411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,8 +183,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.08527435, y: -0.7401871}
+  m_Size: {x: 1.3439528, y: 3.23265}
   m_Direction: 0
 --- !u!61 &6979507046856291837
 BoxCollider2D:
@@ -219,17 +220,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.13898647, y: -0.66599554}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.63000005, y: 1.8153027}
+    oldSize: {x: 5, y: 5}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.37, y: 1.46}
+  m_Size: {x: 3.084812, y: 2.0202334}
   m_EdgeRadius: 0
 --- !u!95 &4613898652628337763
 Animator:
