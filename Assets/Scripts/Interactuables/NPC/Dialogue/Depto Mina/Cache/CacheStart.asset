@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: CacheStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Frente a vos se encuentra una pila de viejos suministros de la VLC. Un
+    cache de antes de la guerra. Estos cargamentos suelen estar escondidos por toda
+    la ciudad, y la resistencia los usa a dia de hoy para resistir la opresi\xF3n
+    de los Rauch Korps. Pero hay algo raro, \xBFQue hace tan a la vista un tesoro
+    como este?"
+  choices:
+  - playerText: Esto me da mala espina, mejor darme media vuelta.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: Investigar los suministros.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 3
+      comparisonType: 3
+      requiredAmount: 8
+    successNode: {fileID: 11400000, guid: de086e3db5c52e84e86e6904ea6e4c4e, type: 2}
+    successRewards:
+    - statType: 3
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 886da9c26dc6b6b42bad67b474ac5e51, type: 2}
+    failureRewards:
+    - statType: 3
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

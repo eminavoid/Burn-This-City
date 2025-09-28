@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Alaric10
+  m_EditorClassIdentifier: 
+  npcName: Alaric
+  npcText: "\xBFOtra manera? \xBFAcaso no me escuchaste? Esa puerta esta cerrada
+    al cal y canto. Mira camarada, realmente necesito esos antibi\xF3ticos, voy a
+    quedarme un rato mas aca por si cambias de opini\xF3n. Pero no tardes, no falta
+    mucho para el toque de queda. Y este lugar no es seguro para pasar la noche."
+  choices:
+  - playerText: Ok
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 11400000, guid: 897f6944a9d40284fa97f147c022324d, type: 2}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

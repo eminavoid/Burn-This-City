@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Botiquin3S
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Con un grito primal, demostras que sobrevivir no siempre se trata de
+    usar la cabeza. Logras abrirlo a la fuerza. Dentro encontras todo tipo de suministros
+    medicos, vitaminas, gazas, alcohol. Cosas \xFAtiles para la supervivencia, pero
+    ning\xFAn antibi\xF3tico. Hay que seguir buscando."
+  choices:
+  - playerText: Salir
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 11400000, guid: 0ea26834c5028ae43bf7b30c00f70856, type: 2}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

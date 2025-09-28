@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AgujeroStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Un enorme agujero yace en el piso enfrente tuyo y sobre el, otro en el
+    techo. Pero lo que realmente capta tu atenci\xF3n es el cache de suministros
+    que yace del otro lado. Parece ser uno de los cargamentos de los viejos cargamentos
+    de la VLC, uno de los tesoros mas preciados que todav\xEDa quedan en Diesmark.
+    Pero antes de alcanzarlo vas a necesitar una manera de llegar al otro lado."
+  choices:
+  - playerText: "Por mucho que me gustar\xEDa revisar sus contenidos. La prioridad
+      ahora mismo son los antibi\xF3ticos. Voy a volver mas tarde."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "No puedo dejar pasar esta oportunidad, quiz\xE1 pueda fabricar un
+      puente improvisado con las maderas que hay a mi alrededor."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 2
+      comparisonType: 3
+      requiredAmount: 8
+    successNode: {fileID: 11400000, guid: c3ed17b8981933e46a4e3d90ae9dc2e0, type: 2}
+    successRewards:
+    - statType: 2
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 1b683bc406a8dba4cbeb921bd411a9df, type: 2}
+    failureRewards:
+    - statType: 2
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "Podr\xEDa saltar al otro lado, solo hace falta tomar un poco de
+      carrera."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 3
+      requiredAmount: 8
+    successNode: {fileID: 11400000, guid: 34aef0b8d78c09644b88bca2455d866b, type: 2}
+    successRewards:
+    - statType: 0
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: d249e8d7608bf2141a1eac30c78d1e06, type: 2}
+    failureRewards:
+    - statType: 0
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

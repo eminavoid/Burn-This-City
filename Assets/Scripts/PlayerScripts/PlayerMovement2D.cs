@@ -17,6 +17,8 @@ public class PlayerMovement2D : MonoBehaviour
     private bool isFacingRight = false;
     private bool canMove = true;
 
+    public bool hasKey = false;
+
 
     private void Awake()
     {
@@ -26,8 +28,7 @@ public class PlayerMovement2D : MonoBehaviour
 
     private void Update()
     {
-        if (canMove)
-            FlipSprite();
+        if (canMove) FlipSprite();
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
@@ -83,7 +84,7 @@ public class PlayerMovement2D : MonoBehaviour
         rb.linearVelocity = new Vector2(vx, rb.linearVelocity.y);
 
         if (animator != null)
-            animator.SetFloat("xVelocity", rb.linearVelocity.x);
+            animator.SetFloat("xVelocity", Math.Abs(rb.linearVelocity.x));
     }
     private void FlipSprite()
     {

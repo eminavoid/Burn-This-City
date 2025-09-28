@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: Backstory intro node 2
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "La ni\xF1ez da lugar a la juventud, \xBFQue fueron de esos a\xF1os? Los
+    j\xF3venes en Diesmark suelen empezar a trabajar a una temprana edad, aunque
+    como todo en la vida, hay excepciones."
+  choices:
+  - playerText: "\xBFTrabajar?\xBFPara que? Para triunfar en la vida solo se necesitan
+      dedos r\xE1pidos y ojos aun mas veloces para ver venir a los polis."
+    defaultNode: {fileID: 11400000, guid: 8a2be593d1b7e554cb90086baa02bf28, type: 2}
+    grantedReward:
+    - statType: 1
+      amount: 3
+    - statType: 3
+      amount: 3
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: 'Ni bien pude conseguir un trabajo en la fabrica como estibador,
+      mi padre siembre dijo: un cuerpo sano es una mente sana.'
+    defaultNode: {fileID: 11400000, guid: 8a2be593d1b7e554cb90086baa02bf28, type: 2}
+    grantedReward:
+    - statType: 0
+      amount: 5
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "Con ayuda de mis padres abr\xED un peque\xF1o taller de reparaciones.
+      Estaba localizado cerca de una jugueteria, por lo que me acostumbre a trabajar
+      con los motores peque\xF1os que llevaban los juguetes mas caros."
+    defaultNode: {fileID: 11400000, guid: 8a2be593d1b7e554cb90086baa02bf28, type: 2}
+    grantedReward:
+    - statType: 1
+      amount: 3
+    - statType: 2
+      amount: 3
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements: []
+    successNode: {fileID: 0}
+    successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 0}
+    failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

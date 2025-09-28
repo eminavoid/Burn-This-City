@@ -13,51 +13,72 @@ MonoBehaviour:
   m_Name: Backstory intro node 1
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit
-    lectus arcu, nec ultrices nibh tempor non. Etiam sit amet metus suscipit ex sollicitudin
-    vestibulum. In nisi erat, placerat sed viverra eu, tristique sed libero. Vivamus
-    facilisis eleifend lectus, nec cursus nibh ultricies eu. Nunc mollis a eros tristique
-    volutpat. Suspendisse dignissim massa vitae imperdiet scelerisque. Vivamus rutrum
-    elit varius porta porttitor. Nullam eu risus lacinia, dictum leo quis, gravida
-    nisl. Proin rutrum est tortor, a volutpat '
+  npcText: "La ni\xF1ez en Diesmark era relativamente llevadera, por lo menos comparada
+    con las ciudades vecinas. Lo que te dio la oportunidad de desarrollarte saludablemente.
+    \xBFComo pasaste tus primeros a\xF1os?\r"
   choices:
-  - playerText: qa
-    defaultNode: {fileID: 0}
-    grantedReward: []
+  - playerText: "No fueron faciles, a los otros chicos les encantaba molestarme,
+      lo que hizo que siempre tuviera que estar alerta. No tuve muchos amigos, por
+      lo que me entreten\xEDa con manualidades."
+    defaultNode: {fileID: 11400000, guid: 94434c5695cf48c43ac2f08fe4293f49, type: 2}
+    grantedReward:
+    - statType: 3
+      amount: 2
+    - statType: 2
+      amount: 2
+    nextStartingNodeDefault: {fileID: 0}
     onTalked:
       m_PersistentCalls:
         m_Calls: []
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
     onSuccess:
       m_PersistentCalls:
         m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
     onFailure:
       m_PersistentCalls:
         m_Calls: []
-  - playerText: a
-    defaultNode: {fileID: 0}
-    grantedReward: []
+  - playerText: "Me la pasaba corriendo de aca para all\xE1, volvia loco a mis padres.
+      Por lo que nunca me daban dinero para comprarme mis cosas (aunque eso no me
+      deten\xEDa de que lo \u201Ctomara prestado\u201D de igual manera)."
+    defaultNode: {fileID: 11400000, guid: 94434c5695cf48c43ac2f08fe4293f49, type: 2}
+    grantedReward:
+    - statType: 0
+      amount: 2
+    - statType: 1
+      amount: 2
+    nextStartingNodeDefault: {fileID: 0}
     onTalked:
       m_PersistentCalls:
         m_Calls: []
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
     onSuccess:
       m_PersistentCalls:
         m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
     onFailure:
       m_PersistentCalls:
         m_Calls: []
-  - playerText: a
-    defaultNode: {fileID: 0}
-    grantedReward: []
+  - playerText: Desde una temprana edad ayude a mis padres en el taller. Por lo que
+      no recuerdo un momento de mi vida en el que no haya estado en forma. O en el
+      que no supiera usar herramientas.
+    defaultNode: {fileID: 11400000, guid: 94434c5695cf48c43ac2f08fe4293f49, type: 2}
+    grantedReward:
+    - statType: 2
+      amount: 2
+    - statType: 0
+      amount: 2
+    nextStartingNodeDefault: {fileID: 0}
     onTalked:
       m_PersistentCalls:
         m_Calls:
@@ -76,11 +97,13 @@ MonoBehaviour:
     statRequirements: []
     successNode: {fileID: 0}
     successRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
     onSuccess:
       m_PersistentCalls:
         m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
+    nextStartingNodeFailure: {fileID: 0}
     onFailure:
       m_PersistentCalls:
         m_Calls: []

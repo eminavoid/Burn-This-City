@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: BotiquinStart
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: "Ni bien abr\xEDs la puerta te encontras con lo que estabas buscando:
+    un kit de primeros auxilios. Dentro tienen que haber antibi\xF3ticos. Solo hay
+    un problema: esta cerrado y no tenes la llave."
+  choices:
+  - playerText: No tener una llave nunca fue un problema para mi.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 1
+      comparisonType: 3
+      requiredAmount: 5
+    successNode: {fileID: 11400000, guid: 0a36aaa7600eddb42a3e2de02d3734bf, type: 2}
+    successRewards:
+    - statType: 1
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: fcd76956fb9843b4d8f09996645de872, type: 2}
+    failureRewards:
+    - statType: 1
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "*Intentar desarmar el botiqu\xEDn.*"
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 2
+      comparisonType: 3
+      requiredAmount: 5
+    successNode: {fileID: 11400000, guid: 3c1b4d733bfdfc64e927629f30671b5b, type: 2}
+    successRewards:
+    - statType: 2
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 78b8af54dd553ea48a6befa34c6462b1, type: 2}
+    failureRewards:
+    - statType: 2
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
+  - playerText: "*Intentar arrancar el botiqu\xEDn de la pared.*"
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    nextStartingNodeDefault: {fileID: 0}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 3
+      requiredAmount: 5
+    successNode: {fileID: 11400000, guid: 2fd087aa07983af44b4f49d8e7922153, type: 2}
+    successRewards:
+    - statType: 0
+      amount: 1
+    nextStartingNodeSuccess: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: 36d7f69080c43d2419e6ed97ec8ef980, type: 2}
+    failureRewards:
+    - statType: 0
+      amount: 1
+    nextStartingNodeFailure: {fileID: 0}
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

@@ -6,10 +6,10 @@ public class StatManager : MonoBehaviour
     public static StatManager Instance { get; private set; }
     public enum StatType
     {
-        Strength,
-        Dexterity,
-        Constitution,
-        Intelligence,
+        Atletismo,
+        Destreza_manual,
+        Mecanica,
+        Percepcion,
         Wisdom,
         Charisma
     }
