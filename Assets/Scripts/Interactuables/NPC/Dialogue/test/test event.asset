@@ -10,29 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: test1
+  m_Name: test event
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: este nodo da la llave
+  npcText: LLAVE??
   choices:
-  - playerText: oka
+  - playerText: bue
     defaultNode: {fileID: 0}
     grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 75e3e804f6b254546b04dea435691135, type: 2}
-      amount: 4
-    nextStartingNodeDefault: {fileID: 11400000, guid: 6bbdcefaa0b1665459967be6b065d98e, type: 2}
-    raiseOnTalked: 1
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 11400000}
+    onTalked:
+      m_PersistentCalls:
+        m_Calls: []
     statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
+    itemRequirements:
+    - item: {fileID: 11400000, guid: 75e3e804f6b254546b04dea435691135, type: 2}
+      amount: 1
+    consumeRequirementsOnSuccess: 1
+    successNode: {fileID: 11400000, guid: b9ec82188c8caae4f96eb8d7e0ccb05f, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    failureNode: {fileID: 11400000, guid: b3c5e8ca25272e741920963b791d8c58, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
