@@ -5,7 +5,9 @@ public class Enemy_Patrol : MonoBehaviour
 {
     public Transform[] patrolPoints;
     private Transform target;
-
+    public DialogueRunner _dialogueRunner;
+    private DialogueNode _dialogueNode;
+    
     public float pauseDuration = 2.5f;
     private bool isPaused;
 
@@ -19,6 +21,7 @@ public class Enemy_Patrol : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         target = patrolPoints[0];
+        _dialogueNode = _dialogueRunner.current;
     }
 
     // Update is called once per frame
@@ -53,5 +56,10 @@ public class Enemy_Patrol : MonoBehaviour
         currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
         target = patrolPoints[currentPatrolIndex];
         isPaused = false;
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }

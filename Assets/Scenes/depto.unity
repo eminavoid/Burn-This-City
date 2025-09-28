@@ -1745,6 +1745,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63129f605fdab394c8f5233143372109, type: 3}
+--- !u!114 &251190123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2025709248709208382, guid: 63129f605fdab394c8f5233143372109, type: 3}
+  m_PrefabInstance: {fileID: 251190122}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913ccc38f0aaeba49872078f7c21fc4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &276483446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
@@ -6579,6 +6590,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 985172234131032053, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
   m_PrefabInstance: {fileID: 513749211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1138130003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1828221389625802284, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_Name
+      value: Capsule npc
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: startingNode
+      value: 
+      objectReference: {fileID: 11400000, guid: eb47f7bc4537d6d45a8b4cf0a84012a0, type: 2}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6512276
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.886068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
 --- !u!4 &1144647540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 985172234131032053, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
@@ -9865,9 +9937,9 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 70, y: 70}
-  m_Spacing: {x: 10, y: 10}
-  m_Constraint: 2
+  m_CellSize: {x: 100, y: 80}
+  m_Spacing: {x: 40, y: 10}
+  m_Constraint: 0
   m_ConstraintCount: 4
 --- !u!114 &1609013509
 MonoBehaviour:
@@ -14098,6 +14170,7 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 1707846877}
   - {fileID: 1978354242}
+  _dialogueRunner: {fileID: 251190123}
   pauseDuration: 2.5
   speed: 2
 --- !u!1660057539 &9223372036854775807
@@ -14124,3 +14197,4 @@ SceneRoots:
   - {fileID: 324106333}
   - {fileID: 1832794358}
   - {fileID: 1863755979}
+  - {fileID: 1138130003}

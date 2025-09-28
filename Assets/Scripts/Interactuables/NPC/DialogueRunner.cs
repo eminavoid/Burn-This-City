@@ -8,7 +8,7 @@ public class DialogueRunner : MonoBehaviour
     public static DialogueRunner Instance { get; private set; }
 
     [SerializeField] private DialogueUI ui;
-    private DialogueNode current;
+    public DialogueNode current;
     private DialogueTrigger currentTrigger;
 
     public static event Action DialogueStarted;

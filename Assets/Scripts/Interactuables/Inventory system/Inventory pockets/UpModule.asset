@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: UpModule
   m_EditorClassIdentifier: 
   displayName: Up
-  rows: 2
-  cols: 9
+  rows: 1
+  cols: 4
