@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour, IInteractable
@@ -9,6 +10,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
 
     private DialogueNode currentNode;
     private DialogueRunner runner;
+
+    [Header("Signals from dialogue (scene events)")]
+    public UnityEvent OnTalked;
+    public UnityEvent OnSucces;
+    public UnityEvent OnFailure;
 
     public string InteractionPrompt => "Talk";
     public bool CanInteract(StatManager stats) => true;
@@ -29,8 +35,23 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
         else
             Debug.LogWarning($"{name}: currentNode is null (did you set startingNode?).");
     }
+
     public void SetStartingNode(DialogueNode newNode)
     {
         currentNode = newNode;
+    }
+
+    // Llamado por el runner cuando un choice marca el flag
+    public void RaiseOnTalked()
+    {
+        OnTalked?.Invoke();
+    }
+    public void RaiseOnSucces()
+    {
+        OnSucces?.Invoke();
+    }
+    public void RaiseOnFailure()
+    {
+        OnFailure?.Invoke();
     }
 }

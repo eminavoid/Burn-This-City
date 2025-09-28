@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Linq;
 using System;
-using UnityEngine.SceneManagement;
 
 public class DialogueRunner : MonoBehaviour
 {
@@ -14,7 +13,12 @@ public class DialogueRunner : MonoBehaviour
     public static event Action DialogueStarted;
     public static event Action DialogueEnded;
 
-    
+    private void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+    }
+
     public void Begin(DialogueNode start, DialogueTrigger trigger)
     {
         currentTrigger = trigger;
@@ -37,6 +41,7 @@ public class DialogueRunner : MonoBehaviour
                              .ToList();
         ui.Show(current.npcName, current.npcText, options);
     }
+
     public void Choose(int index)
     {
         var choice = current.choices[index];
@@ -56,10 +61,11 @@ public class DialogueRunner : MonoBehaviour
             if (choice.defaultItemRewards != null && InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.AddMany(choice.defaultItemRewards);
-                InventoryUI.RefreshIfAnyOpen(); 
+                InventoryUI.RefreshIfAnyOpen();
             }
 
-            choice.onTalked?.Invoke();
+            if (choice.raiseOnTalked)
+                currentTrigger?.RaiseOnTalked();
 
             if (choice.nextStartingNodeDefault != null && currentTrigger != null)
                 currentTrigger.SetStartingNode(choice.nextStartingNodeDefault);
@@ -82,26 +88,24 @@ public class DialogueRunner : MonoBehaviour
 
         if (success)
         {
-            // Consumir requisitos de items si corresponde (ej: "entregar ingredientes")
             if (hasItemReqs && choice.consumeRequirementsOnSuccess && InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.Consume(choice.itemRequirements);
                 InventoryUI.RefreshIfAnyOpen();
             }
 
-            // Recompensas de éxito (stats)
             if (choice.successRewards != null)
                 foreach (var r in choice.successRewards)
                     StatManager.Instance.IncrementStat(r.statType, r.amount);
 
-            // Recompensas de éxito (items)
             if (choice.successItemRewards != null && InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.AddMany(choice.successItemRewards);
                 InventoryUI.RefreshIfAnyOpen();
             }
 
-            choice.onSuccess?.Invoke();
+            if (choice.raiseOnSuccess)
+                currentTrigger?.RaiseOnSucces();
 
             if (choice.nextStartingNodeSuccess != null && currentTrigger != null)
                 currentTrigger.SetStartingNode(choice.nextStartingNodeSuccess);
@@ -110,19 +114,18 @@ public class DialogueRunner : MonoBehaviour
         }
         else
         {
-            // Recompensas de fallo (stats)
             if (choice.failureRewards != null)
                 foreach (var r in choice.failureRewards)
                     StatManager.Instance.IncrementStat(r.statType, r.amount);
 
-            // Recompensas de fallo (items)
             if (choice.failureItemRewards != null && InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.AddMany(choice.failureItemRewards);
                 InventoryUI.RefreshIfAnyOpen();
             }
 
-            choice.onFailure?.Invoke();
+            if (choice.raiseOnFailure)
+                currentTrigger?.RaiseOnFailure();
 
             if (choice.nextStartingNodeFailure != null && currentTrigger != null)
                 currentTrigger.SetStartingNode(choice.nextStartingNodeFailure);
@@ -132,5 +135,4 @@ public class DialogueRunner : MonoBehaviour
 
         Advance();
     }
-
 }

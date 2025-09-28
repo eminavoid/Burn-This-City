@@ -10,18 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: test1
+  m_Name: test event
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: este nodo da la llave
+  npcText: on talked evento
   choices:
-  - playerText: oka
+  - playerText: SII
     defaultNode: {fileID: 0}
     grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 75e3e804f6b254546b04dea435691135, type: 2}
-      amount: 4
-    nextStartingNodeDefault: {fileID: 11400000, guid: 6bbdcefaa0b1665459967be6b065d98e, type: 2}
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 11400000}
     raiseOnTalked: 1
     statRequirements: []
     itemRequirements: []

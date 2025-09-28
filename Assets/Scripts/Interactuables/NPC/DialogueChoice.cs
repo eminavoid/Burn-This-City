@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
 
 [System.Serializable]
 public class DialogueChoice
@@ -14,9 +13,9 @@ public class DialogueChoice
     public List<ItemAmount> defaultItemRewards;
     [Tooltip("If set, the NPC’s startingNode will be replaced with this after choosing.")]
     public DialogueNode nextStartingNodeDefault;
-    public UnityEvent onTalked;
 
-    
+    [Tooltip("If true, the DialogueTrigger will raise its scene event (OnTalked) when this default branch is chosen.")]
+    public bool raiseOnTalked;
 
     [Header("Conditional requirements")]
     public List<InteractionRequirement> statRequirements;
@@ -32,7 +31,9 @@ public class DialogueChoice
     public List<ItemAmount> successItemRewards;
     [Tooltip("If set, NPC will start here next time (success branch)")]
     public DialogueNode nextStartingNodeSuccess;
-    public UnityEvent onSuccess;
+
+    [Tooltip("If true, raise OnTalked on SUCCESS.")]
+    public bool raiseOnSuccess;
 
     [Header("Fail")]
     public DialogueNode failureNode;
@@ -41,6 +42,7 @@ public class DialogueChoice
     public List<ItemAmount> failureItemRewards;
     [Tooltip("If set, NPC will start here next time (failure branch)")]
     public DialogueNode nextStartingNodeFailure;
-    public UnityEvent onFailure;
 
+    [Tooltip("If true, raise OnTalked on FAILURE.")]
+    public bool raiseOnFailure;
 }
