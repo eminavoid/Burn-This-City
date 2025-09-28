@@ -13,32 +13,24 @@ MonoBehaviour:
   m_Name: test event
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: LLAVE??
+  npcText: on talked evento
   choices:
-  - playerText: bue
+  - playerText: SII
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 11400000}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 1
     statRequirements: []
-    itemRequirements:
-    - item: {fileID: 11400000, guid: 75e3e804f6b254546b04dea435691135, type: 2}
-      amount: 1
-    consumeRequirementsOnSuccess: 1
-    successNode: {fileID: 11400000, guid: b9ec82188c8caae4f96eb8d7e0ccb05f, type: 2}
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    failureNode: {fileID: 11400000, guid: b3c5e8ca25272e741920963b791d8c58, type: 2}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
