@@ -17,71 +17,48 @@ MonoBehaviour:
     las demas cosas en este hotel, parece estar todav\xEDa en perfectas condiciones.
     Parece que quien la construyo no escatimo en gastos."
   choices:
-  - playerText: "No hay forma de que abra esto sin ayuda. Sera mejor conseguirle
-      esos antibi\xF3ticos a Alaric."
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
-    statRequirements: []
-    successNode: {fileID: 0}
-    successRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    failureNode: {fileID: 0}
-    failureRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
   - playerText: '*Analizar la trampilla*'
     defaultNode: {fileID: 0}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements:
     - statType: 2
       comparisonType: 3
       requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 11400000, guid: debe5642867081546a7ce17469806b72, type: 2}
     successRewards:
     - statType: 2
       amount: 1
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 11400000, guid: b54fc4853087fdb468b12988a987b901, type: 2}
     failureRewards:
     - statType: 2
       amount: 1
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
   - playerText: Intentar forzar la cerradura de la trampilla.
     defaultNode: {fileID: 11400000, guid: 3fcc9088087dc2d4cb1b787721692e32, type: 2}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0

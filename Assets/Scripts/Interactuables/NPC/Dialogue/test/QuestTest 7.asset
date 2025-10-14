@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: Trampilla2Success
+  m_Name: QuestTest 7
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: "Efectivamente, las bombas pr\xE1cticamente no tuvieron efecto en ella.
-    Abrirla sin la llave va a ser imposible sin un buen par de herramientas y una
-    considerable cantidad de tiempo."
+  npcText: "Entonces, \xBFComo va a ser?"
   choices:
-  - playerText: No hay forma de que abra esto sin ayuda. Sera mejor encontrar la
-      llave
+  - playerText: '[ATLETISMO] Porque si no me la das te rompo la cara'
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 0
+      requiredAmount: 0
     itemRequirements: []
-    consumeRequirementsOnSuccess: 1
-    successNode: {fileID: 0}
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 840a2f5ec4ff99b429017ca08d9ceb3b, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
@@ -37,42 +37,47 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: '[USAR LLAVE]'
+  - playerText: "[PERSUASION] Enserio necesito esto \xBFNo podrias darmelo de la
+      bondad de tu corazon?"
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
-    itemRequirements:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    consumeRequirementsOnSuccess: 1
-    successNode: {fileID: 11400000, guid: db78217a529d5ac438b755aef3ad823d, type: 2}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 1
-    failureNode: {fileID: 11400000, guid: 97c0f4d0c284f5c4f92e7bfbb2a9fe95, type: 2}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: Salir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 11400000, guid: 814cfb86e3bd3254cba6bfe54641e3c0, type: 2}
-    raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 0
+      requiredAmount: 50
     itemRequirements: []
-    consumeRequirementsOnSuccess: 1
+    consumeRequirementsOnSuccess: 0
     successNode: {fileID: 0}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    failureNode: {fileID: 11400000, guid: cabeff53dc009034fbce7f1397fe88a7, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: Puedo pagarte (300 CR)
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 0
+      comparisonType: 0
+      requiredAmount: 50
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: cabeff53dc009034fbce7f1397fe88a7, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}

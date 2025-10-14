@@ -100,4 +100,14 @@ public class PlayerMovement2D : MonoBehaviour
             transform.localScale = ls;
         }
     }
+
+    public void GetKey()
+    {
+        hasKey = true;
+    }
+
+    public void UseKey()
+    {
+        hasKey = false;
+    }
 }

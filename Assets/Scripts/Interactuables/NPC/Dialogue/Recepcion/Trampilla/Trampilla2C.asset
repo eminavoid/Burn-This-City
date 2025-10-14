@@ -19,20 +19,19 @@ MonoBehaviour:
   - playerText: Salir
     defaultNode: {fileID: 0}
     grantedReward: []
-    nextStartingNodeDefault: {fileID: 11400000, guid: 814cfb86e3bd3254cba6bfe54641e3c0, type: 2}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
