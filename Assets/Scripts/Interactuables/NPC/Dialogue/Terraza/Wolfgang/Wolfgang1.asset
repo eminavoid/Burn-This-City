@@ -18,60 +18,57 @@ MonoBehaviour:
   - playerText: "\xBFY vos quien sos?"
     defaultNode: {fileID: 11400000, guid: 83b538f16ee807e4aad6b4c69f43ee5e, type: 2}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
   - playerText: Todos morimos solo al final, camarada.
     defaultNode: {fileID: 11400000, guid: d0fbb88e465d9ec4789708302407ae2f, type: 2}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
   - playerText: No te ves bien amigo mio.
     defaultNode: {fileID: 11400000, guid: 32d9f3839f98e3b43ba836ab426de970, type: 2}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0

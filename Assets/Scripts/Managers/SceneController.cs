@@ -43,4 +43,9 @@ public class SceneController : MonoBehaviour
             Debug.LogWarning("SceneController: No next scene in Build Settings.");
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

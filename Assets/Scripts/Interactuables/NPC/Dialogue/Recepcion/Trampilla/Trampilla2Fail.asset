@@ -18,42 +18,61 @@ MonoBehaviour:
   choices:
   - playerText: Aunque las bombas la hayan aflojado, dudo que pueda abrirla con mis
       manos.
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: debe5642867081546a7ce17469806b72, type: 2}
     grantedReward: []
-    nextStartingNodeDefault: {fileID: 11400000, guid: 814cfb86e3bd3254cba6bfe54641e3c0, type: 2}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
+  - playerText: '[USAR LLAVE]'
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements:
+    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
+      amount: 1
+    consumeRequirementsOnSuccess: 1
+    successNode: {fileID: 11400000, guid: db78217a529d5ac438b755aef3ad823d, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 1
+    failureNode: {fileID: 11400000, guid: 97c0f4d0c284f5c4f92e7bfbb2a9fe95, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
   - playerText: No pierdo nada con probar forzarla a la fuerza.
     defaultNode: {fileID: 11400000, guid: 46f0785fc7485f748bdec4ffb9e62c38, type: 2}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
