@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Rusy Key
   icon: {fileID: 6114163804962241700, guid: 2b36ad2f2e3579d45a3d3b2d0fcc39bd, type: 3}
-  stackable: 1
-  maxStack: 99
+  stackable: 0
+  maxStack: 1
   category: 0

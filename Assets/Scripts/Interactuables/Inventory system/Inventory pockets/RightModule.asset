@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RightModule
   m_EditorClassIdentifier: 
   displayName: Right
-  rows: 6
-  cols: 3
+  rows: 4
+  cols: 2
