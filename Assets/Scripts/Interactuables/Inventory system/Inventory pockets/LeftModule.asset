@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LeftModule
   m_EditorClassIdentifier: 
   displayName: Left
-  rows: 6
-  cols: 3
+  rows: 4
+  cols: 2

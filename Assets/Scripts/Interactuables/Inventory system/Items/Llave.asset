@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Llave
   icon: {fileID: 21300000, guid: 85df4c086945ca04db3828b58d515fda, type: 3}
-  stackable: 1
-  maxStack: 99
+  stackable: 0
+  maxStack: 1
   category: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Pan rancio
   icon: {fileID: 21300000, guid: 6bdbe1afc3fcbc7469c47b8ed56c3ba7, type: 3}
-  stackable: 1
-  maxStack: 99
+  stackable: 0
+  maxStack: 1
   category: 1

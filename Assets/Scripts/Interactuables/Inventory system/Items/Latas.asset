@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Latas
   icon: {fileID: 21300000, guid: a1b2855c711f6d04b9a2d8c9b73cd9ed, type: 3}
-  stackable: 1
-  maxStack: 10
+  stackable: 0
+  maxStack: 1
   category: 1
