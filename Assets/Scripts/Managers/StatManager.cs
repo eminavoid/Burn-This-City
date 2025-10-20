@@ -6,12 +6,15 @@ public class StatManager : MonoBehaviour
     public static StatManager Instance { get; private set; }
     public enum StatType
     {
-        Atletismo,
-        Destreza_manual,
-        Mecanica,
-        Percepcion,
-        Wisdom,
-        Charisma
+        Knowledge,
+        Logic,
+        Perception,
+        Dexterity,
+        Robustness,
+        Vigor,
+        Coaxing,
+        Intimidation,
+        Trickery
     }
     [System.Serializable]
     public struct StatEntry
