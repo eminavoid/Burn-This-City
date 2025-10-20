@@ -4,6 +4,10 @@ using System.Collections.Generic;
 public class StatManager : MonoBehaviour
 {
     public static StatManager Instance { get; private set; }
+
+    // NUEVA LÍNEA: Declaramos el evento. Avisará qué stat cambió y su nuevo valor.
+    public static event System.Action<StatType, int> OnStatChanged;
+
     public enum StatType
     {
         Knowledge,
@@ -80,6 +84,8 @@ public class StatManager : MonoBehaviour
     {
         stats[type] = value;
         UpdateOrAddEntry(type, value);
+
+        OnStatChanged?.Invoke(type, value);
     }
     public int GetStat(StatType type)
     {
@@ -92,6 +98,6 @@ public class StatManager : MonoBehaviour
     public void IncrementStat(StatType type, int amount)
     {
         int newValue = Mathf.Max(0, GetStat(type) + amount);
-        SetStat(type, newValue);
+        SetStat(type, newValue); // SetStat ya dispara el evento, así que no necesitamos hacer nada más.
     }
 }
