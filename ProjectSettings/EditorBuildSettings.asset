@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 97fe30d405eb70b4cad0c70d1a373aa2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/createCharacter.unity
     guid: 50de498edf3733946a40950d59a4ac8b
   - enabled: 0
@@ -17,12 +17,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/recepcion.unity
     guid: 3ac6a72d8df185545bfab83dc7c5a73a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/depto.unity
     guid: e2ad959d7a18c194fa0b6551f6035ba7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Victory.unity
     guid: 72ce7dc0131fd5748b4daf9ecc11420b
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 1e910ede307526245932d334b0e95fd4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0

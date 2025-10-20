@@ -10,34 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT Schweinar 5
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: hola
+  npcText: "It\u2019s a nickname the invaders coined for the people of Diesmark,
+    mocking their failed uprising. The real rebels still active in the gutters of
+    Diesmark are now called insurgents. \r\nYour reflection is interrupted again
+    by the captain.\r"
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
-    statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 1. Continue
+    defaultNode: {fileID: 11400000, guid: ae05204a1dfffcf41baac6d50c25389e, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

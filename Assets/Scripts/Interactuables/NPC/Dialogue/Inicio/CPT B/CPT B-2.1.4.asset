@@ -10,33 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT B-2.1.4
   m_EditorClassIdentifier: 
-  npcName: 
-  npcText: hola
+  npcName: Captain Schweinar
+  npcText: "Hmph, that\u2019s what I thought. You rebels ought to start learning
+    your place in the world, if you know what\u2019s good for you. Anyway, as I was
+    saying, transit visa, eh? Before I go over your papers, protocol says I have
+    to ask you a few questions."
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
-    statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: salir
+  - playerText: 1. Answer his questions
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []

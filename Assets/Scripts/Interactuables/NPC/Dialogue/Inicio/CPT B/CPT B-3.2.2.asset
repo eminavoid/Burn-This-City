@@ -10,34 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT B-3.2.2
   m_EditorClassIdentifier: 
-  npcName: 
-  npcText: hola
+  npcName: Captain Schweinar
+  npcText: "Careful, rebel. Wouldn\u2019t want us to mistake you for an insurgent.
+    Or maybe you\u2019d like to have a little chat with my friend in black?"
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
-    statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 1. Continue
+    defaultNode: {fileID: 11400000, guid: 0910b96e2f6cb224789ed48f46e37660, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

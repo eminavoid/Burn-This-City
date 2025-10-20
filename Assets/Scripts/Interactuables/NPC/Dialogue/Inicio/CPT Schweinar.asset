@@ -10,34 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT Schweinar
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: hola
+  npcText: "In front of you stands an officer of the Rauchmacht. Fat and pompous,
+    with rosy cheeks and a uniform stained with grease. He looks like a bad joke,
+    while Diesmark starves, the man in charge of deciding who gets a transit visa
+    to escape this damned city looks like a pig ready for dinner. He hasn\u2019t
+    yet acknowledged your presence, choosing instead to examine a pile of messy papers
+    on his desk while chewing on the end of his pencil. From the insignia on his
+    chest, you recognise him as a captain, though it\u2019s doubtful he ever fought
+    on the frontlines. A man like this would\u2019ve been cannon fodder during the
+    rebellion."
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
-    statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 1. Continue
+    defaultNode: {fileID: 11400000, guid: 1dfe6c6b158068942be51c7c5f91e00b, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

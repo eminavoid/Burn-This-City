@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT B-3.2
   m_EditorClassIdentifier: 
-  npcName: 
-  npcText: hola
+  npcName: Captain Schweinar
+  npcText: Ha! Difficult, you say? I bet in hindsight your little rebellion must
+    look like a real stroke of genius!
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
+  - playerText: "1. It wasn\u2019t stupid! Diesmark fought for a just cause. Even
+      outnumbered and outgunned, we fought bravely to the last man!"
+    defaultNode: {fileID: 11400000, guid: b686a36d57b4af043aec7a3136bcd388, type: 2}
     grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
+    raiseOnTalked: 0
     statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
@@ -36,8 +36,28 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: "2. I suppose so. If it hadn\u2019t been for this damned war\u2026
+      my family would still be alive."
+    defaultNode: {fileID: 11400000, guid: f67e89ef3a068794bb99e1c2a17bb84f, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: 3. (Stay silent)
+    defaultNode: {fileID: 11400000, guid: 79d68b4b82ae262409ed81ac12e92f53, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

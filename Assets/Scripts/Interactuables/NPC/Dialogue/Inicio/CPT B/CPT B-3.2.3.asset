@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT B-3.2.3
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: hola
+  npcText: He points towards the Korp standing behind him, still as a statue, its
+    crimson visor locked onto you.
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
+  - playerText: "1. Sorry, I\u2026 got carried away. Please, let\u2019s continue."
+    defaultNode: {fileID: 11400000, guid: 4f16015a02752ff4ab08df743b531ca1, type: 2}
     grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
+    raiseOnTalked: 0
     statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
@@ -36,8 +35,9 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 2. After everything I saw during the war, do you really think your
+      threats can scare me?
+    defaultNode: {fileID: 11400000, guid: aaf5c561688ed6f438555e1515971c0d, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

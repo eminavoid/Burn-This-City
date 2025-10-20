@@ -10,34 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT B-3.3.4
   m_EditorClassIdentifier: 
-  npcName: 
-  npcText: hola
+  npcName: Capyain Schweinar
+  npcText: "I see. Well then, I think we\u2019re done here."
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
-    statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
-    successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
-    failureNode: {fileID: 0}
-    failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 1. Continue
+    defaultNode: {fileID: 11400000, guid: 8e4e5acba9efc0040ae87485edf0ab65, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

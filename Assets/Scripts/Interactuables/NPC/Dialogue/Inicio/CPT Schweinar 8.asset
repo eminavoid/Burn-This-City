@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: prueba
+  m_Name: CPT Schweinar 8
   m_EditorClassIdentifier: 
-  npcName: 
-  npcText: hola
+  npcName: Captain Schweinar
+  npcText: "Mmm, let\u2019s see\u2026 transit visa, eh? What\u2019s the matter, rebel?
+    Got tired of your city?"
   choices:
-  - playerText: abrir
-    defaultNode: {fileID: 0}
+  - playerText: 1. (Stay silent)
+    defaultNode: {fileID: 11400000, guid: d2284a5e9b4c33f4c8313e740934516f, type: 2}
     grantedReward: []
-    defaultItemRewards:
-    - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
-      amount: 1
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 1
+    raiseOnTalked: 0
     statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
@@ -36,8 +35,27 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: salir
-    defaultNode: {fileID: 0}
+  - playerText: 2. More like tired of the occupation.
+    defaultNode: {fileID: 11400000, guid: 70f590d1f58f469488447b24a83b1a48, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: "3. Things are\u2026 difficult. I need a clean slate."
+    defaultNode: {fileID: 11400000, guid: 206a7c099b8e77345813bf9f9c7bb353, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
