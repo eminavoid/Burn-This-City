@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Interactuables/NPC/DialogueChoice.cs" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Interactuables/NPC/DialogueNode.cs" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/Interactuables/NPC/DialogueRunner.cs" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Assets/Scripts/Interactuables/NPC/DialogueUI.cs" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/Assets/Scripts/PlayerScripts/PlayerInteraction.cs" charset="windows-1252" />
   </component>
 </project>

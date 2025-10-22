@@ -7,6 +7,11 @@ public class DialogueRunner : MonoBehaviour
     public static DialogueRunner Instance { get; private set; }
 
     [SerializeField] private DialogueUI ui;
+    [SerializeField] private AudioClip successSFX;
+    [SerializeField] private AudioClip failureSFX;
+    [SerializeField] private AudioClip nextDialogueSFX;
+    [SerializeField] private AudioClip endDialogueSFX;
+    
     public DialogueNode current;
     private DialogueTrigger currentTrigger;
 
@@ -22,19 +27,47 @@ public class DialogueRunner : MonoBehaviour
     public void Begin(DialogueNode start, DialogueTrigger trigger)
     {
         currentTrigger = trigger;
+        
+        if (currentTrigger != null)
+        {
+            currentTrigger.OnSucces.RemoveListener(HandleOnSucces);
+            currentTrigger.OnFailure.RemoveListener(HandleOnFailure);
+
+            currentTrigger.OnSucces.AddListener(HandleOnSucces);
+            currentTrigger.OnFailure.AddListener(HandleOnFailure);
+        }
+        
         DialogueStarted?.Invoke();
         current = start;
         Advance();
+    }
+    
+    private void HandleOnSucces()
+    {
+        if (AudioManager.Instance != null && successSFX != null)
+            AudioManager.Instance.PlaySFX(successSFX);
+    }
+
+    private void HandleOnFailure()
+    {
+        if (AudioManager.Instance != null && failureSFX != null)
+            AudioManager.Instance.PlaySFX(failureSFX);
     }
 
     private void Advance()
     {
         if (current == null || current.choices == null)
         {
+            if (AudioManager.Instance != null && endDialogueSFX != null)
+                AudioManager.Instance.PlaySFX(endDialogueSFX);
+            
             ui.Hide();
             DialogueEnded?.Invoke();
             return;
         }
+        
+        if (AudioManager.Instance != null && nextDialogueSFX != null)
+            AudioManager.Instance.PlaySFX(nextDialogueSFX, 0.8f);
 
         var options = current.choices
                              .Select((c, i) => (c.playerText, i))

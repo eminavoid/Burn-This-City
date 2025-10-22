@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: prueba
   m_EditorClassIdentifier: 
   npcName: 
-  npcText: hola
+  npcText: 'hola holahola holahola holahola holahola holahola holahola holahola holahola
+    holahola holahola holahola holahola holahola hola hola hola hola hola hola hola
+    hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola
+    hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola
+    hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola
+    hola hola hola hola hola hola hola hola hola hola hola hola hola hola hola '
   choices:
   - playerText: abrir
     defaultNode: {fileID: 0}
@@ -37,7 +42,7 @@ MonoBehaviour:
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
   - playerText: salir
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: 5881a47ebf6fd674a8269ec49d6a0e8a, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
@@ -55,3 +60,25 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
+  - playerText: stat prueba
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 0
+      comparisonType: 0
+      requiredAmount: 5
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 1
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 1

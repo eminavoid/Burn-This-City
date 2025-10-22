@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DoorTeleport : MonoBehaviour
+public class DoorTeleport : MonoBehaviour, IInteractable
 {
     [Header("Configuración de la puerta")]
     [SerializeField] private bool requiresKey = true;
@@ -20,6 +20,9 @@ public class DoorTeleport : MonoBehaviour
 
     private bool playerInRange = false;
     private PlayerMovement2D playerInteraction;
+
+    public string InteractionPrompt => "Walk";
+    public bool CanInteract(StatManager stats) => true;
 
     private void Start()
     {
@@ -52,10 +55,8 @@ public class DoorTeleport : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Interact(StatManager stats)
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
-        {
             if (!requiresKey || (playerInteraction != null && playerInteraction.hasKey))
             {
                 if (useSceneTransition && !string.IsNullOrEmpty(sceneToLoad))
@@ -77,7 +78,6 @@ public class DoorTeleport : MonoBehaviour
             {
                 Debug.Log("La puerta está cerrada. Necesitás una llave.");
             }
-        }
     }
 
     private void UpdatePromptText()

@@ -1,3 +1,5 @@
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +18,8 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public UnityEvent OnSucces;
     public UnityEvent OnFailure;
 
+    [SerializeField] public GameObject icon;
+
     public string InteractionPrompt => "Talk";
     public bool CanInteract(StatManager stats) => true;
 
@@ -26,6 +30,22 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
             Debug.LogError($"{name}: No DialogueRunner instance found!");
 
         currentNode = startingNode;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            icon.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            icon.SetActive(false);
+        }
     }
 
     public void Interact(StatManager stats)
