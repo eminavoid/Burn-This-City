@@ -22,7 +22,10 @@ MonoBehaviour:
   choices:
   - playerText: abrir
     defaultNode: {fileID: 0}
-    grantedReward: []
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: 0
     defaultItemRewards:
     - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
       amount: 1
