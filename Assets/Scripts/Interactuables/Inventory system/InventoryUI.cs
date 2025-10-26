@@ -26,6 +26,12 @@ public class InventoryUI : MonoBehaviour
     [Header("Visual de botón deshabilitado")]
     [SerializeField, Range(0f, 1f)] private float disabledAlpha = 0.5f;
 
+    [Header("Consume Button")]
+    [SerializeField] private Button consumeButtonPrefab;
+    [SerializeField] private Vector2 consumeButtonOffset;
+    private Button consumeButtonInstance;
+    private ItemSlotUI currentSlotForConsume;
+
     [Header("Split (derecha/cofre)")]
     [SerializeField] private ContainerGridUI containerGridUI;
     public ContainerGridUI ContainerGridUI => containerGridUI;
@@ -33,8 +39,6 @@ public class InventoryUI : MonoBehaviour
     public bool IsBackpackOpen => backpackRoot && backpackRoot.activeSelf;
     public bool IsSplitOpen => splitRoot && splitRoot.activeSelf;
     public Container CurrentContainer { get; private set; }
-
-    private Button activeConsumeButton;
 
     private void Awake()
     {
@@ -53,6 +57,17 @@ public class InventoryUI : MonoBehaviour
                 pocketButtons[i].onClick.AddListener(() => TogglePocket(idx));
         }
         UpdatePocketButtonsVisuals();
+        if (consumeButtonPrefab != null && backpackRoot != null)
+        {
+            consumeButtonInstance = Instantiate(consumeButtonPrefab, backpackRoot.transform);
+
+            Canvas btnCanvas = consumeButtonInstance.gameObject.AddComponent<Canvas>();
+            btnCanvas.overrideSorting = true;
+            btnCanvas.sortingOrder = 10; // Dibujar encima de todo
+            consumeButtonInstance.gameObject.AddComponent<GraphicRaycaster>();
+
+            consumeButtonInstance.gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable()
@@ -181,20 +196,39 @@ public class InventoryUI : MonoBehaviour
             btn.interactable = !isOpen;
         }
     }
-    public void RegisterActiveConsumeButton(Button button)
+    public void ShowConsumeButtonFor(ItemSlotUI slot)
     {
-        // Oculta cualquier otro botón activo antes
-        HideActiveConsumeButton();
-        activeConsumeButton = button;
+        if (currentSlotForConsume == slot && consumeButtonInstance.gameObject.activeSelf)
+        {
+            HideActiveConsumeButton();
+            return;
+        }
+
+        if (slot.CurrentItem == null || !slot.CurrentItem.isConsumable)
+        {
+            HideActiveConsumeButton(); // Oculta si había uno visible
+            return;
+        }
+
+        currentSlotForConsume = slot;
+        consumeButtonInstance.gameObject.SetActive(true);
+
+        consumeButtonInstance.transform.SetParent(slot.transform);
+        consumeButtonInstance.GetComponent<RectTransform>().anchoredPosition = consumeButtonOffset;
+        consumeButtonInstance.transform.SetParent(backpackRoot.transform);
+
+        consumeButtonInstance.onClick.RemoveAllListeners();
+        consumeButtonInstance.onClick.AddListener(slot.OnConsumeClicked);
     }
 
     public void HideActiveConsumeButton()
     {
-        if (activeConsumeButton != null)
+        if (consumeButtonInstance != null)
         {
-            activeConsumeButton.gameObject.SetActive(false);
-            activeConsumeButton = null;
+            consumeButtonInstance.gameObject.SetActive(false);
+            consumeButtonInstance.onClick.RemoveAllListeners();
         }
+        currentSlotForConsume = null;
     }
 
     // Helpers de compatibilidad
