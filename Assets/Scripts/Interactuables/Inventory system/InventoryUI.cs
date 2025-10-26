@@ -86,6 +86,7 @@ public class InventoryUI : MonoBehaviour
             toggleInventory.action.started -= OnToggle;
             toggleInventory.action.Disable();
         }
+        HideActiveConsumeButton();
     }
 
     private void Update()
@@ -93,8 +94,36 @@ public class InventoryUI : MonoBehaviour
         // Detecta clic fuera del botón
         if (Input.GetMouseButtonDown(0))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            // Verificamos si el clic fue sobre el botón mismo
+            if (consumeButtonInstance != null && consumeButtonInstance.gameObject.activeSelf)
+            {
+                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                {
+                    // Si no hay un objeto de UI bajo el clic, o si lo hay pero NO es el botón
+                    PointerEventData eventData = new PointerEventData(EventSystem.current);
+                    eventData.position = Input.mousePosition;
+                    List<RaycastResult> results = new List<RaycastResult>();
+                    EventSystem.current.RaycastAll(eventData, results);
+
+                    bool clickedOnButton = false;
+                    foreach (var result in results)
+                    {
+                        if (result.gameObject == consumeButtonInstance.gameObject)
+                        {
+                            clickedOnButton = true;
+                            break;
+                        }
+                    }
+
+                    if (!clickedOnButton)
+                        HideActiveConsumeButton();
+                }
+            }
+            // Lógica original para clic fuera de cualquier UI
+            else if (!EventSystem.current.IsPointerOverGameObject())
+            {
                 HideActiveConsumeButton();
+            }
         }
     }
 
@@ -155,6 +184,12 @@ public class InventoryUI : MonoBehaviour
         if (!IsValidPocket(index)) return;
         bool next = !pocketPanels[index].activeSelf;
         pocketPanels[index].SetActive(next);
+
+        if (!next) // Si se acaba de CERRAR el pocket
+        {
+            HideActiveConsumeButton();
+        }
+
         UpdatePocketButtonsVisuals();
     }
 
@@ -170,6 +205,7 @@ public class InventoryUI : MonoBehaviour
         if (!IsValidPocket(index)) return;
         pocketPanels[index].SetActive(false);
         UpdatePocketButtonsVisuals();
+        HideActiveConsumeButton();
     }
 
     private void SetAllPockets(bool active)
@@ -178,6 +214,11 @@ public class InventoryUI : MonoBehaviour
         for (int i = 0; i < pocketPanels.Length; i++)
             if (pocketPanels[i] != null)
                 pocketPanels[i].SetActive(active);
+
+        if (!active) // Si se están CERRANDO todos los pockets
+        {
+            HideActiveConsumeButton();
+        }
     }
 
     private bool IsValidPocket(int index)
