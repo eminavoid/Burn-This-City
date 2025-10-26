@@ -6065,11 +6065,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: sceneToLoad
-      value: Exterior
+      value: Exterior Fix
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
+      propertyPath: useCustomSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: useSceneTransition
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
+      propertyPath: targetSpawnPointName
+      value: DefaultSpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
