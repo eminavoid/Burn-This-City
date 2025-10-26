@@ -17,7 +17,54 @@ MonoBehaviour:
   choices:
   - playerText: SII
     defaultNode: {fileID: 0}
-    grantedReward: []
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: 10
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 11400000}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: SII
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: 10
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 11400000}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: SII
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: 10
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 11400000}
     raiseOnTalked: 1
