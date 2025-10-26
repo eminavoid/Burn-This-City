@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475dc251d5a2090438b1322f92fdc1d0, type: 3}
   m_Name: Cigarro
   m_EditorClassIdentifier: 
-  displayName: Cigarillos
-  icon: {fileID: 0}
+  displayName: Cigarro
+  icon: {fileID: 21300000, guid: d2286b9647d538a4b8c2135ff16f7220, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1
   consumableEffects:
   - type: 1
-    amount: 1
+    amount: 2
