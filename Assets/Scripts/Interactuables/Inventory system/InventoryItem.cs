@@ -26,6 +26,9 @@ public class ConsumableEffect
     [Tooltip("Which attribute this consumable affects.")]
     public ConsumableType type = ConsumableType.Health;
 
+    [Tooltip("Which stat to modify, if type is 'Stat'.")]
+    public StatManager.StatType statType;
+
     [Tooltip("How much to heal or restore. Can be negative to damage.")]
     public float amount = 0f;
 }
@@ -33,5 +36,6 @@ public class ConsumableEffect
 public enum ConsumableType
 {
     Health,
-    Sanity
+    Sanity,
+    Stat
 }

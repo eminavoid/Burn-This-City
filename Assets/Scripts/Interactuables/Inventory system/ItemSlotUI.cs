@@ -58,6 +58,9 @@ public class ItemSlotUI : MonoBehaviour
                 case ConsumableType.Sanity:
                     SurvivabilityManager.Instance.ModifySanity(effect.amount);
                     break;
+                case ConsumableType.Stat:
+                    StatManager.Instance.IncrementStat(effect.statType, (int)effect.amount);
+                    break;
             }
         }
 

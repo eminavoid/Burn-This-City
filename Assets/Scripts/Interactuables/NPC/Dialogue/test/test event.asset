@@ -18,9 +18,12 @@ MonoBehaviour:
   - playerText: SII
     defaultNode: {fileID: 0}
     grantedReward:
+    - rewardType: 2
+      statType: 0
+      amount: 5
     - rewardType: 1
       statType: 0
-      amount: 1
+      amount: -5
     defaultItemRewards:
     - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
       amount: 1
@@ -58,7 +61,10 @@ MonoBehaviour:
     grantedReward:
     - rewardType: 1
       statType: 0
-      amount: 1
+      amount: 5
+    - rewardType: 2
+      statType: 0
+      amount: -5
     defaultItemRewards:
     - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
       amount: 1
@@ -96,7 +102,10 @@ MonoBehaviour:
     grantedReward:
     - rewardType: 1
       statType: 0
-      amount: 1
+      amount: 5
+    - rewardType: 2
+      statType: 0
+      amount: -5
     defaultItemRewards:
     - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
       amount: 1
