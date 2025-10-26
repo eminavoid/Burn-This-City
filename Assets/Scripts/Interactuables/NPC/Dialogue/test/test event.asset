@@ -41,6 +41,12 @@ MonoBehaviour:
       amount: 1
     - item: {fileID: 11400000, guid: 975f2e42706422a4b8cbe105deca97e7, type: 2}
       amount: 1
+    - item: {fileID: 11400000, guid: ee5b752daec45db4b92324fb1aea4086, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 267e522ef2a12834a985147f12d96073, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: b5486cbec857d444985f1e6971a13e30, type: 2}
+      amount: 1
     nextStartingNodeDefault: {fileID: 11400000}
     raiseOnTalked: 1
     statRequirements: []
