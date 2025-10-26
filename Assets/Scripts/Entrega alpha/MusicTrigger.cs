@@ -16,12 +16,12 @@ public class MusicTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        if (alreadyPlayed && playOnlyOnce) return;
+        if (alreadyPlayed && playOnlyOnce) Destroy(this);
 
         if (musicPlayer != null && newClip != null && musicPlayer.clip != newClip)
         {
             musicPlayer.clip = newClip;
-            musicPlayer.Play();
+            AudioManager.Instance.PlayMusic(newClip);
             alreadyPlayed = true;
         }
     }

@@ -22,48 +22,65 @@ MonoBehaviour:
       dudo que me alcance el tiempo para hacerlo.
     defaultNode: {fileID: 0}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 11400000, guid: bdaa931e903997d439ba7af44fa50611, type: 2}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
   - playerText: "No voy a dejar que un par de piedras se interpongan en mi camino.
       Del otro lado puede haber cosas \xFAtiles."
     defaultNode: {fileID: 0}
     grantedReward: []
+    defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    onTalked:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnTalked: 0
     statRequirements:
     - statType: 0
       comparisonType: 3
       requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 11400000, guid: 85399991d8022b44da3e98603453dc57, type: 2}
     successRewards:
     - statType: 0
       amount: 1
+    successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    onSuccess:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnSuccess: 0
     failureNode: {fileID: 11400000, guid: 208cd9173876a6346ac971c9787b09b2, type: 2}
     failureRewards:
     - statType: 0
       amount: 1
+    failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    onFailure:
-      m_PersistentCalls:
-        m_Calls: []
+    raiseOnFailure: 0
+  - playerText: seguir
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

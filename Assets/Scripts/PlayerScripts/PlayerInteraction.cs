@@ -9,6 +9,8 @@ public class PlayerInteraction : MonoBehaviour
     private StatManager statManager;
     private List<IInteractable> nearbyInteractables = new List<IInteractable>();
 
+    private bool canInteract = true;
+
     private void Start()
     {
         statManager = StatManager.Instance;
@@ -17,12 +19,18 @@ public class PlayerInteraction : MonoBehaviour
     {
         interact.action.Enable();
         interact.action.started += OnInteractActionPerformed;
+        
+        DialogueRunner.DialogueStarted += OnDialogueStarted;
+        DialogueRunner.DialogueEnded += OnDialogueEnded;
     }
 
     private void OnDisable()
     {
         interact.action.Disable();
         interact.action.started -= OnInteractActionPerformed;
+        
+        DialogueRunner.DialogueStarted -= OnDialogueStarted;
+        DialogueRunner.DialogueEnded -= OnDialogueEnded;
     }
     // ——— 2D trigger callbacks ———
     private void OnTriggerEnter2D(Collider2D other)
@@ -52,6 +60,9 @@ public class PlayerInteraction : MonoBehaviour
     private void InteractWithNearest()
     {
         var target = nearbyInteractables.FirstOrDefault();
+
+        if (!canInteract) return;
+        
         if (target == null)
         {
             return;
@@ -65,5 +76,15 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
         target.Interact(statManager);
+    }
+
+    private void OnDialogueStarted()
+    {
+        canInteract = false;
+    }
+
+    private void OnDialogueEnded()
+    {
+        canInteract = true;
     }
 }

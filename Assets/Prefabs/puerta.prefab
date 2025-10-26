@@ -198,8 +198,8 @@ MonoBehaviour:
   useSceneTransition: 0
   sceneToLoad: 
   teleportDestination: {fileID: 0}
-  interactPrompt: F para interactuar
-  lockedPrompt: "Necesit\xE1s una llave"
+  interactPrompt: Interact
+  lockedPrompt: Locked
   promptUI: {fileID: 3073482994217243901}
   promptText: {fileID: 2966289121772951346}
 --- !u!1 &6390141030023723283

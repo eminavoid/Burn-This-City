@@ -19,9 +19,9 @@ public class BackstoryManager : MonoBehaviour
     private void OnBackstoryComplete()
     {
         DialogueRunner.DialogueEnded -= OnBackstoryComplete;
-        if (SceneController.Instance != null)
+        if (ScreenFader.Instance != null)
         {
-            SceneController.Instance.LoadNextScene();
+            ScreenFader.Instance.FadeOutAndLoadScene("Camp");
         }
         else
         {
