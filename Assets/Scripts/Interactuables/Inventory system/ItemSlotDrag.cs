@@ -48,8 +48,6 @@ public class ItemSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     {
         if (item == null || amount <= 0) return;
 
-        InventoryUI.Instance?.HideActiveConsumeButton();
-
         var cg = GetComponent<CanvasGroup>() ?? gameObject.AddComponent<CanvasGroup>();
         cg.blocksRaycasts = false; cg.alpha = 0.6f;
 

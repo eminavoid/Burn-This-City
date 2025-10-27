@@ -17,23 +17,15 @@ MonoBehaviour:
   choices:
   - playerText: 
     defaultNode: {fileID: 0}
-    grantedReward:
-    - rewardType: 2
-      statType: 0
-      amount: 0
-    defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
+    grantedReward: []
     statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
