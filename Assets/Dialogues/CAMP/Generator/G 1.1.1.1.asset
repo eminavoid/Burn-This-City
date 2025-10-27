@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: CM 2.1.1
+  m_Name: G 1.1.1.1
   m_EditorClassIdentifier: 
-  npcName: Clueless Mechanic
-  npcText: '"Heh, I see you''re not a man of many words. So I''ll get straight to
-    the point."'
+  npcName: 
+  npcText: 'SUCCESS Your skilled hands manage to dismantle the structure without
+    further damaging the machinery. When you remove the chassis, the problem becomes
+    evident: the metal belt that gives life to the engine is broken in two.'
   choices:
   - playerText: Continue
-    defaultNode: {fileID: 11400000, guid: 55639cf368738264b862eb48e39a8f51, type: 2}
+    defaultNode: {fileID: 11400000, guid: 59c505f3b3d7a8348afc3580456a3e48, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

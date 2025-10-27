@@ -18,7 +18,7 @@ MonoBehaviour:
     of his shoulders.
   choices:
   - playerText: Continue
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: 7b1be3089ae862c41876a0c59b219b28, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

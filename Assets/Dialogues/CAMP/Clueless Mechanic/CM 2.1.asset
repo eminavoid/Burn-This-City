@@ -18,7 +18,7 @@ MonoBehaviour:
     and says to you.
   choices:
   - playerText: Continue
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: a2f4aa31d142a7e4caab4bae6e22df6e, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

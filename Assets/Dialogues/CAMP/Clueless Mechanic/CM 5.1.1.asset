@@ -17,7 +17,7 @@ MonoBehaviour:
     at you with eyes full of hope and says.
   choices:
   - playerText: Continue
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: a7c376d3143197442aabecf0fb9af75f, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

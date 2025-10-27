@@ -10,25 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: CM 2.1.1
+  m_Name: G 5
   m_EditorClassIdentifier: 
-  npcName: Clueless Mechanic
-  npcText: '"Heh, I see you''re not a man of many words. So I''ll get straight to
-    the point."'
+  npcName: 
+  npcText: Defeated, you walk away from the engine. You let out a long sigh, which
+    grows longer when you notice the tools the mechanic gave you broke during your
+    failed attempt.
   choices:
-  - playerText: Continue
-    defaultNode: {fileID: 11400000, guid: 55639cf368738264b862eb48e39a8f51, type: 2}
+  - playerText: Leave
+    defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
     statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 0
+    itemRequirements:
+    - item: {fileID: 11400000, guid: 3076d4666d91cb4498e5f86eb608d515, type: 2}
+      amount: 1
+    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
     successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
+    nextStartingNodeSuccess: {fileID: 11400000, guid: 269c0648a0263ec469e7e14137e745fd, type: 2}
     raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []

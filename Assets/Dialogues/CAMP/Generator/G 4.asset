@@ -10,25 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: CM 2.1.1
+  m_Name: G 4
   m_EditorClassIdentifier: 
-  npcName: Clueless Mechanic
-  npcText: '"Heh, I see you''re not a man of many words. So I''ll get straight to
-    the point."'
+  npcName: 
+  npcText: It seems the worst is over; the belt doesn't seem too difficult to fix.
+    So, using your tools and the spare parts that were conveniently in the same box,
+    you manage to fix it. It's as simple as unhooking the old one and putting the
+    new one on. Even a child could do it... which doesn't speak very well of the
+    "mechanic." When you finish, you feel satisfied with yourself, knowing that you
+    not only overcame the challenge but also did the camp a favor.
   choices:
-  - playerText: Continue
-    defaultNode: {fileID: 11400000, guid: 55639cf368738264b862eb48e39a8f51, type: 2}
+  - playerText: '"I should go back to the mechanic."'
+    defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 1
+      requiredAmount: 100
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
     successNode: {fileID: 0}
     successRewards: []
     successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
+    nextStartingNodeSuccess: {fileID: 11400000, guid: 1c125f764af9a44459bc16df95f53f2b, type: 2}
     raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
