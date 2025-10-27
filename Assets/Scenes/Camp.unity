@@ -6503,7 +6503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: useCustomSpawn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: useSceneTransition
