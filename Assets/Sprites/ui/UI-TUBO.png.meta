@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 225736d82a3ce674099dd4836d69183b
+guid: 38a99cf9c557ee743a2440963b20a6b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6002183883260865002
-    second: cora_0
+      213: 1146722977547748272
+    second: UI-TUBO_0
+  - first:
+      213: 5475160409945140260
+    second: UI-TUBO_1
+  - first:
+      213: 1616877157562864734
+    second: UI-TUBO_2
+  - first:
+      213: 8849002943422648254
+    second: UI-TUBO_3
+  - first:
+      213: -4342096767099140934
+    second: UI-TUBO_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cora_0
+      name: UI-TUBO_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 18
-        height: 27
+        y: 91
+        width: 51
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61659a12f85f3bca0800000000000000
-      internalID: -6002183883260865002
+      spriteID: 0b30384f87af9ef00800000000000000
+      internalID: 1146722977547748272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 165
+        width: 43
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42cef0b526dabfb40800000000000000
+      internalID: 5475160409945140260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 166
+        width: 53
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e545afd453d407610800000000000000
+      internalID: 1616877157562864734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 37
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfc7130b49fdca70800000000000000
+      internalID: 8849002943422648254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 82
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab40fa8eef5cdb3c0800000000000000
+      internalID: -4342096767099140934
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cora_0: -6002183883260865002
+      UI-TUBO_0: 1146722977547748272
+      UI-TUBO_1: 5475160409945140260
+      UI-TUBO_2: 1616877157562864734
+      UI-TUBO_3: 8849002943422648254
+      UI-TUBO_4: -4342096767099140934
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 225736d82a3ce674099dd4836d69183b
+guid: 0807d6e3b965245449dbf47cc4cc3861
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6002183883260865002
-    second: cora_0
+      213: 2881396383668320294
+    second: UI-TUBO 1_0
+  - first:
+      213: -6871584177192845525
+    second: UI-TUBO 1_1
+  - first:
+      213: -4218900672494440340
+    second: UI-TUBO 1_2
+  - first:
+      213: -4065755287846753764
+    second: UI-TUBO 1_3
+  - first:
+      213: 4054872165162033732
+    second: UI-TUBO 1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cora_0
+      name: UI-TUBO 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 18
-        height: 27
+        y: 84
+        width: 54
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61659a12f85f3bca0800000000000000
-      internalID: -6002183883260865002
+      spriteID: 62835a1aeb6ccf720800000000000000
+      internalID: 2881396383668320294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO 1_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 166
+        width: 43
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2fb93a199a33a0a0800000000000000
+      internalID: -6871584177192845525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO 1_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 166
+        width: 53
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60ff49e0347375c0800000000000000
+      internalID: -4218900672494440340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO 1_3
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 0
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a6a346b198397c0800000000000000
+      internalID: -4065755287846753764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI-TUBO 1_4
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 82
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4422a1620ccc54830800000000000000
+      internalID: 4054872165162033732
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cora_0: -6002183883260865002
+      UI-TUBO 1_0: 2881396383668320294
+      UI-TUBO 1_1: -6871584177192845525
+      UI-TUBO 1_2: -4218900672494440340
+      UI-TUBO 1_3: -4065755287846753764
+      UI-TUBO 1_4: 4054872165162033732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

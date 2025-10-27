@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI 1
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: "The commissioner is standing on some old supply crates. A small crowd
+    has gathered at his feet, waiting to hear the latest announcements and news from
+    the camp, news that will later spread by word of mouth, getting distorted along
+    the way. \r\nThe commissioner was appointed by the provisional government, which
+    assumed power in the city after the fall of the Last Baron of Diesmark, when
+    the city was finally occupied by the Rauchreich. His main job is the organization
+    and maintenance of this refugee camp, one of many, first erected when the Rauchreich
+    decimated de residential district of the city. It's no surprise that the commissioner
+    is a man with few friends. Not only is he a representative of the unpopular provisional
+    government, but also, when you're the one who decides who stays and who leaves,
+    who eats and who goes hungry, people tend to resent you.\r\n"
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: 91ea78e8954c3b548be0b9cb50ce0aa2, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
