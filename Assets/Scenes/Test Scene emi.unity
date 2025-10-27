@@ -5440,6 +5440,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1294232383124139507, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+      propertyPath: m_Name
+      value: Consume item button
+      objectReference: {fileID: 0}
     - target: {fileID: 1507247474880695199, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: m_Name
       value: InventoryUI
@@ -5473,6 +5477,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+      propertyPath: consumeButtonPrefab
+      value: 
+      objectReference: {fileID: 734709944114218420, guid: 86cbc44f1791d7549a8ce2dafe0f9908, type: 3}
+    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: containerGridParent
       value: 
       objectReference: {fileID: 1780242128}
@@ -5480,6 +5488,14 @@ PrefabInstance:
       propertyPath: containerSlotPrefab
       value: 
       objectReference: {fileID: 8457473980194023213}
+    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+      propertyPath: consumeButtonOffset.x
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+      propertyPath: consumeButtonOffset.y
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: backpackSoloGridParent
       value: 
@@ -5532,6 +5548,10 @@ PrefabInstance:
       propertyPath: 'pocketButtons.Array.data[3]'
       value: 
       objectReference: {fileID: 200672489}
+    - target: {fileID: 6684623273960776364, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+      propertyPath: consumeButtonPrefab
+      value: 
+      objectReference: {fileID: 734709944114218420, guid: 86cbc44f1791d7549a8ce2dafe0f9908, type: 3}
     - target: {fileID: 7276198395778927272, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5799,6 +5819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stats menu
       objectReference: {fileID: 0}
+    - target: {fileID: 8940752997173597427, guid: 5dc29d798af1f5b43911ba6b638e4240, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8957817209058028448, guid: 5dc29d798af1f5b43911ba6b638e4240, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5958,6 +5982,22 @@ PrefabInstance:
     - target: {fileID: 7341630457874388634, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
+      propertyPath: hp.start
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
+      propertyPath: sanity.start
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
+      propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
+      propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
