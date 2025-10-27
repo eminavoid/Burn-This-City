@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: CM 5.2.1.1
+  m_EditorClassIdentifier: 
+  npcName: Clueless Mechanic
+  npcText: '"Hehe... there''s no need to be like that. Listen, I have some cigarettes
+    on me. Say nothing and they''re yours, here you go."'
+  choices:
+  - playerText: Continue (+ Cigarettes)
+    defaultNode: {fileID: 11400000, guid: 811847cd523e3a64d81960b7f6506f0f, type: 2}
+    grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: e5d657a0bbd8e0a4fbdc3cc470883516, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

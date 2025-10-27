@@ -17,8 +17,136 @@ MonoBehaviour:
   choices:
   - playerText: SII
     defaultNode: {fileID: 0}
-    grantedReward: []
-    defaultItemRewards: []
+    grantedReward:
+    - rewardType: 2
+      statType: 0
+      amount: 5
+    - rewardType: 1
+      statType: 0
+      amount: -5
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: da52a41b860f6ea439ce84d10d4511f7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: f599b6281c06aa3469dfb773d2d30c85, type: 2}
+      amount: 0
+    - item: {fileID: 11400000, guid: 8e7fb778b43176640b43ba2b42fa85b6, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 8ec0c03c2e008ee4b9c52cd7812ec018, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: a4bbdd3693d170b459f36c6508234412, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 34beb202c65f90b498a374f7a4be538e, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 975f2e42706422a4b8cbe105deca97e7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: ee5b752daec45db4b92324fb1aea4086, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 267e522ef2a12834a985147f12d96073, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: b5486cbec857d444985f1e6971a13e30, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 706e1159f64171042ae60298e24a0397, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 11400000}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: SII
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - rewardType: 2
+      statType: 0
+      amount: 5
+    - rewardType: 1
+      statType: 0
+      amount: -5
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: da52a41b860f6ea439ce84d10d4511f7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: f599b6281c06aa3469dfb773d2d30c85, type: 2}
+      amount: 0
+    - item: {fileID: 11400000, guid: 8e7fb778b43176640b43ba2b42fa85b6, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 8ec0c03c2e008ee4b9c52cd7812ec018, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: a4bbdd3693d170b459f36c6508234412, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 34beb202c65f90b498a374f7a4be538e, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 975f2e42706422a4b8cbe105deca97e7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: ee5b752daec45db4b92324fb1aea4086, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 267e522ef2a12834a985147f12d96073, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: b5486cbec857d444985f1e6971a13e30, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 706e1159f64171042ae60298e24a0397, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 11400000}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: SII
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - rewardType: 2
+      statType: 0
+      amount: 5
+    - rewardType: 1
+      statType: 0
+      amount: -5
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: e707d6593b728464e9a0aca1020b91df, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: da52a41b860f6ea439ce84d10d4511f7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: f599b6281c06aa3469dfb773d2d30c85, type: 2}
+      amount: 0
+    - item: {fileID: 11400000, guid: 8e7fb778b43176640b43ba2b42fa85b6, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 8ec0c03c2e008ee4b9c52cd7812ec018, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: a4bbdd3693d170b459f36c6508234412, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 34beb202c65f90b498a374f7a4be538e, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 975f2e42706422a4b8cbe105deca97e7, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: ee5b752daec45db4b92324fb1aea4086, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 267e522ef2a12834a985147f12d96073, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: b5486cbec857d444985f1e6971a13e30, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 706e1159f64171042ae60298e24a0397, type: 2}
+      amount: 1
     nextStartingNodeDefault: {fileID: 11400000}
     raiseOnTalked: 1
     statRequirements: []

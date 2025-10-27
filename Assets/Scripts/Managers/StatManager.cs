@@ -5,7 +5,7 @@ public class StatManager : MonoBehaviour
 {
     public static StatManager Instance { get; private set; }
 
-    // NUEVA LÕNEA: Declaramos el evento. Avisar· quÈ stat cambiÛ y su nuevo valor.
+    // NUEVA L√çNEA: Declaramos el evento. Avisar√° qu√© stat cambi√≥ y su nuevo valor.
     public static event System.Action<StatType, int> OnStatChanged;
 
     public enum StatType
@@ -98,6 +98,6 @@ public class StatManager : MonoBehaviour
     public void IncrementStat(StatType type, int amount)
     {
         int newValue = Mathf.Max(0, GetStat(type) + amount);
-        SetStat(type, newValue); // SetStat ya dispara el evento, asÌ que no necesitamos hacer nada m·s.
+        SetStat(type, newValue); // SetStat ya dispara el evento, as√≠ que no necesitamos hacer nada m√°s.
     }
 }
