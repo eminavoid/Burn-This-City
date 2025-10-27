@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI 4.1.1.1
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: '"Easy now, citizen. Let cooler heads prevail. I''m not the one who sets
+    the productivity quotas! The provisional government hands them down! I''m as
+    much a victim as you are! It''s not my fault you were expelled, it''s theirs...
+    As you said, I work for you! Let''s... let''s do this: why don''t I give you
+    some supplies... as a gift, a farewell gift, yes! That way we avoid any unpleasantness.
+    Here, take this..."
+
+    The Commissioner hands you some supplies from a crate
+    behind him, gives you a nervous smile and shouts.
+
+    "NEXT!"
+
+'
+  choices: []

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI 3.1
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: "SUCCESS The Commissioner's pensive face softens a little. You notice
+    a hint of guilt in his expression; it seems your words managed to resonate with
+    him. He becomes lost in his thoughts again, only this time, it seems you are
+    occupying them completely. He seems to reach a conclusion, though by the look
+    on his face, it's clearly not the one you hoped for. Yet you detect a certain
+    clemency in his expression.\r\n\"I am sorry, citizen, but there is nothing I
+    can do. I have already sent the approved refugee list to the provisional government,
+    and you are not on it. If the Korps were to find you here... it would compromise
+    the entire camp.\"\r"
+  choices: []

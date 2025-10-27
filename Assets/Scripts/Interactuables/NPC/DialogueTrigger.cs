@@ -6,6 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour, IInteractable
 {
+    [Header("ID")] [SerializeField] private int npcID;
+    
     [Header("Initial Dialogue")]
     [Tooltip("The DialogueNode to start with on first interaction.")]
     public DialogueNode startingNode;

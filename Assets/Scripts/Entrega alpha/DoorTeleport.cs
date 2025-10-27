@@ -10,6 +10,10 @@ public class DoorTeleport : MonoBehaviour, IInteractable
     [SerializeField] private string sceneToLoad;
     [SerializeField] private Transform teleportDestination;
     
+    [Header("Spawn personalizado (solo si cambia de escena)")]
+    [SerializeField] private bool useCustomSpawn = false;
+    [SerializeField] private string targetSpawnPointName;
+    
     [Header("Mensajes personalizables")]
     [SerializeField] private string interactPrompt = "F para interactuar";
     [SerializeField] private string lockedPrompt = "Necesitás una llave";
@@ -62,6 +66,9 @@ public class DoorTeleport : MonoBehaviour, IInteractable
                 if (useSceneTransition && !string.IsNullOrEmpty(sceneToLoad))
                 {
                     Debug.Log($"Cargando escena: {sceneToLoad}");
+
+                    SceneSpawnManager.NextSpawnPoint = useCustomSpawn ? targetSpawnPointName : null;
+                    
                     ScreenFader.Instance.FadeOutAndLoadScene(sceneToLoad);
                 }
                 else if (teleportDestination != null)
@@ -84,14 +91,9 @@ public class DoorTeleport : MonoBehaviour, IInteractable
     {
         if (promptText == null || playerInteraction == null) return;
 
-        if (!requiresKey || playerInteraction.hasKey)
-        {
-            promptText.text = interactPrompt;
-        }
-        else
-        {
-            promptText.text = lockedPrompt;
-        }
+        promptText.text = (!requiresKey || playerInteraction.hasKey)
+            ? interactPrompt
+            : lockedPrompt;
     }
 
     private void LateUpdate()

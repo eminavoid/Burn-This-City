@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      separacion de cuartos-departamento_0: 8792188765995275294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
