@@ -18,44 +18,30 @@ MonoBehaviour:
   - playerText: ola
     defaultNode: {fileID: 11400000, guid: ad36e57e54d04654ea70b431bdb4ce26, type: 2}
     grantedReward:
-    - rewardType: 0
-      statType: 0
+    - statType: 0
       amount: 5
-    defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
     statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []
   - playerText: CHAU
     defaultNode: {fileID: 0}
-    grantedReward:
-    - rewardType: 2
-      statType: 0
-      amount: -1
-    defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
+    grantedReward: []
     statRequirements: []
-    itemRequirements: []
-    consumeRequirementsOnSuccess: 1
     successNode: {fileID: 0}
     successRewards: []
-    successItemRewards: []
-    nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
+    onSuccess:
+      m_PersistentCalls:
+        m_Calls: []
     failureNode: {fileID: 0}
     failureRewards: []
-    failureItemRewards: []
-    nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
+    onFailure:
+      m_PersistentCalls:
+        m_Calls: []

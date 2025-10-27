@@ -11,7 +11,7 @@ public class DialogueRunner : MonoBehaviour
     [SerializeField] private AudioClip failureSFX;
     [SerializeField] private AudioClip nextDialogueSFX;
     [SerializeField] private AudioClip endDialogueSFX;
-
+    
     public DialogueNode current;
     private DialogueTrigger currentTrigger;
 
@@ -27,7 +27,7 @@ public class DialogueRunner : MonoBehaviour
     public void Begin(DialogueNode start, DialogueTrigger trigger)
     {
         currentTrigger = trigger;
-
+        
         if (currentTrigger != null)
         {
             currentTrigger.OnSucces.RemoveListener(HandleOnSucces);
@@ -36,12 +36,12 @@ public class DialogueRunner : MonoBehaviour
             currentTrigger.OnSucces.AddListener(HandleOnSucces);
             currentTrigger.OnFailure.AddListener(HandleOnFailure);
         }
-
+        
         DialogueStarted?.Invoke();
         current = start;
         Advance();
     }
-
+    
     private void HandleOnSucces()
     {
         if (AudioManager.Instance != null && successSFX != null)
@@ -60,12 +60,12 @@ public class DialogueRunner : MonoBehaviour
         {
             if (AudioManager.Instance != null && endDialogueSFX != null)
                 AudioManager.Instance.PlaySFX(endDialogueSFX);
-
+            
             ui.Hide();
             DialogueEnded?.Invoke();
             return;
         }
-
+        
         if (AudioManager.Instance != null && nextDialogueSFX != null)
             AudioManager.Instance.PlaySFX(nextDialogueSFX, 0.8f);
 
@@ -75,23 +75,6 @@ public class DialogueRunner : MonoBehaviour
         ui.Show(current.npcName, current.npcText, options);
     }
 
-    // ?? NUEVO: Maneja tanto Stats como Health y Sanity
-    private void ApplyReward(DialogueReward reward)
-    {
-        switch (reward.rewardType)
-        {
-            case DialogueReward.RewardType.Stat:
-                StatManager.Instance.IncrementStat(reward.statType, reward.amount);
-                break;
-            case DialogueReward.RewardType.Health:
-                SurvivabilityManager.Instance?.ModifyHealth(reward.amount);
-                break;
-            case DialogueReward.RewardType.Sanity:
-                SurvivabilityManager.Instance?.ModifySanity(reward.amount);
-                break;
-        }
-    }
-
     public void Choose(int index)
     {
         var choice = current.choices[index];
@@ -99,13 +82,15 @@ public class DialogueRunner : MonoBehaviour
         bool hasStatReqs = choice.statRequirements != null && choice.statRequirements.Count > 0;
         bool hasItemReqs = choice.itemRequirements != null && choice.itemRequirements.Count > 0;
 
-        // ——— Caso sin requisitos ———
+        // ——— Caso sin requisitos: solo dar recompensas default ———
         if (!hasStatReqs && !hasItemReqs)
         {
+            // Stats
             if (choice.grantedReward != null)
                 foreach (var r in choice.grantedReward)
-                    ApplyReward(r);
+                    StatManager.Instance.IncrementStat(r.statType, r.amount);
 
+            // Items
             if (choice.defaultItemRewards != null && InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.AddMany(choice.defaultItemRewards);
@@ -123,7 +108,7 @@ public class DialogueRunner : MonoBehaviour
             return;
         }
 
-        // ——— Caso con requisitos ———
+        // ——— Caso con requisitos: chequear stats + items ———
         bool statsOk = true;
         if (hasStatReqs)
             statsOk = choice.statRequirements.All(req => req.IsMet(StatManager.Instance.GetStat(req.statType)));
@@ -144,7 +129,7 @@ public class DialogueRunner : MonoBehaviour
 
             if (choice.successRewards != null)
                 foreach (var r in choice.successRewards)
-                    ApplyReward(r);
+                    StatManager.Instance.IncrementStat(r.statType, r.amount);
 
             if (choice.successItemRewards != null && InventoryManager.Instance != null)
             {
@@ -164,7 +149,7 @@ public class DialogueRunner : MonoBehaviour
         {
             if (choice.failureRewards != null)
                 foreach (var r in choice.failureRewards)
-                    ApplyReward(r);
+                    StatManager.Instance.IncrementStat(r.statType, r.amount);
 
             if (choice.failureItemRewards != null && InventoryManager.Instance != null)
             {

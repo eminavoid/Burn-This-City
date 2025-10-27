@@ -22,10 +22,7 @@ MonoBehaviour:
   choices:
   - playerText: abrir
     defaultNode: {fileID: 0}
-    grantedReward:
-    - rewardType: 1
-      statType: 0
-      amount: 0
+    grantedReward: []
     defaultItemRewards:
     - item: {fileID: 11400000, guid: 00147c0c70eebe446bc042cbca0c7625, type: 2}
       amount: 1
@@ -46,10 +43,7 @@ MonoBehaviour:
     raiseOnFailure: 0
   - playerText: salir
     defaultNode: {fileID: 11400000, guid: 5881a47ebf6fd674a8269ec49d6a0e8a, type: 2}
-    grantedReward:
-    - rewardType: 1
-      statType: 0
-      amount: -1
+    grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0

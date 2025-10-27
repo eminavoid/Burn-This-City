@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7341630457874388634}
   - component: {fileID: 7342868620184812813}
   m_Layer: 0
-  m_Name: SurvivalManager
+  m_Name: survivalManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,12 +45,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
+  tickRateSeconds: 1
+  useUnscaledTime: 0
+  autoPauseWhenTimescaleZero: 1
   hp:
-    max: 5
-    start: 5
+    max: 100
+    start: 100
+    baseDecayPerTick: 0
+  food:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.3
+  water:
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.6
   sanity:
-    max: 5
-    start: 5
+    max: 100
+    start: 100
+    baseDecayPerTick: 0.1
+  hpDecaysWhenOtherStatsEmpty: 1
+  hpExtraDecayPerEmptyStat: 1
   OnStatChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -60,5 +75,13 @@ MonoBehaviour:
   OnDied:
     m_PersistentCalls:
       m_Calls: []
-  hpCurrent: 5
-  sanityCurrent: 5
+  OnTickingChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  syncFromInspectorInPlayMode: 0
+  hpCurrent: 100
+  foodCurrent: 100
+  waterCurrent: 100
+  sanityCurrent: 100
+  isTicking: 0
+  pauseReasons: []
