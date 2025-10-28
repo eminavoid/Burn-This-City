@@ -100,4 +100,16 @@ public class StatManager : MonoBehaviour
         int newValue = Mathf.Max(0, GetStat(type) + amount);
         SetStat(type, newValue); // SetStat ya dispara el evento, así que no necesitamos hacer nada más.
     }
+    public void ResetAllStats()
+    {
+        // Iteramos sobre todos los valores posibles del enum StatType
+        foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
+        {
+            // Usamos SetStat, que ya se encarga de actualizar todo
+            // y notificar a los listeners (OnStatChanged)
+            SetStat(stat, 1);
+        }
+
+        Debug.Log("Todas las estadísticas han sido reseteadas a 1.");
+    }
 }
