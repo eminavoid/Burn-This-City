@@ -757,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &51846093
 Transform:
   m_ObjectHideFlags: 0
@@ -20443,15 +20443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5544490993531722511, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: m_Name
-      value: calle1-depto1(S)
+      value: calle1-depto1
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: sceneToLoad
       value: depto 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
-      propertyPath: useCustomSpawn
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: useSceneTransition
@@ -20459,10 +20455,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: teleportDestination
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
-      propertyPath: targetSpawnPointName
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20989,7 +20981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1308121975
 Transform:
   m_ObjectHideFlags: 0
@@ -29427,6 +29419,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 578061405}
     m_Modifications:
+    - target: {fileID: 3894066997095321541, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25.000061
+      objectReference: {fileID: 0}
     - target: {fileID: 4443449605405327771, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_Name
       value: Dialogue UI
@@ -29657,15 +29653,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5544490993531722511, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: m_Name
-      value: callejon2-depto2(S)
+      value: callejon2-depto2
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: sceneToLoad
       value: depto 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
-      propertyPath: useCustomSpawn
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: useSceneTransition
@@ -29673,10 +29665,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
       propertyPath: teleportDestination
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8215329591951334886, guid: 335a223bca0dc4b48b9d24674930b3c6, type: 3}
-      propertyPath: targetSpawnPointName
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -32381,10 +32369,6 @@ PrefabInstance:
     - target: {fileID: 2490332341739187217, guid: 2a2547cc802fcec4bbabef868f782164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905768507281114736, guid: 2a2547cc802fcec4bbabef868f782164, type: 3}
-      propertyPath: moveSpeed
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4045633897904665037, guid: 2a2547cc802fcec4bbabef868f782164, type: 3}
       propertyPath: m_SortingOrder

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI END
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: "You approach the commissioner again. He's still busy with the other refugees.
+    From what you can see, for now, you're the only one who got expelled. There's
+    nothing more to say to him\u2014better not risk him calling the guards to \"ensure\"
+    you leave."
+  choices: []

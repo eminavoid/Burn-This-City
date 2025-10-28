@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI 5.2
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: 'FAILURE The commissioner looks at you sternly; he clearly isn''t buying
+    your story.
+
+    "You think you''re the first to try and weasel out like this?
+    Please. Even if I believed you, I''ve already submitted the approved refugee
+    list. There''s nothing I can do. And for the record, I don''t believe you. My
+    subordinates rarely make mistakes with the quotas. Now move along. There''s nothing
+    more for you here, and there are honest people waiting behind you."
+
+    The
+    commissioner steps to the side and calls out.
+
+    "NEXT!"
+
+'
+  choices: []

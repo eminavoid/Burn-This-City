@@ -27,17 +27,20 @@ public sealed class SurvivabilityManager : MonoBehaviour
     [Header("Stats")]
     public StatSetup hp = new StatSetup { max = 100, start = 100 };
     public StatSetup sanity = new StatSetup { max = 100, start = 100 };
+    
+    public bool IsInitialized { get; private set; } = false;
 
     [Header("Events")]
     public StatChangedEvent OnStatChanged;
     public StatZeroEvent OnStatZero;
     public DiedEvent OnDied;
 
-    [SerializeField, Min(0)] private float hpCurrent = 100f;
-    [SerializeField, Min(0)] private float sanityCurrent = 100f;
+    [SerializeField, Min(0)] public float hpCurrent = 100f;
+    [SerializeField, Min(0)] public float sanityCurrent = 100f;
 
     private readonly Dictionary<SurvivabilityStat, float> _current = new();
     private readonly Dictionary<SurvivabilityStat, float> _max = new();
+    
 
     private void Awake()
     {
@@ -52,6 +55,8 @@ public sealed class SurvivabilityManager : MonoBehaviour
 
         InitStat(SurvivabilityStat.HP, hp);
         InitStat(SurvivabilityStat.Sanity, sanity);
+
+        IsInitialized = true; // 👈 marcamos que ya está listo
     }
 
     private void InitStat(SurvivabilityStat s, StatSetup setup)

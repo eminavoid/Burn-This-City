@@ -46,7 +46,10 @@ MonoBehaviour:
     raiseOnFailure: 0
   - playerText: salir
     defaultNode: {fileID: 11400000, guid: 5881a47ebf6fd674a8269ec49d6a0e8a, type: 2}
-    grantedReward: []
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: -1
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
