@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      npc-sombra-walk2_0: 1047120997675439657
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

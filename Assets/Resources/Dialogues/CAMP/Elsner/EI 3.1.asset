@@ -22,4 +22,23 @@ MonoBehaviour:
     can do. I have already sent the approved refugee list to the provisional government,
     and you are not on it. If the Korps were to find you here... it would compromise
     the entire camp.\"\r"
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: b3a87422462297846a974128e6b2accb, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

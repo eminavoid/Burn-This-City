@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 97fe30d405eb70b4cad0c70d1a373aa2
   - enabled: 1
+    path: Assets/Scenes/Charater creation with points.unity
+    guid: 09c6e1a819151bf439e318e488fbf988
+  - enabled: 1
     path: Assets/Scenes/Container.unity
     guid: 1e910ede307526245932d334b0e95fd4
   - enabled: 1

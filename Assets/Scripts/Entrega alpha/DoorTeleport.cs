@@ -73,8 +73,7 @@ public class DoorTeleport : MonoBehaviour, IInteractable
                 }
                 else if (teleportDestination != null)
                 {
-                    playerInteraction.transform.position = teleportDestination.position;
-                    Debug.Log("¡Teletransportado!");
+                    Teleport(teleportDestination);
                 }
                 else
                 {
@@ -94,6 +93,12 @@ public class DoorTeleport : MonoBehaviour, IInteractable
         promptText.text = (!requiresKey || playerInteraction.hasKey)
             ? interactPrompt
             : lockedPrompt;
+    }
+
+    private void Teleport(Transform tpDestination)
+    {
+        playerInteraction.transform.position = tpDestination.position;
+        Debug.Log("¡Teletransportado!");
     }
 
     private void LateUpdate()

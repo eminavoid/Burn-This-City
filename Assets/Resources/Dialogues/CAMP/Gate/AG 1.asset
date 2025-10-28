@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AG 1
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcText: So much has happened in such a short time. Not only have you lost your
+    place to stay, but you've also agreed to work for the shadiest man in the camp.
+    This day can't possibly get any worse... or at least that's what you want to
+    believe. But hey, look on the bright side, at least you've got a job! That's
+    more than most people in this city can say...
+  choices:
+  - playerText: To the great city
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

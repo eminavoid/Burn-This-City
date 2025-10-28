@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sombra anim4_0: -3679553870833035711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

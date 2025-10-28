@@ -18,4 +18,23 @@ MonoBehaviour:
     did not expect that response. He glances around, checking if any guards are nearby,
     but fortunately, none seem to have noticed your threats. He hesitates, searching
     for the right words to avoid escalating the situation further.
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: a9b252db6266c494aa478da87d27afe9, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

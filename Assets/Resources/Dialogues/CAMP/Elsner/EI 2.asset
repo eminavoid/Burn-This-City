@@ -23,4 +23,23 @@ MonoBehaviour:
     Your number came up in the lottery. We have to economize the little space and
     supplies we have. And, regrettably, you weren't productive enough to be exempt
     from the draw. You're going to have to leave the camp.\"\r"
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: 85845d8a28ab4c64d8a72ed80f8569ac, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

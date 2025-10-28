@@ -53,6 +53,8 @@ public class ScreenFader : MonoBehaviour
     {
         fadeImage.gameObject.SetActive(true);
 
+        Time.timeScale = 1;
+
         Color color = fadeImage.color;
         float t = 0;
 

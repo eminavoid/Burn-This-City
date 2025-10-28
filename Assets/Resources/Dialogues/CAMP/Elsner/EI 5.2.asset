@@ -28,4 +28,23 @@ MonoBehaviour:
     "NEXT!"
 
 '
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: 87166968fbbd3dc42b6d47787ce17b27, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 4
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'The man gives you a sly smile before continuing.
+
+    "I knew you''d
+    be interested! I''ll be brief. You see, I need to deliver a letter to a friend
+    who lives in one of the apartments in the occupied district. Unfortunately, I
+    can''t leave here until my documents are renewed, or I risk never being allowed
+    back in! So, since you''re already on your way out, you could deliver my correspondence!
+    I''m sure my friend will reward you handsomely. Well, what do you say? Do you
+    accept?"
+
+    The mysterious man impatiently waits for your answer.
+
+'
+  choices:
+  - playerText: (T - EASY) "He is  holding something back. What is it?"
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 8
+      comparisonType: 3
+      requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: c14b218a5053a534d81d2b3d9942f9a1, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 3ed0b7f88d980cb4f84100ca1e0e603a, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: (C - EASY) "Come on, you know I'm desperate here. How about some
+      upfront payment? Insurance, in case your friend gets stingy."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 6
+      comparisonType: 3
+      requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 6af62a8bc0ca2b44e918a4ce68e22cb6, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 44425a072022b3245b6ac5b836ae987f, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Alright, I''ll deliver your letter. But your friend had better
+      pay up!"'
+    defaultNode: {fileID: 11400000, guid: 3819182401331dd42b58c3b891db4094, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

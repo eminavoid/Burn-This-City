@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 5.3
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'The mysterious man taps his foot impatiently.
+
+    "Well? You in or out?"
+
+'
+  choices:
+  - playerText: (6) (C - EASY) "Come on, you know I'm desperate here. How about some
+      upfront payment? Insurance, in case your friend gets stingy."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 6
+      comparisonType: 3
+      requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 6af62a8bc0ca2b44e918a4ce68e22cb6, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 44425a072022b3245b6ac5b836ae987f, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Fine, I''ll do it."'
+    defaultNode: {fileID: 11400000, guid: 290dc47bc53c2b04a94fe43a9df5e7ec, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

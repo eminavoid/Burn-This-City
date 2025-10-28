@@ -29,4 +29,23 @@ MonoBehaviour:
     government to get your spot back."
 
 '
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: 783bfb3ba5433e943b4a00d4f8bb56ea, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 9.1.1.2
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: "FAILURE You stare at the letters, trying to make sense of them. They
+    look important\u2014too neat to be random, too deliberate to be nonsense. Maybe
+    it\u2019s a code\u2026 or just a trick? You start jotting down letters, looking
+    for patterns, anything that repeats. \u2018K\u2026 V\u2026 W\u2026\u2019\u2014none
+    of it means anything. After a while, frustration sets in, but something about
+    it feels structured, like there\u2019s a rhythm hidden beneath the chaos. Maybe
+    someone who actually understands this stuff could crack it\u2026 but for now,
+    it\u2019s just a wall of secrets."
+  choices:
+  - playerText: "Your head hurts\u2026 better to just deliver the letter."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

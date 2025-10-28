@@ -21,11 +21,82 @@ MonoBehaviour:
     of sixteen hours or more a day, every day, for the rest of their short lives.
     A fate worse than death.
 
-    
 
-    It can''t end like this. You have to defend
-    yourself. Maybe there''s something you can do to convince the Commissioner that
-    he''s wrong, that you deserve a place in the camp!
+
+    It can''t end like this. You have to defend yourself.
+    Maybe there''s something you can do to convince the Commissioner that he''s wrong,
+    that you deserve a place in the camp!
 
 '
-  choices: []
+  choices:
+  - playerText: (C - MEDIUM) "Wait a moment! Have mercy, you've heard the stories!
+      You can't just turn me out onto the street! I wouldn't survive a single day
+      out there!"
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 6
+      comparisonType: 3
+      requiredAmount: 6
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 5a33cb79c72e0f448afa613f7104f86d, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: a72fb644ce340a540b2109c89ffb7ac5, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: (I - HARD) "Not productive, huh? How many have you thrown out with
+      that excuse? Remember, you work for us. Make sure to remember that, lest you
+      suffer an accident."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 7
+      comparisonType: 3
+      requiredAmount: 9
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: a56994e5823816d4d8d493ace1dc4718, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 0e27de91807e42445b1c643dc1ede2f0, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: (T - MEDIUM) "Look, I knew this would be a problem. You see, Commissioner,
+      it's not that I wasn't productive, it's that my hours weren't registered correctly!"
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 8
+      comparisonType: 3
+      requiredAmount: 6
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 3ec3c95404788e347bd46b124ba5afe9, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: a05b6e0ff64dcdd42aa797b7209c1b4a, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

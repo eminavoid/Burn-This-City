@@ -839,6 +839,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465957399}
   m_CullTransparentMesh: 1
+--- !u!1001 &1519682938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7528281
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.111252
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07075138
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 753060637100048186, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764650402190740937, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: m_Name
+      value: StatManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
 --- !u!1 &1598239485
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,6 +983,7 @@ GameObject:
   - component: {fileID: 1766035469}
   - component: {fileID: 1766035468}
   - component: {fileID: 1766035467}
+  - component: {fileID: 1766035470}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -996,16 +1054,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192193505}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadNextScene
-        m_Mode: 1
+      - m_Target: {fileID: 1766035470}
+        m_TargetAssemblyTypeName: NewGameButtonBehaviour, Assembly-CSharp
+        m_MethodName: ResetStatsAndLoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Charater creation with points
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1766035468
@@ -1046,6 +1104,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766035465}
   m_CullTransparentMesh: 1
+--- !u!114 &1766035470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766035465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbc2c36bacb5a3449eee83dc59d481a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940651395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,3 +1522,4 @@ SceneRoots:
   - {fileID: 1940651399}
   - {fileID: 72121920}
   - {fileID: 1192193506}
+  - {fileID: 1519682938}

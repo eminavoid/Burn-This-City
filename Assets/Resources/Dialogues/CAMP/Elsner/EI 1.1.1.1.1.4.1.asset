@@ -33,4 +33,23 @@ MonoBehaviour:
     to handle the ruder ones... or an office where I could do my work in peace."
 
 '
-  choices: []
+  choices:
+  - playerText: Hand over the documents
+    defaultNode: {fileID: 11400000, guid: e5beb9f184a69634489671db6144b99e, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
