@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Medicine
   m_EditorClassIdentifier: 
   displayName: Medicine
-  icon: {fileID: 0}
+  icon: {fileID: 8267587157006727520, guid: ce0f6f94b749fb54b8bfb558077579ec, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

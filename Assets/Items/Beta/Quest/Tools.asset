@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Tools
   m_EditorClassIdentifier: 
   displayName: Tools
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: cd228da53279bd54b8fbcd05ccf2f17f, type: 3}
   stackable: 0
   maxStack: 1
-  category: 4
+  isConsumable: 0
+  consumableEffects: []

@@ -15919,18 +15919,18 @@ PrefabInstance:
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1757885951}
+      objectReference: {fileID: 935162055}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FadeOutAndLoadScene
+      value: useFade
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScreenFader, Assembly-CSharp
+      value: tpPlayer, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -15983,8 +15983,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1828221389625802284, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 935162055}
   m_SourcePrefab: {fileID: 100100000, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+--- !u!1 &935162054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1828221389625802284, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+  m_PrefabInstance: {fileID: 935162053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &935162055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935162054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117db58b8ca111b43ab97c70f8ba243f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953289603
 GameObject:
   m_ObjectHideFlags: 0
