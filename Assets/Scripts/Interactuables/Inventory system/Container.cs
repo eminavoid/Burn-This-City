@@ -6,6 +6,8 @@ public class Container : MonoBehaviour, IInteractable
     [Header("Contenidos del cofre")]
     public List<ItemAmount> contents = new List<ItemAmount>();
 
+    [SerializeField] public GameObject icon;
+    
     public string InteractionPrompt => "Abrir";
     public bool CanInteract(StatManager stats) => true;
 
@@ -28,6 +30,23 @@ public class Container : MonoBehaviour, IInteractable
         InventoryUI.Instance?.OpenSplit(this);
     }
 
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            icon.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            icon.SetActive(false);
+        }
+    }
+    
     public void LootOne(int index)
     {
         if (contents == null || index < 0 || index >= contents.Count) return;

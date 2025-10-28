@@ -49,7 +49,7 @@ MonoBehaviour:
     raiseOnTalked: 0
     statRequirements:
     - statType: 0
-      comparisonType: 1
+      comparisonType: 0
       requiredAmount: 100
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
@@ -57,9 +57,9 @@ MonoBehaviour:
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 1
+    raiseOnSuccess: 0
     failureNode: {fileID: 0}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 0
+    raiseOnFailure: 1

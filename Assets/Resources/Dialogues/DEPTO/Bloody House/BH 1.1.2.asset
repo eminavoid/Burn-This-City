@@ -24,7 +24,7 @@ MonoBehaviour:
       amount: -1
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
+    raiseOnTalked: 1
     statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0

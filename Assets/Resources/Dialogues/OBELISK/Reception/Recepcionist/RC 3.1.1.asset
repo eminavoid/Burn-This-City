@@ -19,4 +19,24 @@ MonoBehaviour:
     the same with you inspectors... Very well, how can I help you?"
 
 '
-  choices: []
+  choices:
+  - playerText: '"I''m here to conduct a security check. I need unrestricted access
+      to the building."'
+    defaultNode: {fileID: 11400000, guid: 92a57d5e17df451468483f1ca8e2d868, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

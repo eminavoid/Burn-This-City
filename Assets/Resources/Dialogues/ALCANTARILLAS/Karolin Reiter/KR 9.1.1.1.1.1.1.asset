@@ -30,7 +30,7 @@ MonoBehaviour:
 '
   choices:
   - playerText: '"Yes, could you repeat it?"'
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: 7d54fbea60e1c034e885dc8a2035e837, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

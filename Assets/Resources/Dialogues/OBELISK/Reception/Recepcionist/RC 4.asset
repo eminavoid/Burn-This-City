@@ -13,16 +13,35 @@ MonoBehaviour:
   m_Name: RC 4
   m_EditorClassIdentifier: 
   npcName: Recepcionist
-  npcText: 'FAILURE The receptionist gives you a small smile and laughs nervously.
+  npcText: 'The receptionist looks surprised.
 
-    "Hehe,
-    I suppose... Wait here a moment."
+    "That is... highly irregular."
 
-    You notice her reaching for something
-    under her desk, and in the blink of an eye, two Korps soldiers rush toward you.
+    Then
+    she mutters under her breath:
 
-    "This
-    man is clearly an insurgent infiltrator! Take him away."
+    "They never tell me about these things...
+    Very well, Inspector. I''ll notify security to grant you full access to the building.
+    Good luck!"
 
 '
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 11400000, guid: 357276bf6d83265458f1304c4fd43b33, type: 2}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

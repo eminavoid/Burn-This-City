@@ -6480,7 +6480,7 @@ MonoBehaviour:
   - {fileID: 2003423329}
   - {fileID: 1857395071}
   - {fileID: 1596114602}
-  gameScene: Container
+  gameScene: Camp
   menuScene: Main Menu
 --- !u!114 &1322127092
 MonoBehaviour:

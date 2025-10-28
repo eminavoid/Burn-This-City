@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trap Door Key
   m_EditorClassIdentifier: 
   displayName: Trap Door Key
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4778cfc7e638b564292317cb606bd99d, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 0

@@ -51,12 +51,12 @@ MonoBehaviour:
       requiredAmount: 9
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
+    successNode: {fileID: 11400000, guid: aaf573bbeb5e0b742a30d41fb79d7307, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    failureNode: {fileID: 11400000, guid: 43ddcbe1a93854f46ba7a13b887fdf09, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}

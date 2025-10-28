@@ -26,11 +26,8 @@ MonoBehaviour:
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
-    statRequirements:
-    - statType: 0
-      comparisonType: 0
-      requiredAmount: 100
+    raiseOnTalked: 1
+    statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
     successNode: {fileID: 0}
@@ -42,4 +39,4 @@ MonoBehaviour:
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
-    raiseOnFailure: 1
+    raiseOnFailure: 0

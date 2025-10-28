@@ -27,6 +27,18 @@ public class DoorTeleport : MonoBehaviour, IInteractable
 
     public string InteractionPrompt => "Walk";
     public bool CanInteract(StatManager stats) => true;
+    
+    
+    private void Awake()
+    {
+        // 🔹 Intenta encontrar al jugador apenas inicia el juego
+        if (playerInteraction == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+                playerInteraction = playerObj.GetComponent<PlayerMovement2D>();
+        }
+    }
 
     private void Start()
     {
@@ -38,13 +50,15 @@ public class DoorTeleport : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Player"))
         {
-            playerInteraction = other.GetComponent<PlayerMovement2D>();
-            if (playerInteraction != null)
-            {
-                playerInRange = true;
-                UpdatePromptText();
+            // Ya no es necesario reasignar cada vez, pero igual lo validamos
+            if (playerInteraction == null)
+                playerInteraction = other.GetComponent<PlayerMovement2D>();
+
+            playerInRange = true;
+            UpdatePromptText();
+
+            if (promptUI != null)
                 promptUI.SetActive(true);
-            }
         }
     }
 
@@ -52,7 +66,6 @@ public class DoorTeleport : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Player"))
         {
-            playerInteraction = null;
             playerInRange = false;
             if (promptUI != null)
                 promptUI.SetActive(false);
@@ -73,7 +86,7 @@ public class DoorTeleport : MonoBehaviour, IInteractable
                 }
                 else if (teleportDestination != null)
                 {
-                    Teleport(teleportDestination);
+                    Teleport();
                 }
                 else
                 {
@@ -95,9 +108,11 @@ public class DoorTeleport : MonoBehaviour, IInteractable
             : lockedPrompt;
     }
 
-    private void Teleport(Transform tpDestination)
+    public void Teleport()
     {
-        playerInteraction.transform.position = tpDestination.position;
+        if (teleportDestination == null) return;
+        
+        playerInteraction.transform.position = teleportDestination.position;
         Debug.Log("¡Teletransportado!");
     }
 

@@ -14,4 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Recepcionist
   npcText: The receptionist looks at you impatiently, clearly waiting for an explanation.
-  choices: []
+  choices:
+  - playerText: (T - HARD) "Oh yes, how careless of me. They printed my name wrong
+      on the papers... you know how it is."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 8
+      comparisonType: 3
+      requiredAmount: 9
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: f32afcbffc00bad4fa6d043dc58e0e74, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 20669b2025ae24c45948da8f5bdd0526, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

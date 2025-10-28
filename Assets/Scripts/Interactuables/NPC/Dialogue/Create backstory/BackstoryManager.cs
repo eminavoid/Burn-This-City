@@ -21,7 +21,7 @@ public class BackstoryManager : MonoBehaviour
         DialogueRunner.DialogueEnded -= OnBackstoryComplete;
         if (ScreenFader.Instance != null)
         {
-            ScreenFader.Instance.FadeOutAndLoadScene("Camp");
+            ScreenFader.Instance.FadeOutAndLoadScene("Charater creation with points");
         }
         else
         {

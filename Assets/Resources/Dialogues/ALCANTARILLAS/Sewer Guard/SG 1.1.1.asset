@@ -60,8 +60,9 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 
-    defaultNode: {fileID: 0}
+  - playerText: A password? I don't know it! But I was sent by Alaric! I have something
+      for Karolin Reiter!
+    defaultNode: {fileID: 11400000, guid: 5603e986023f02342931b65c01034bbd, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
