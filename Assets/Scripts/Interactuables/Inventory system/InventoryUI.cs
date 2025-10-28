@@ -132,6 +132,14 @@ public class InventoryUI : MonoBehaviour
         if (IsSplitOpen || IsBackpackOpen) CloseAll();
         else OpenBackpack();
     }
+    
+    public void ToggleInventory()
+    {
+        if (IsBackpackOpen || IsSplitOpen)
+            CloseAll();
+        else
+            OpenBackpack();
+    }
 
     // --------- Abrir/Cerrar modos ---------
     public void OpenBackpack()

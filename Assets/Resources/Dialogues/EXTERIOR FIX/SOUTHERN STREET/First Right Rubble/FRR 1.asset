@@ -23,43 +23,50 @@ MonoBehaviour:
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 2
+      comparisonType: 3
+      requiredAmount: 6
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
+    successNode: {fileID: 11400000, guid: 254a09894d089d74d85b08e28d75eb3f, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    failureNode: {fileID: 11400000, guid: 488810238814d5346bc16bd8ef058e1b, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 
+  - playerText: (V - EASY) Try moving some of the heavier debris. Anything easy to
+      grab has probably already been looted.
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 5
+      comparisonType: 3
+      requiredAmount: 3
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
+    successNode: {fileID: 11400000, guid: 595d07631dc80b541a1826d853eb4fb8, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    failureNode: {fileID: 11400000, guid: 7898d05819d0b38498661a8df925ecd6, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 
+  - playerText: '"Search through these ruins? My time is better spent elsewhere"'
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 0}
+    nextStartingNodeDefault: {fileID: 11400000, guid: 357276bf6d83265458f1304c4fd43b33, type: 2}
     raiseOnTalked: 0
     statRequirements: []
     itemRequirements: []

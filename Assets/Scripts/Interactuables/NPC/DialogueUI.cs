@@ -8,7 +8,7 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     [Header("UI References")]
-    [Tooltip("Shows the NPC’s name")]
+    [Tooltip("Shows the NPCâ€™s name")]
     public TMP_Text npcNameText;
 
     [Tooltip("Shows what the NPC actually says")]
@@ -92,7 +92,7 @@ public class DialogueUI : MonoBehaviour
         {
             dialogueText.text += text[i];
 
-            // Reproducir sonido cada N letras (usar audioSource si está, si no AudioManager)
+            // Reproducir sonido cada N letras (usar audioSource si estÃ¡, si no AudioManager)
             if (typingSFX != null && (i % lettersPerSound == 0)) {
                 if (audioSource != null) audioSource.PlayOneShot(typingSFX);
                 else if (AudioManager.Instance != null) AudioManager.Instance.PlaySFX(typingSFX, 0.5f);

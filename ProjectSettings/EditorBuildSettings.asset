@@ -13,10 +13,10 @@ EditorBuildSettings:
     guid: 09c6e1a819151bf439e318e488fbf988
   - enabled: 1
     path: Assets/Scenes/Container.unity
-    guid: 1e910ede307526245932d334b0e95fd4
+    guid: 9ee0859e65b8f34488e5f61dfe5b0818
   - enabled: 1
     path: Assets/Scenes/Camp.unity
-    guid: ef0b0d996a338ee4985b8c8c128367f8
+    guid: 506b617c3d6e47249ac510f528f406d8
   - enabled: 1
     path: Assets/Scenes/Exterior Fix.unity
     guid: 373d7747eed7c04448b3e9817c20c1ef
@@ -28,8 +28,8 @@ EditorBuildSettings:
     guid: 9307c243722eeb34984acc720a99c444
   - enabled: 1
     path: Assets/Scenes/Alcantarilla.unity
-    guid: f463f9621471eb2489004e0f1a900420
-  - enabled: 1
+    guid: 632836438145cc14489635b6953b0c0e
+  - enabled: 0
     path: Assets/Scenes/Zona Final.unity
     guid: 032f253577d4fd740be1c9e5b4977eb1
   - enabled: 1

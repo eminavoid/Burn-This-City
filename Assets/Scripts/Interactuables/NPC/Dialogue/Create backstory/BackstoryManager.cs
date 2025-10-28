@@ -25,7 +25,7 @@ public class BackstoryManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No SceneController found—did you forget to add it?");
+            Debug.LogWarning("No SceneController foundâ€”did you forget to add it?");
         }
     }
 }
