@@ -106,9 +106,9 @@ TextureImporter:
       name: anim-fuego6_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 4
         y: 1
-        width: 38
+        width: 36
         height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
