@@ -59,7 +59,6 @@ public class StatAllocatorUI : MonoBehaviour
     {
         if (startGameButton.interactable)
         {
-            Debug.Log("Iniciando el juego..."); 
             SceneController.Instance.LoadScene(gameScene);
         }
     }

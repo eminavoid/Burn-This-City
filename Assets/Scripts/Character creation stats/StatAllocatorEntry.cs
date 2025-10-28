@@ -14,7 +14,7 @@ public class StatAllocatorEntry : MonoBehaviour
     private void Start()
     {
         // Asigna el nombre de la stat automáticamente
-        statNameText.text = statType.ToString();
+        statNameText.text = statType.ToString()+":";
 
         // Conecta los listeners de los botones
         incrementButton.onClick.AddListener(OnIncrement);
