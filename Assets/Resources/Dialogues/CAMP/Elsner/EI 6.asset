@@ -22,4 +22,27 @@ MonoBehaviour:
     Now you need to focus on the next objective:
 
 '
-  choices: []
+  choices:
+  - playerText: Continue (+1 Canned Food, +1 Clean Water)
+    defaultNode: {fileID: 11400000, guid: 0c685637d2b5eb246bafc9a1f112f816, type: 2}
+    grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: e2561ab9b7480904ca6bf59b58f24543, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: 7c431b048eec8df4cbda40077e2691dd, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

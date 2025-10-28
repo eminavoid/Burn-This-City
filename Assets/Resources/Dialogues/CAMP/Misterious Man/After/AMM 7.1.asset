@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 7.1
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'The man lets out a sigh of relief and replies.
+
+    "Of course he''ll
+    pay! We''ve known each other for years! Ah, but one more thing. Don''t read the
+    letter. It''s private, and trust me, there''s nothing interesting in it."
+
+    He
+    pauses for a moment, as if to emphasize the importance of what he just said,
+    then continues:
+
+    "If there''s nothing else, comrade, I''ll take my leave."
+
+    Before
+    you can respond, the man melts back into the camp, disappearing from view.
+
+'
+  choices: []

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 8
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'The man gives you a somewhat strained smile, lets out a deep sigh, and
+    answers.
+
+    "Excellent, excellent. I knew we''d understand each other. Now
+    about this letter - it''s private, alright? So don''t even think about reading
+    it. Besides, there''s nothing interesting in there anyway."
+
+    He lets the
+    words hang in the air for a moment before continuing.
+
+    "If that''s all,
+    comrade, I''ll be on my way."
+
+    Before you can get another word in, he slips
+    back into the camp and vanishes from sight.
+
+'
+  choices: []

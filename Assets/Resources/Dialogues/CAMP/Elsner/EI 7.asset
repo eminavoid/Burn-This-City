@@ -19,4 +19,26 @@ MonoBehaviour:
     to your name but your skills. How will you survive? What will you eat? Where
     will you sleep? These realities hit you like a punch to the jaw. You try to focus\u2014now
     is not the time to despair. You must concentrate on the next objective:\r\n"
-  choices: []
+  choices:
+  - playerText: Continue (-1 Mind)
+    defaultNode: {fileID: 11400000, guid: 0c685637d2b5eb246bafc9a1f112f816, type: 2}
+    grantedReward:
+    - rewardType: 2
+      statType: 0
+      amount: -1
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
