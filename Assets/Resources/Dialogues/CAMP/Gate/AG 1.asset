@@ -10,18 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
-  m_Name: AMM 7.1.1.2
+  m_Name: AG 1
   m_EditorClassIdentifier: 
-  npcName: Misterious Man
-  npcText: FAILURE Comrade... it's on the tip of your tongue, but for the life of
-    you, you can't remember where you've heard it before.
+  npcName: 
+  npcText: So much has happened in such a short time. Not only have you lost your
+    place to stay, but you've also agreed to work for the shadiest man in the camp.
+    This day can't possibly get any worse... or at least that's what you want to
+    believe. But hey, look on the bright side, at least you've got a job! That's
+    more than most people in this city can say...
   choices:
-  - playerText: Continue
-    defaultNode: {fileID: 11400000, guid: ca5b59d8e4a6e644697f48084fa53424, type: 2}
+  - playerText: To the great city
+    defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
-    raiseOnTalked: 0
+    raiseOnTalked: 1
     statRequirements: []
     itemRequirements: []
     consumeRequirementsOnSuccess: 0

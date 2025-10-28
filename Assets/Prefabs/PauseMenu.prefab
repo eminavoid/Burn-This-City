@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 1565192414711042166}
   - component: {fileID: 6627598017649601556}
   - component: {fileID: 292639027906848306}
+  - component: {fileID: 5972067393669771607}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -680,10 +681,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5242655555432711716}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: MenuButton
-        m_Mode: 1
+      - m_Target: {fileID: 5972067393669771607}
+        m_TargetAssemblyTypeName: NewGameButtonBehaviour, Assembly-CSharp
+        m_MethodName: ResetStatsAndLoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -692,6 +693,18 @@ MonoBehaviour:
           m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5972067393669771607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3901084928019687042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbc2c36bacb5a3449eee83dc59d481a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4562147685070419663
 GameObject:
   m_ObjectHideFlags: 0

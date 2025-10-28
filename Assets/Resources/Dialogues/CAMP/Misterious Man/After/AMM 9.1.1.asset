@@ -19,4 +19,45 @@ MonoBehaviour:
     letter likely clipped from headlines. It reads as follows:\n\r\n\u201CTHIRDCOLUMN
     = KVWXR UJVYQ RQYQH ZCQGJ XQEGG WQAWP QCOEJ VQEHW EQQKR GZCFU JNWKP HNFHC XQGQJ
     VKWJU VQVHJ APEQN WQEHW\u201D\r\n"
-  choices: []
+  choices:
+  - playerText: (L - VERY HARD) "Try to decipher the hidden message."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 1
+      comparisonType: 3
+      requiredAmount: 12
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: a99e06ef999bac941884489d15bf9e46, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 40d30a55c7e8b1941895987b601e6af5, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Some things are better left unknown."'
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

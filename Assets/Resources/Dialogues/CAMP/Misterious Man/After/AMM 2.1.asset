@@ -23,4 +23,24 @@ MonoBehaviour:
     a position to turn down... lucrative opportunities."
 
 '
-  choices: []
+  choices:
+  - playerText: '"Now you''re speaking my language. What kind of "lucrative opportunities"
+      are we talking about?"'
+    defaultNode: {fileID: 11400000, guid: f8d4cb59cc3d27345aa5ed00e4ca9043, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

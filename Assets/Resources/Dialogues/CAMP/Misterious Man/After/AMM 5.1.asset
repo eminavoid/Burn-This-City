@@ -17,4 +17,47 @@ MonoBehaviour:
     being about the job, and the fact he was listening in on your talk with the Commissioner...
     it all adds up to one thing: this guy''s trouble. Which means whatever he''s
     mixed up in is probably illegal. Not that you can afford to be picky right now.'
-  choices: []
+  choices:
+  - playerText: (I - MEDIUM) "This sounds shady. I'll do it, but if I'm risking my
+      neck, you better make it worth my while. Or maybe the guards would like to
+      hear about your little operation."
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 7
+      comparisonType: 3
+      requiredAmount: 6
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 135a7b655b8320b4f8a14f0fd3d791fa, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: a8799291537772f4ebb3400f33cd1bdf, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Fine, i''ll do it"'
+    defaultNode: {fileID: 11400000, guid: 290dc47bc53c2b04a94fe43a9df5e7ec, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

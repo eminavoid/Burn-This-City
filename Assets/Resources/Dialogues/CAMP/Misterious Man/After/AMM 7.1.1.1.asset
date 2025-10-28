@@ -17,4 +17,23 @@ MonoBehaviour:
     the rebels used to call each other during the war. Could it be... could the man
     you just spoke to be an Insurgent? If that's the case, then what kind of \"correspondence\"
     are you carrying\u2026? \r\nWhatever it is, you need the work.\r\n"
-  choices: []
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: ca5b59d8e4a6e644697f48084fa53424, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
