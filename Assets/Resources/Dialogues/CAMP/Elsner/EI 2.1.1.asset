@@ -43,12 +43,12 @@ MonoBehaviour:
       requiredAmount: 6
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
-    successNode: {fileID: 0}
+    successNode: {fileID: 11400000, guid: 5a33cb79c72e0f448afa613f7104f86d, type: 2}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
     raiseOnSuccess: 0
-    failureNode: {fileID: 0}
+    failureNode: {fileID: 11400000, guid: a72fb644ce340a540b2109c89ffb7ac5, type: 2}
     failureRewards: []
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}

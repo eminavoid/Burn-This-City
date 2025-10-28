@@ -23,7 +23,7 @@ public class TriggerDialogo : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         if (triggerOnce && hasTriggered) return;
 
-        hasTriggered = true;
+        
         StartCoroutine(StartDialogueAfterDelay());
     }
 
@@ -32,10 +32,10 @@ public class TriggerDialogo : MonoBehaviour
         if (delayBeforeStart > 0f)
             yield return new WaitForSeconds(delayBeforeStart);
 
-        // Inicia el diálogo
-        dialogueTrigger.Interact(null);
-
-        // Lanza el evento de conversación, si querés que se marque
-        dialogueTrigger.RaiseOnTalked();
+        if (this != null & this.enabled)
+        {
+            dialogueTrigger.Interact(null);
+            hasTriggered = true;
+        }
     }
 }
