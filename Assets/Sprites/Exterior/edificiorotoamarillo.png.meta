@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b64d1da8859220a43b6e8d453d2ed3b3
+guid: e2c9cef9e2766ef49a37e121c4f64871
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8792188765995275294
-    second: separacion de cuartos-departamento_0
+      213: 8303798062656838181
+    second: edificiorotoamarillo_0
+  - first:
+      213: -8082775058717306361
+    second: edificiorotoamarillo_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: separacion de cuartos-departamento_0
+      name: edificiorotoamarillo_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 16
-        height: 133
+        width: 268
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1414538911240a70800000000000000
-      internalID: 8792188765995275294
+      spriteID: 52adc33b7540d3370800000000000000
+      internalID: 8303798062656838181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: edificiorotoamarillo_1
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 5
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70294c198e634df80800000000000000
+      internalID: -8082775058717306361
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      separacion de cuartos-departamento_0: 8792188765995275294
+      edificiorotoamarillo_0: 8303798062656838181
+      edificiorotoamarillo_1: -8082775058717306361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

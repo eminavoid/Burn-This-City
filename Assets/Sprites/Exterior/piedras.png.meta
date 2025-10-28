@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b64d1da8859220a43b6e8d453d2ed3b3
+guid: 54ab2408b88987741bc20cc09ac1ad68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8792188765995275294
-    second: separacion de cuartos-departamento_0
+      213: 2099454076993707005
+    second: piedras_0
+  - first:
+      213: -2006833340330160411
+    second: piedras_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: separacion de cuartos-departamento_0
+      name: piedras_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 133
+        width: 83
+        height: 56
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1414538911240a70800000000000000
-      internalID: 8792188765995275294
+      spriteID: dfb94711c52c22d10800000000000000
+      internalID: 2099454076993707005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: piedras_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eec53aa5bb4624e0800000000000000
+      internalID: -2006833340330160411
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      separacion de cuartos-departamento_0: 8792188765995275294
+      piedras_0: 2099454076993707005
+      piedras_1: -2006833340330160411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
