@@ -27,7 +27,7 @@ MonoBehaviour:
   choices:
   - playerText: '"It''s a free camp, I can look at whoever I want. And who are you,
       anyway? What are you doing here?"'
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: 602fd65d4c91c634b968331f3ff4c7f8, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

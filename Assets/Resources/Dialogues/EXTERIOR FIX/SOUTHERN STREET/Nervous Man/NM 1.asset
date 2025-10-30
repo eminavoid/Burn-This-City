@@ -18,8 +18,8 @@ MonoBehaviour:
     for both of you, he''s blocking the entrance to the yellow house. You''re going
     to have to get him to move if you want to deliver that letter.
 
-    The man
-    eyes you warily.
+    The man eyes
+    you warily.
 
 '
   choices:
@@ -45,7 +45,7 @@ MonoBehaviour:
     raiseOnFailure: 0
   - playerText: '"Move it, you filthy junkie! Some of us are trying to work! I''ve
       got a letter to deliver in that building!"'
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: 12aa8513447540d449f8bdbaa739daef, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}

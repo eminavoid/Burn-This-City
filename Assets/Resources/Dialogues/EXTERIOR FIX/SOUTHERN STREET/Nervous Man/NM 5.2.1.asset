@@ -18,7 +18,7 @@ MonoBehaviour:
     the letter to. But I guess that doesn't matter now. Hahaha...\"\r"
   choices:
   - playerText: '"Doesn''t matter? What do you mean?"'
-    defaultNode: {fileID: 0}
+    defaultNode: {fileID: 11400000, guid: a02ec9ecf43033040a39117d5d37e5cd, type: 2}
     grantedReward: []
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
