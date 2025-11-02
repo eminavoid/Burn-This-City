@@ -1,19 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
 
-    private string saveFilePath;
+    private float totalPlaytimeInSeconds = 0f;
+
+    [Tooltip("El nombre base para los archivos de guardado, sin extensión.")]
+    [SerializeField] private string saveFileBaseName = "save";
+    private string saveFilePath_JSON;
+    private string saveFilePath_PNG;
 
     private Dictionary<int, DialogueNode> sceneDialogueState = new Dictionary<int, DialogueNode>();
 
     private GameData dataToLoad = null;
-
-    private float totalPlaytimeInSeconds = 0f;
 
     private void Awake()
     {
@@ -25,7 +29,9 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        saveFilePath = Path.Combine(Application.persistentDataPath, "burnthiscity.json");
+        string persistentPath = Application.persistentDataPath;
+        saveFilePath_JSON = Path.Combine(persistentPath, saveFileBaseName + ".json");
+        saveFilePath_PNG = Path.Combine(persistentPath, saveFileBaseName + ".png");
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -62,15 +68,51 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("Guardando partida...");
+        Debug.Log("Iniciando guardado...");
+        StartCoroutine(SaveGameCoroutine());
+    }
+    private IEnumerator SaveGameCoroutine()
+    {
+        yield return new WaitForEndOfFrame();
+
+        // 2. CAPTURAR LA PANTALLA (Textura completa)
+        Texture2D fullScreenTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+        fullScreenTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        fullScreenTexture.Apply();
+
+        // 3. REDIMENSIONAR EN LA GPU
+        int thumbWidth = 640;
+        int thumbHeight = 360;
+        RenderTexture rt = RenderTexture.GetTemporary(thumbWidth, thumbHeight, 0);
+
+        // Copia la textura completa a la RenderTexture pequeña (blit)
+        Graphics.Blit(fullScreenTexture, rt);
+
+        // Lee la RenderTexture pequeña de vuelta a una Texture2D
+        RenderTexture.active = rt;
+        Texture2D thumbnailTexture = new Texture2D(thumbWidth, thumbHeight, TextureFormat.RGB24, false);
+        thumbnailTexture.ReadPixels(new Rect(0, 0, thumbWidth, thumbHeight), 0, 0);
+        thumbnailTexture.Apply();
+
+        // Limpieza de memoria
+        RenderTexture.active = null;
+        RenderTexture.ReleaseTemporary(rt);
+        Destroy(fullScreenTexture); // Ya no necesitamos la grande
+
+        // 4. CODIFICAR A JPG Y GUARDAR SCREENSHOT
+        byte[] screenshotBytes = thumbnailTexture.EncodeToJPG(75);
+        Destroy(thumbnailTexture); // Ya no necesitamos la pequeña
+        File.WriteAllBytes(saveFilePath_PNG, screenshotBytes);
+
+        // 5. RECOLECTAR Y GUARDAR DATOS (JSON)
         GameData gameData = new GameData();
 
-        // 0. GUARDAR METADATA
-        gameData.metaData.saveTimestamp = System.DateTime.Now.ToString("o"); // "o" es formato ISO 8601
+        // 5a. Metadata
+        gameData.metaData.saveTimestamp = System.DateTime.Now.ToString("o");
         gameData.metaData.totalPlaytimeInSeconds = this.totalPlaytimeInSeconds;
         gameData.metaData.gameVersion = Application.version;
 
-        // 1. Guardar Escena y Posición del Jugador
+        // 5b. Escena y Jugador
         gameData.sceneName = SceneManager.GetActiveScene().name;
         PlayerMovement2D player = FindFirstObjectByType<PlayerMovement2D>();
         if (player != null)
@@ -79,14 +121,14 @@ public class SaveManager : MonoBehaviour
             gameData.playerData.playerPosY = player.transform.position.y;
         }
 
-        // 2. Guardar Survivability
+        // 5c. Survivability
         gameData.playerData.currentHP = SurvivabilityManager.Instance.Get(SurvivabilityStat.HP);
         gameData.playerData.currentSanity = SurvivabilityManager.Instance.Get(SurvivabilityStat.Sanity);
 
-        // 3. Guardar Stats
+        // 5d. Stats
         gameData.statsData.statEntries = StatManager.Instance.GetStatEntries();
 
-        // 4. Guardar Inventario (Traducción Item -> ItemID)
+        // 5e. Inventario (Traducción Item -> ItemID)
         gameData.inventoryData.modules = new List<SerializableModuleState>();
         foreach (var module in InventoryManager.Instance.Modules)
         {
@@ -96,8 +138,6 @@ public class SaveManager : MonoBehaviour
                 var newSavedSlot = new SerializableSlotState();
                 if (slot.item != null)
                 {
-                    // item.name como ID unico.
-                    // items en Resources/Items/
                     newSavedSlot.itemID = slot.item.name;
                     newSavedSlot.amount = slot.amount;
                 }
@@ -106,12 +146,10 @@ public class SaveManager : MonoBehaviour
             gameData.inventoryData.modules.Add(newSavedModule);
         }
 
-        // 5. Guardar Estado de Diálogos
+        // 5f. Diálogos
         gameData.dialogueData.nodeStates = new List<NpcDialogueState>();
         foreach (var kvp in sceneDialogueState)
         {
-            // node.name como ID unico
-            // El nodo DEBE estar en una carpeta "Resources/DialogueNodes/"
             gameData.dialogueData.nodeStates.Add(new NpcDialogueState
             {
                 npcID = kvp.Key,
@@ -119,26 +157,26 @@ public class SaveManager : MonoBehaviour
             });
         }
 
-        // Serializar y Escribir en Disco
+        // 6. SERIALIZAR Y ESCRIBIR EN DISCO (JSON)
         string json = JsonUtility.ToJson(gameData, true);
-        File.WriteAllText(saveFilePath, json);
-        Debug.Log($"Partida guardada en: {saveFilePath}");
+        File.WriteAllText(saveFilePath_JSON, json);
+
+        Debug.Log($"Partida y Screenshot guardados en: {Application.persistentDataPath}");
     }
 
     public void LoadGame()
     {
-        if (!File.Exists(saveFilePath))
+        // (Modificado para usar la nueva variable de ruta)
+        if (!File.Exists(saveFilePath_JSON))
         {
-            Debug.LogWarning("No se encontró archivo de guardado.");
+            Debug.LogWarning("No se encontró archivo de guardado (.json).");
             return;
         }
 
         Debug.Log("Cargando partida...");
-        string json = File.ReadAllText(saveFilePath);
+        string json = File.ReadAllText(saveFilePath_JSON);
         GameData gameData = JsonUtility.FromJson<GameData>(json);
 
-        // Guardamos los datos temporalmente y cargamos la escena.
-        // OnSceneLoaded se encargará de aplicar los datos.
         this.dataToLoad = gameData;
         SceneManager.LoadScene(gameData.sceneName);
     }
@@ -229,21 +267,36 @@ public class SaveManager : MonoBehaviour
     }
     public void DeleteSavedData()
     {
-        if (File.Exists(saveFilePath))
+        // Borrar el JSON
+        if (File.Exists(saveFilePath_JSON))
         {
             try
             {
-                File.Delete(saveFilePath);
-                Debug.Log($"Archivo de guardado borrado de: {saveFilePath}");
+                File.Delete(saveFilePath_JSON);
+                Debug.Log($"Archivo JSON borrado: {saveFilePath_JSON}");
             }
             catch (System.Exception ex)
             {
-                Debug.LogError($"Error al intentar borrar el archivo de guardado: {ex.Message}");
+                Debug.LogError($"Error al borrar JSON: {ex.Message}");
             }
         }
         else
         {
-            Debug.Log("No se encontró archivo de guardado para borrar. No se hace nada.");
+            Debug.Log("No se encontró archivo JSON para borrar.");
+        }
+
+        // Borrar el Screenshot
+        if (File.Exists(saveFilePath_PNG))
+        {
+            try
+            {
+                File.Delete(saveFilePath_PNG);
+                Debug.Log($"Archivo PNG borrado: {saveFilePath_PNG}");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"Error al borrar PNG: {ex.Message}");
+            }
         }
     }
 }
