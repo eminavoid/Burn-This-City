@@ -3,75 +3,127 @@ using UnityEngine.UI;
 using TMPro; // Usa esto si tienes TextMeshPro
 using System.IO;
 
+/// <summary>
+/// Gestiona la visualización de un único slot de guardado.
+/// Al activarse (OnEnable), comprueba si los archivos de guardado
+/// existen y actualiza la UI correspondientemente.
+/// </summary>
 public class LoadSlotUI : MonoBehaviour
 {
+    [Header("Configuración de Guardado")]
+    [Tooltip("El nombre base del archivo a cargar (debe coincidir con el de SaveManager, ej: 'burnthiscity')")]
+    [SerializeField] private string saveFileBaseName = "burnthiscity";
+
     [Header("UI Elements")]
-    [SerializeField] private RawImage screenshotImage; // <-- USA RAWIMAGE, no Image
+    [Tooltip("El objeto a mostrar si el slot está vacío.")]
+    [SerializeField] private GameObject emptySlotVisuals;
+    [Tooltip("El objeto que contiene los datos si el slot está lleno.")]
+    [SerializeField] private GameObject dataSlotVisuals;
+
+    [Header("Data Visuals (Hijos de DataSlotVisuals)")]
+    [Tooltip("Componente RawImage para mostrar la screenshot.")]
+    [SerializeField] private RawImage screenshotImage;
+    [Tooltip("Texto para el tiempo de juego.")]
     [SerializeField] private TextMeshProUGUI playtimeText;
+    [Tooltip("Texto para el nombre de la escena.")]
     [SerializeField] private TextMeshProUGUI sceneNameText;
+    [Tooltip("Texto para la fecha y hora.")]
     [SerializeField] private TextMeshProUGUI timestampText;
-    [SerializeField] private GameObject emptySlotVisuals; // Objeto a mostrar si no hay guardado
-    [SerializeField] private GameObject dataSlotVisuals;  // Objeto a mostrar si hay guardado
 
     /// <summary>
-    /// Llama a este método para poblar el slot.
+    /// Se llama CADA VEZ que el objeto se activa.
+    /// Perfecto para refrescar la UI del menú de carga.
     /// </summary>
-    public void CheckAndPopulateSlot(string baseSaveName)
+    private void OnEnable()
     {
-        string persistentPath = Application.persistentDataPath;
-        string jsonPath = Path.Combine(persistentPath, baseSaveName + ".json");
-        string pngPath = Path.Combine(persistentPath, baseSaveName + ".png");
+        PopulateSlot();
+    }
 
+    /// <summary>
+    /// Comprueba si existe el archivo de guardado y puebla la UI.
+    /// </summary>
+    private void PopulateSlot()
+    {
+        // --- 1. Validar Referencias Clave ---
+        if (emptySlotVisuals == null || dataSlotVisuals == null)
+        {
+            Debug.LogError($"LoadSlotUI: '{name}' le faltan las referencias a 'emptySlotVisuals' o 'dataSlotVisuals'. Por favor, asígnalas en el Inspector.");
+            return;
+        }
+
+        // --- 2. Definir Rutas ---
+        string persistentPath = Application.persistentDataPath;
+        string jsonPath = Path.Combine(persistentPath, saveFileBaseName + ".json");
+        string pngPath = Path.Combine(persistentPath, saveFileBaseName + ".png");
+
+        // --- 3. Comprobar si existe el guardado ---
         if (!File.Exists(jsonPath))
         {
-            // No existe guardado, muestra el visual de "slot vacío"
+            // No existe guardado
             emptySlotVisuals.SetActive(true);
             dataSlotVisuals.SetActive(false);
             return;
         }
 
-        // Existe guardado, muestra los datos
+        // --- 4. Existe guardado ---
+        // ¡Este es el fix! Nos aseguramos de ocultar 'empty' y mostrar 'data'
         emptySlotVisuals.SetActive(false);
         dataSlotVisuals.SetActive(true);
 
-        // 1. Cargar datos JSON
-        string json = File.ReadAllText(jsonPath);
-        GameData data = JsonUtility.FromJson<GameData>(json);
-
-        // 2. Poblar Textos (Metadata)
-        // Formatear el tiempo de juego
-        System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(data.metaData.totalPlaytimeInSeconds);
-        playtimeText.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
-                                        timeSpan.Hours,
-                                        timeSpan.Minutes,
-                                        timeSpan.Seconds);
-
-        // Formatear el timestamp
-        System.DateTime saveTime = System.DateTime.Parse(data.metaData.saveTimestamp);
-        timestampText.text = saveTime.ToString("g"); // Formato corto de fecha y hora
-
-        // (Aquí puedes usar el truco del diccionario para traducir el nombre de la escena)
-        sceneNameText.text = data.sceneName;
-
-        // 3. Cargar Screenshot (PNG/JPG)
-        if (File.Exists(pngPath))
+        // --- 5. Cargar y Poblar Datos ---
+        try
         {
-            // Lee los bytes del archivo
-            byte[] fileData = File.ReadAllBytes(pngPath);
+            // Cargar datos JSON
+            string json = File.ReadAllText(jsonPath);
+            GameData data = JsonUtility.FromJson<GameData>(json);
 
-            // Crea una nueva textura y cárgale los bytes
-            Texture2D tex = new Texture2D(2, 2); // El tamaño inicial no importa
-            if (tex.LoadImage(fileData)) // LoadImage detecta si es JPG o PNG
+            // Poblar Textos (Metadata)
+            if (playtimeText != null)
             {
-                screenshotImage.texture = tex;
-                screenshotImage.color = Color.white; // Asegúrate de que sea visible
+                System.TimeSpan timeSpan = System.TimeSpan.FromSeconds(data.metaData.totalPlaytimeInSeconds);
+                playtimeText.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
+                                                timeSpan.Hours,
+                                                timeSpan.Minutes,
+                                                timeSpan.Seconds);
+            }
+
+            if (timestampText != null)
+            {
+                System.DateTime saveTime = System.DateTime.Parse(data.metaData.saveTimestamp);
+                timestampText.text = saveTime.ToString("g"); // Formato corto
+            }
+
+            if (sceneNameText != null)
+            {
+                sceneNameText.text = data.sceneName;
+            }
+
+            // Cargar Screenshot (PNG/JPG)
+            if (screenshotImage != null)
+            {
+                if (File.Exists(pngPath))
+                {
+                    byte[] fileData = File.ReadAllBytes(pngPath);
+                    Texture2D tex = new Texture2D(2, 2);
+                    if (tex.LoadImage(fileData))
+                    {
+                        screenshotImage.texture = tex;
+                        screenshotImage.color = Color.white;
+                    }
+                }
+                else
+                {
+                    screenshotImage.texture = null;
+                    screenshotImage.color = Color.black;
+                }
             }
         }
-        else
+        catch (System.Exception ex)
         {
-            // No se encontró screenshot, muestra un color negro
-            screenshotImage.texture = null;
-            screenshotImage.color = Color.black;
+            Debug.LogError($"Error al cargar y poblar el slot: {ex.Message}");
+            // Si el JSON está corrupto o algo falla, lo mostramos como vacío
+            emptySlotVisuals.SetActive(true);
+            dataSlotVisuals.SetActive(false);
         }
     }
 }
