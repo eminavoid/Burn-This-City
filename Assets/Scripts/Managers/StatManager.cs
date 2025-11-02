@@ -112,4 +112,26 @@ public class StatManager : MonoBehaviour
 
         Debug.Log("Todas las estadísticas han sido reseteadas a 1.");
     }
+
+    // Métodos para Guardar/Cargar Datos
+
+    public List<StatEntry> GetStatEntries()
+    {
+        return statEntries;
+    }
+
+    public void LoadStats(List<StatEntry> loadedEntries)
+    {
+        if (loadedEntries == null) return;
+
+        statEntries = new List<StatEntry>(loadedEntries);
+        SyncDictFromList(); // Sincroniza el diccionario interno
+
+        // Notifica a todos los listeners (UI, etc) del cambio
+        foreach (var entry in statEntries)
+        {
+            OnStatChanged?.Invoke(entry.statType, entry.value);
+        }
+        Debug.Log("Stats cargados en StatManager.");
+    }
 }

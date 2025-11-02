@@ -31,7 +31,19 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
         if (runner == null)
             Debug.LogError($"{name}: No DialogueRunner instance found!");
 
-        currentNode = startingNode;
+        // Consultamos al SaveManager si hay un estado guardado para este NPC
+        var savedNode = SaveManager.Instance?.GetNpcNode(npcID);
+        if (savedNode != null)
+        {
+            currentNode = savedNode;
+        }
+        else
+        {
+            // Si no hay nada guardado, usamos el de inspector
+            currentNode = startingNode;
+            // Y registramos este estado inicial en el manager
+            SaveManager.Instance?.UpdateNpcNode(npcID, currentNode);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -61,6 +73,7 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public void SetStartingNode(DialogueNode newNode)
     {
         currentNode = newNode;
+        SaveManager.Instance?.UpdateNpcNode(npcID, currentNode);
     }
 
     // Llamado por el runner cuando un choice marca el flag

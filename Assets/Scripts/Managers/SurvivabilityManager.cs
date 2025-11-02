@@ -66,9 +66,7 @@ public sealed class SurvivabilityManager : MonoBehaviour
         RaiseChanged(s);
     }
 
-    // ===========================
     // Public API
-    // ===========================
 
     public float Get(SurvivabilityStat s) => _current[s];
     public float GetMax(SurvivabilityStat s) => _max[s];
@@ -119,5 +117,27 @@ public sealed class SurvivabilityManager : MonoBehaviour
         OnStatChanged?.Invoke(s, _current[s], _max[s]);
         if (s == SurvivabilityStat.HP) hpCurrent = _current[s];
         if (s == SurvivabilityStat.Sanity) sanityCurrent = _current[s];
+    }
+
+    public void ResetStatsToDefault()
+    {
+        if (IsInitialized)
+        {
+            InitStat(SurvivabilityStat.HP, hp);
+            InitStat(SurvivabilityStat.Sanity, sanity);
+        }
+    }
+
+    // --- Métodos para Cargar Datos ---
+    public void SetHealth(float value)
+    {
+        _current[SurvivabilityStat.HP] = Mathf.Clamp(value, 0f, _max[SurvivabilityStat.HP]);
+        RaiseChanged(SurvivabilityStat.HP); // Notifica a la UI
+    }
+
+    public void SetSanity(float value)
+    {
+        _current[SurvivabilityStat.Sanity] = Mathf.Clamp(value, 0f, _max[SurvivabilityStat.Sanity]);
+        RaiseChanged(SurvivabilityStat.Sanity); // Notifica a la UI
     }
 }

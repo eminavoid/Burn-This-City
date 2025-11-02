@@ -26,7 +26,7 @@ public class InventoryManager : MonoBehaviour
         OnInventoryChanged?.Invoke();
     }
 
-    void InitModules()
+    public void InitModules()
     {
         modules.Clear();
         foreach (var def in moduleDefs)
@@ -293,6 +293,11 @@ public void AddMany(System.Collections.Generic.List<ItemAmount> items)
         item = s.item;
         amount = s.amount;
         return true;
+    }
+
+    public void ForceRefresh()
+    {
+        OnInventoryChanged?.Invoke();
     }
 }
 
