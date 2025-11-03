@@ -4213,11 +4213,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &579392850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8909,7 +8909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262276080392565141, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.9999695
+      value: -0.99993896
       objectReference: {fileID: 0}
     - target: {fileID: 7892760161978104419, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_Pivot.x

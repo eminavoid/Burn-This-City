@@ -29,7 +29,7 @@ MonoBehaviour:
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []
-    nextStartingNodeDefault: {fileID: 0}
+    nextStartingNodeDefault: {fileID: 11400000, guid: 92200ed1888b00d41ac5e1e6745dfab0, type: 2}
     raiseOnTalked: 1
     statRequirements: []
     itemRequirements: []
