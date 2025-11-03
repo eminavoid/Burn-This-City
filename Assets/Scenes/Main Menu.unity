@@ -3666,7 +3666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5ad4a02745084fb40b103bb82c1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveFileBaseName: burnthiscity
   emptySlotVisuals: {fileID: 60315858}
   dataSlotVisuals: {fileID: 128746918}
   screenshotImage: {fileID: 57846491}
