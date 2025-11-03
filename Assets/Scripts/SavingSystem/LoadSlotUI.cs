@@ -12,6 +12,7 @@ public class LoadSlotUI : MonoBehaviour
 {
     [Header("Configuración de Guardado")]
     [Tooltip("El nombre base del archivo a cargar (debe coincidir con el de SaveManager, ej: 'burnthiscity')")]
+    // ¡Muy bien por tomarlo del SaveManager!
     private string saveFileBaseName;
 
     [Header("UI Elements")]
@@ -36,9 +37,9 @@ public class LoadSlotUI : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
+        // Esta línea que añadiste es perfecta.
         saveFileBaseName = SaveManager.Instance.saveFileBaseName;
         PopulateSlot();
-
     }
 
     /// <summary>
@@ -55,11 +56,11 @@ public class LoadSlotUI : MonoBehaviour
 
         // --- 2. Definir Rutas ---
         string persistentPath = Application.persistentDataPath;
-        string jsonPath = Path.Combine(persistentPath, saveFileBaseName + ".json");
-        string pngPath = Path.Combine(persistentPath, saveFileBaseName + ".png");
+        string saveFilePath_SAV = Path.Combine(persistentPath, saveFileBaseName + ".sav");
+        string saveFilePath_PNG = Path.Combine(persistentPath, saveFileBaseName + ".png");
 
         // --- 3. Comprobar si existe el guardado ---
-        if (!File.Exists(jsonPath))
+        if (!File.Exists(saveFilePath_SAV))
         {
             // No existe guardado
             emptySlotVisuals.SetActive(true);
@@ -68,16 +69,26 @@ public class LoadSlotUI : MonoBehaviour
         }
 
         // --- 4. Existe guardado ---
-        // ¡Este es el fix! Nos aseguramos de ocultar 'empty' y mostrar 'data'
         emptySlotVisuals.SetActive(false);
         dataSlotVisuals.SetActive(true);
 
         // --- 5. Cargar y Poblar Datos ---
         try
         {
-            // Cargar datos JSON
-            string json = File.ReadAllText(jsonPath);
+            // --- INICIO DE LA MODIFICACIÓN ---
+
+            // 1. Cargar el string protegido (ya no es JSON)
+            string protectedJson = File.ReadAllText(saveFilePath_SAV);
+
+            // 2. ¡NUEVO! Validar y desproteger
+            // Esto lanzará una excepción si el hash no coincide,
+            // la cual será atrapada por el bloque 'catch'.
+            string json = SaveDataProtector.ValidateAndLoad(protectedJson);
+
+            // 3. Deserializar el JSON limpio (como antes)
             GameData data = JsonUtility.FromJson<GameData>(json);
+
+            // --- FIN DE LA MODIFICACIÓN ---
 
             // Poblar Textos (Metadata)
             if (playtimeText != null)
@@ -103,9 +114,9 @@ public class LoadSlotUI : MonoBehaviour
             // Cargar Screenshot (PNG/JPG)
             if (screenshotImage != null)
             {
-                if (File.Exists(pngPath))
+                if (File.Exists(saveFilePath_PNG))
                 {
-                    byte[] fileData = File.ReadAllBytes(pngPath);
+                    byte[] fileData = File.ReadAllBytes(saveFilePath_PNG);
                     Texture2D tex = new Texture2D(2, 2);
                     if (tex.LoadImage(fileData))
                     {
@@ -123,7 +134,8 @@ public class LoadSlotUI : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError($"Error al cargar y poblar el slot: {ex.Message}");
-            // Si el JSON está corrupto o algo falla, lo mostramos como vacío
+            // Si el JSON está corrupto o (más probablemente) el hash falla,
+            // lo mostramos como vacío.
             emptySlotVisuals.SetActive(true);
             dataSlotVisuals.SetActive(false);
         }
