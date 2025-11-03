@@ -41,10 +41,6 @@ public class LoadSlotUI : MonoBehaviour
         saveFileBaseName = SaveManager.Instance.saveFileBaseName;
         PopulateSlot();
     }
-
-    /// <summary>
-    /// Comprueba si existe el archivo de guardado y puebla la UI.
-    /// </summary>
     private void PopulateSlot()
     {
         // --- 1. Validar Referencias Clave ---
@@ -77,12 +73,11 @@ public class LoadSlotUI : MonoBehaviour
         {
             // --- INICIO DE LA MODIFICACIÓN ---
 
-            // 1. Cargar el string protegido (ya no es JSON)
+            // 1. Cargar el string protegido
             string protectedJson = File.ReadAllText(saveFilePath_SAV);
 
             // 2. ¡NUEVO! Validar y desproteger
-            // Esto lanzará una excepción si el hash no coincide,
-            // la cual será atrapada por el bloque 'catch'.
+            // si el hash no coincide,
             string json = SaveDataProtector.ValidateAndLoad(protectedJson);
 
             // 3. Deserializar el JSON limpio (como antes)
@@ -134,8 +129,7 @@ public class LoadSlotUI : MonoBehaviour
         catch (System.Exception ex)
         {
             Debug.LogError($"Error al cargar y poblar el slot: {ex.Message}");
-            // Si el JSON está corrupto o (más probablemente) el hash falla,
-            // lo mostramos como vacío.
+            // Si el hash falla,
             emptySlotVisuals.SetActive(true);
             dataSlotVisuals.SetActive(false);
         }
