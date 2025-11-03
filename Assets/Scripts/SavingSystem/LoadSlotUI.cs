@@ -12,7 +12,7 @@ public class LoadSlotUI : MonoBehaviour
 {
     [Header("Configuración de Guardado")]
     [Tooltip("El nombre base del archivo a cargar (debe coincidir con el de SaveManager, ej: 'burnthiscity')")]
-    [SerializeField] private string saveFileBaseName = "burnthiscity";
+    private string saveFileBaseName;
 
     [Header("UI Elements")]
     [Tooltip("El objeto a mostrar si el slot está vacío.")]
@@ -36,7 +36,9 @@ public class LoadSlotUI : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
+        saveFileBaseName = SaveManager.Instance.saveFileBaseName;
         PopulateSlot();
+
     }
 
     /// <summary>
