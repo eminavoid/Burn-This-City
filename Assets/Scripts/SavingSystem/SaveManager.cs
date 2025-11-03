@@ -12,7 +12,7 @@ public class SaveManager : MonoBehaviour
 
     [Tooltip("El nombre base para los archivos de guardado, sin extensión.")]
     [SerializeField] public string saveFileBaseName = "save";
-    private string saveFilePath_JSON;
+    private string saveFilePath_SAV;
     private string saveFilePath_PNG;
 
     private Dictionary<int, DialogueNode> sceneDialogueState = new Dictionary<int, DialogueNode>();
@@ -30,7 +30,7 @@ public class SaveManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         string persistentPath = Application.persistentDataPath;
-        saveFilePath_JSON = Path.Combine(persistentPath, saveFileBaseName + ".json");
+        saveFilePath_SAV = Path.Combine(persistentPath, saveFileBaseName + ".sav");
         saveFilePath_PNG = Path.Combine(persistentPath, saveFileBaseName + ".png");
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -159,26 +159,39 @@ public class SaveManager : MonoBehaviour
 
         // 6. SERIALIZAR Y ESCRIBIR EN DISCO (JSON)
         string json = JsonUtility.ToJson(gameData, true);
-        File.WriteAllText(saveFilePath_JSON, json);
+        string protectedJson = SaveDataProtector.Protect(json);
 
+        // 7. ESCRIBIR EN DISCO (JSON)
+        File.WriteAllText(saveFilePath_SAV, protectedJson);
         Debug.Log($"Partida y Screenshot guardados en: {Application.persistentDataPath}");
     }
 
     public void LoadGame()
     {
         // (Modificado para usar la nueva variable de ruta)
-        if (!File.Exists(saveFilePath_JSON))
+        if (!File.Exists(saveFilePath_SAV))
         {
             Debug.LogWarning("No se encontró archivo de guardado (.json).");
             return;
         }
 
         Debug.Log("Cargando partida...");
-        string json = File.ReadAllText(saveFilePath_JSON);
-        GameData gameData = JsonUtility.FromJson<GameData>(json);
 
-        this.dataToLoad = gameData;
-        SceneManager.LoadScene(gameData.sceneName);
+        try
+        {
+            string protectedJson = File.ReadAllText(saveFilePath_SAV);
+
+            string json = SaveDataProtector.ValidateAndLoad(protectedJson);
+
+            GameData gameData = JsonUtility.FromJson<GameData>(json);
+
+            this.dataToLoad = gameData;
+            SceneManager.LoadScene(gameData.sceneName);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error al cargar la partida: {ex.Message}");
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -268,12 +281,12 @@ public class SaveManager : MonoBehaviour
     public void DeleteSavedData()
     {
         // Borrar el JSON
-        if (File.Exists(saveFilePath_JSON))
+        if (File.Exists(saveFilePath_SAV))
         {
             try
             {
-                File.Delete(saveFilePath_JSON);
-                Debug.Log($"Archivo JSON borrado: {saveFilePath_JSON}");
+                File.Delete(saveFilePath_SAV);
+                Debug.Log($"Archivo JSON borrado: {saveFilePath_SAV}");
             }
             catch (System.Exception ex)
             {
