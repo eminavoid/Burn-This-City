@@ -4026,7 +4026,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 530893531807334879, guid: f3ac3481ee3836348b18eb98ed5a4de8, type: 3}
       propertyPath: saveFileBaseName
-      value: sav
+      value: game
       objectReference: {fileID: 0}
     - target: {fileID: 673200101791420089, guid: f3ac3481ee3836348b18eb98ed5a4de8, type: 3}
       propertyPath: m_LocalPosition.x
