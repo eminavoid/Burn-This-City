@@ -11,7 +11,7 @@ public class SaveManager : MonoBehaviour
     private float totalPlaytimeInSeconds = 0f;
 
     [Tooltip("El nombre base para los archivos de guardado, sin extensión.")]
-    [SerializeField] private string saveFileBaseName = "save";
+    [SerializeField] public string saveFileBaseName = "save";
     private string saveFilePath_JSON;
     private string saveFilePath_PNG;
 
