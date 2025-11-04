@@ -45,7 +45,6 @@ public class SaveManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // API de Persistencia de Escena (Modo 1)
     public void UpdateNpcNode(int npcID, DialogueNode node)
     {
         if (node != null)
@@ -97,7 +96,7 @@ public class SaveManager : MonoBehaviour
         // Limpieza de memoria
         RenderTexture.active = null;
         RenderTexture.ReleaseTemporary(rt);
-        Destroy(fullScreenTexture); // Ya no necesitamos la grande
+        Destroy(fullScreenTexture);
 
         // 4. CODIFICAR A JPG Y GUARDAR SCREENSHOT
         byte[] screenshotBytes = thumbnailTexture.EncodeToJPG(75);
@@ -107,12 +106,12 @@ public class SaveManager : MonoBehaviour
         // 5. RECOLECTAR Y GUARDAR DATOS (JSON)
         GameData gameData = new GameData();
 
-        // 5a. Metadata
+        // 6. Metadata
         gameData.metaData.saveTimestamp = System.DateTime.Now.ToString("o");
         gameData.metaData.totalPlaytimeInSeconds = this.totalPlaytimeInSeconds;
         gameData.metaData.gameVersion = Application.version;
 
-        // 5b. Escena y Jugador
+        // 7. Escena y Jugador
         gameData.sceneName = SceneManager.GetActiveScene().name;
         PlayerMovement2D player = FindFirstObjectByType<PlayerMovement2D>();
         if (player != null)
@@ -121,14 +120,14 @@ public class SaveManager : MonoBehaviour
             gameData.playerData.playerPosY = player.transform.position.y;
         }
 
-        // 5c. Survivability
+        // 8. Survivability
         gameData.playerData.currentHP = SurvivabilityManager.Instance.Get(SurvivabilityStat.HP);
         gameData.playerData.currentSanity = SurvivabilityManager.Instance.Get(SurvivabilityStat.Sanity);
 
-        // 5d. Stats
+        // 9. Stats
         gameData.statsData.statEntries = StatManager.Instance.GetStatEntries();
 
-        // 5e. Inventario (Traducción Item -> ItemID)
+        // 10. Inventario (Traducción Item -> ItemID)
         gameData.inventoryData.modules = new List<SerializableModuleState>();
         foreach (var module in InventoryManager.Instance.Modules)
         {
@@ -146,7 +145,7 @@ public class SaveManager : MonoBehaviour
             gameData.inventoryData.modules.Add(newSavedModule);
         }
 
-        // 5f. Diálogos
+        // 11. Diálogos
         gameData.dialogueData.nodeStates = new List<NpcDialogueState>();
         foreach (var kvp in sceneDialogueState)
         {
@@ -157,18 +156,17 @@ public class SaveManager : MonoBehaviour
             });
         }
 
-        // 6. SERIALIZAR Y ESCRIBIR EN DISCO (JSON)
+        // 12. Serializar
         string json = JsonUtility.ToJson(gameData, true);
         string protectedJson = SaveDataProtector.Protect(json);
 
-        // 7. ESCRIBIR EN DISCO (JSON)
+        // 13. Escribir en disco 
         File.WriteAllText(saveFilePath_SAV, protectedJson);
         Debug.Log($"Partida y Screenshot guardados en: {Application.persistentDataPath}");
     }
 
     public void LoadGame()
     {
-        // (Modificado para usar la nueva variable de ruta)
         if (!File.Exists(saveFilePath_SAV))
         {
             Debug.LogWarning("No se encontró archivo de guardado (.json).");
@@ -217,7 +215,7 @@ public class SaveManager : MonoBehaviour
 
         // 3. Aplicar Inventario (Traducción ItemID -> Item)
         var inv = InventoryManager.Instance;
-        inv.InitModules(); // Resetea el inventario a slots vacíos
+        inv.InitModules();
 
         var loadedModules = dataToLoad.inventoryData.modules;
         for (int m = 0; m < inv.Modules.Count; m++)
@@ -252,7 +250,6 @@ public class SaveManager : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(npcState.nodeID))
             {
-                // ASUNCIÓN CRÍTICA: Carga el nodo desde "Resources/DialogueNodes/"
                 DialogueNode node = Resources.Load<DialogueNode>("DialogueNodes/" + npcState.nodeID);
                 if (node != null)
                 {
@@ -280,7 +277,6 @@ public class SaveManager : MonoBehaviour
     }
     public void DeleteSavedData()
     {
-        // Borrar el JSON
         if (File.Exists(saveFilePath_SAV))
         {
             try
@@ -298,7 +294,6 @@ public class SaveManager : MonoBehaviour
             Debug.Log("No se encontró archivo JSON para borrar.");
         }
 
-        // Borrar el Screenshot
         if (File.Exists(saveFilePath_PNG))
         {
             try
