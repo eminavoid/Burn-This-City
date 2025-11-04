@@ -11,8 +11,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))   
         {
-            container.SetActive(true);
-            Time.timeScale = 0;
+            TogglePause();
         }
     }
 
@@ -27,5 +26,19 @@ public class PauseMenu : MonoBehaviour
         container.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    private void TogglePause()
+    {
+        if (container.activeSelf)
+        {
+            container.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            container.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 }
