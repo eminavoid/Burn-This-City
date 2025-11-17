@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CenterModule
   m_EditorClassIdentifier: 
   displayName: Center
-  rows: 6
-  cols: 6
+  rows: 4
+  cols: 4
