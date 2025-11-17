@@ -1320,11 +1320,11 @@ PrefabInstance:
     - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 707586534}
     - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 707586535}
     - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: OnStatChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
@@ -1375,7 +1375,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Game Over
+      value: "THE CITY GOT THE BETTER OF YOU: You weren\u2019t strong enough to withstand
+        the city\u2019s challenges. Whether it was the physical exhaustion or the
+        mental strain, your body finally gives in to the pressure. You collapse to
+        the ground, trembling. Deep down, you know no one will come to help. How
+        could they? Everyone\u2019s just one bad day away from ending up like you.
+        Soon, your body will blend into the city\u2019s decaying landscape. You won\u2019t
+        be remembered. "
       objectReference: {fileID: 0}
     - target: {fileID: 7342868620184812813, guid: 1d6f1f00d5736504cabc49500b4313a4, type: 3}
       propertyPath: OnStatZero.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2781,6 +2787,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 823855326ea8ddf4599584ace9e92280, type: 3}
+--- !u!1 &707586534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2182455457890536129, guid: 823855326ea8ddf4599584ace9e92280, type: 3}
+  m_PrefabInstance: {fileID: 707586532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &707586535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9064231722811305254, guid: 823855326ea8ddf4599584ace9e92280, type: 3}
+  m_PrefabInstance: {fileID: 707586532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &772227003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4904,11 +4926,11 @@ PrefabInstance:
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 707586534}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 707586535}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4943,7 +4965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Game Over
+      value: 'Game Over: Why Would You Say That?'
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
