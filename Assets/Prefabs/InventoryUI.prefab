@@ -63,6 +63,9 @@ MonoBehaviour:
   consumeButtonPrefab: {fileID: 0}
   consumeButtonOffset: {x: 90, y: 0}
   containerGridUI: {fileID: 0}
+  tooltipObject: {fileID: 0}
+  tooltipText: {fileID: 0}
+  tooltipOffset: {x: 150, y: -12, z: 0}
 --- !u!1001 &5926994782777910453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,6 +74,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7276198395778927272}
     m_Modifications:
+    - target: {fileID: 2031754567920694029, guid: 69386ce66dd723148a276cc66476f668, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031754567920694029, guid: 69386ce66dd723148a276cc66476f668, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031754567920694029, guid: 69386ce66dd723148a276cc66476f668, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031754567920694029, guid: 69386ce66dd723148a276cc66476f668, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ItemSlotUI, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2319166449084468194, guid: 69386ce66dd723148a276cc66476f668, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -161,14 +180,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8357348148531901284, guid: 69386ce66dd723148a276cc66476f668, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8715060243035219640}
+      addedObject: {fileID: 2845884545264271621}
   m_SourcePrefab: {fileID: 100100000, guid: 69386ce66dd723148a276cc66476f668, type: 3}
 --- !u!1 &2430722819513980881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8357348148531901284, guid: 69386ce66dd723148a276cc66476f668, type: 3}
   m_PrefabInstance: {fileID: 5926994782777910453}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &8715060243035219640
+--- !u!225 &2845884545264271621
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
