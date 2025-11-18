@@ -96,40 +96,57 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        // Detecta clic fuera del botón
+        // --- Lógica del Botón Consumir ---
+
+        // Detecta clic fuera del botón o fuera de un slot (asumiendo que Click() en el slot llama ShowConsumeButtonFor)
         if (Input.GetMouseButtonDown(0))
         {
-            // Verificamos si el clic fue sobre el botón mismo
             if (consumeButtonInstance != null && consumeButtonInstance.gameObject.activeSelf)
             {
-                if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+                PointerEventData eventData = new PointerEventData(EventSystem.current)
                 {
-                    // Si no hay un objeto de UI bajo el clic, o si lo hay pero NO es el botón
-                    PointerEventData eventData = new PointerEventData(EventSystem.current);
-                    eventData.position = Input.mousePosition;
-                    List<RaycastResult> results = new List<RaycastResult>();
-                    EventSystem.current.RaycastAll(eventData, results);
+                    position = Input.mousePosition
+                };
+                List<RaycastResult> results = new List<RaycastResult>();
+                EventSystem.current.RaycastAll(eventData, results);
 
-                    bool clickedOnButton = false;
-                    foreach (var result in results)
+                bool clickedOnButton = false;
+                bool clickedOnActiveSlot = false;
+
+                foreach (var result in results)
+                {
+                    // Detectar si se hizo clic en el botón
+                    if (result.gameObject == consumeButtonInstance.gameObject)
                     {
-                        if (result.gameObject == consumeButtonInstance.gameObject)
-                        {
-                            clickedOnButton = true;
-                            break;
-                        }
+                        clickedOnButton = true;
+                        break;
                     }
 
-                    if (!clickedOnButton)
-                        HideActiveConsumeButton();
+                    // Detectar si se hizo clic en el slot que tiene el botón activo
+                    if (currentSlotForConsume != null && result.gameObject == currentSlotForConsume.gameObject)
+                    {
+                        clickedOnActiveSlot = true;
+                        // NO romper el loop, aún necesitamos revisar si el botón está encima.
+                    }
+                }
+
+                // Ocultar si el clic no fue ni en el botón ni en el slot (o si se hizo clic en otro slot/UI)
+                // Si haces clic en otro lado (o en el mismo slot por segunda vez), oculta el botón.
+                if (!clickedOnButton && !clickedOnActiveSlot)
+                {
+                    HideActiveConsumeButton();
                 }
             }
-            // Lógica original para clic fuera de cualquier UI
-            else if (!EventSystem.current.IsPointerOverGameObject())
+            // Asegura que, si no hay botón activo, el Tooltip tampoco lo esté.
+            else if (tooltipObject.activeSelf)
             {
-                HideActiveConsumeButton();
+                // Esto es una medida de seguridad, HideTooltip() ya se debería llamar en OnPointerExit
+                HideTooltip();
             }
         }
+
+        // --- Lógica del Tooltip (Seguir al Mouse) ---
+
         if (tooltipObject != null && tooltipObject.activeSelf)
         {
             tooltipObject.transform.position = Input.mousePosition + tooltipOffset;
@@ -264,16 +281,57 @@ public class InventoryUI : MonoBehaviour
 
         if (slot.CurrentItem == null || !slot.CurrentItem.isConsumable)
         {
-            HideActiveConsumeButton(); // Oculta si había uno visible
+            HideActiveConsumeButton();
             return;
         }
 
         currentSlotForConsume = slot;
         consumeButtonInstance.gameObject.SetActive(true);
 
-        consumeButtonInstance.transform.SetParent(slot.transform);
-        consumeButtonInstance.GetComponent<RectTransform>().anchoredPosition = consumeButtonOffset;
-        consumeButtonInstance.transform.SetParent(backpackRoot.transform);
+        // --- LÓGICA CORREGIDA PARA SCREEN SPACE - OVERLAY ---
+
+        // 1. Aseguramos que el botón permanezca como hijo de backpackRoot para evitar la interrupción de eventos
+        if (consumeButtonInstance.transform.parent != backpackRoot.transform)
+        {
+            // Usamos 'false' para no preservar la posición en el mundo, sino solo la local
+            consumeButtonInstance.transform.SetParent(backpackRoot.transform, false);
+        }
+
+        RectTransform slotRect = slot.GetComponent<RectTransform>();
+        RectTransform buttonRect = consumeButtonInstance.GetComponent<RectTransform>();
+
+        // 2. Calculamos la posición local del slot dentro del backpackRoot.
+        // Convertimos la posición del slot (que es un punto en el canvas/pantalla)
+        // a coordenadas locales dentro del RectTransform del backpackRoot.
+        Vector2 localPos;
+
+        // Intentamos obtener el canvas. Si es overlay, pasamos 'null' como cámara/canvas.
+        Canvas canvas = GetComponentInParent<Canvas>();
+        if (canvas == null || canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+        {
+            // Para Overlay, usamos null en la cámara/canvas.
+            // La posición del slot ya está en coordenadas de pantalla.
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+               backpackRoot.GetComponent<RectTransform>(),
+               slotRect.position,
+               null,
+               out localPos);
+        }
+        else
+        {
+            // Si por alguna razón no es overlay (aunque dijiste que sí), volvemos al método con cámara.
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                backpackRoot.GetComponent<RectTransform>(),
+                slotRect.position,
+                canvas.worldCamera,
+                out localPos);
+        }
+
+
+        // 3. Aplicamos la posición local más el offset
+        buttonRect.anchoredPosition = localPos + consumeButtonOffset;
+
+        // --- FIN DE LÓGICA CORREGIDA ---
 
         consumeButtonInstance.onClick.RemoveAllListeners();
         consumeButtonInstance.onClick.AddListener(slot.OnConsumeClicked);
@@ -304,10 +362,24 @@ public class InventoryUI : MonoBehaviour
         tooltipText.text = itemName;
         tooltipObject.SetActive(true);
         tooltipObject.transform.SetAsLastSibling();
+
+        // NEW FIX: Ensure the tooltip does not block mouse clicks on other UI elements.
+        CanvasGroup canvasGroup = tooltipObject.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            canvasGroup = tooltipObject.AddComponent<CanvasGroup>();
+        }
+
+        // This is the key line: tells the system to ignore the tooltip for raycasts.
+        canvasGroup.blocksRaycasts = false;
     }
     public void HideTooltip()
     {
         if (tooltipObject != null)
             tooltipObject.SetActive(false);
+    }
+    public ItemSlotUI GetCurrentSlotForConsume()
+    {
+        return currentSlotForConsume;
     }
 }
