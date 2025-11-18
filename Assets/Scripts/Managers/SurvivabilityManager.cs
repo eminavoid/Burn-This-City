@@ -108,7 +108,10 @@ public sealed class SurvivabilityManager : MonoBehaviour
         {
             OnStatZero?.Invoke(s);
             if (s == SurvivabilityStat.HP)
+            {
+                ActivateDeathScreen();
                 OnDied?.Invoke();
+            }
         }
     }
 
@@ -139,5 +142,26 @@ public sealed class SurvivabilityManager : MonoBehaviour
     {
         _current[SurvivabilityStat.Sanity] = Mathf.Clamp(value, 0f, _max[SurvivabilityStat.Sanity]);
         RaiseChanged(SurvivabilityStat.Sanity); // Notifica a la UI
+    }
+    
+    private void ActivateDeathScreen()
+    {
+        GameObject deathRoot = GameObject.Find("DeathS");
+        if (deathRoot == null)
+        {
+            Debug.LogWarning("No se encontró el objeto 'DeathS' en la escena.");
+            return;
+        }
+
+        // Busca el canvas dentro del objeto
+        Transform canvas = deathRoot.transform.Find("DeathScreen");
+        if (canvas == null)
+        {
+            Debug.LogWarning("No se encontró el hijo 'DeathScreen' dentro de DeathS.");
+            return;
+        }
+
+        canvas.gameObject.SetActive(true);
+        Debug.Log("Death Screen activado.");
     }
 }

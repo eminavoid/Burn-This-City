@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Logic Magazine
   m_EditorClassIdentifier: 
   displayName: Logic Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0246dd49c50d48048bc2b8c271308484, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

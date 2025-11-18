@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Building Key
   m_EditorClassIdentifier: 
   displayName: Key
-  icon: {fileID: 21300000, guid: 4778cfc7e638b564292317cb606bd99d, type: 3}
+  icon: {fileID: 21300000, guid: c3b94e30d14611843937cf7b19f435d6, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 0

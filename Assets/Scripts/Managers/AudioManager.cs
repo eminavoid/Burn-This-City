@@ -1,14 +1,24 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+    
+    [Header("Scene Music")]
+    public AudioClip mainMenuMusic;
 
     [Header("Audio Sources")] 
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource musicSource;
+    
+    [Header("Fade Settings")]
+    public float fadeDuration = 1.5f;
+
+    private Coroutine currentFade;
 
     [Header("Default Volumes")] 
     [Range(0f, 1f)] [SerializeField] private float sfxVolume = 1f;
@@ -16,6 +26,27 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<string, AudioClip> sfxLibrary = new Dictionary<string, AudioClip>();
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Main Menu")
+        {
+            if (musicSource.clip != mainMenuMusic)
+            {
+                PlayMusic(mainMenuMusic);
+            }
+        }
+    }
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -68,8 +99,15 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {
         if (clip == null) return;
-        musicSource.clip = clip;
-        musicSource.Play();
+
+        if (currentFade != null)
+        {
+            StopCoroutine(currentFade);
+        }
+        
+        currentFade = StartCoroutine(FadeMusicRoutine(clip));
+        // musicSource.clip = clip;
+        // musicSource.Play();
     }
     
     public void StopMusic() => musicSource.Stop();
@@ -78,5 +116,38 @@ public class AudioManager : MonoBehaviour
     {
         if (sfxSource == null) return;
         sfxSource.Stop();
+    }
+    
+    private IEnumerator FadeMusicRoutine(AudioClip newClip)
+    {
+        float startVolume = musicSource.volume;
+
+        // --- FADE OUT ---
+        float t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(startVolume, 0f, t / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.volume = 0f;
+        musicSource.Stop();
+
+        // Cambiamos track
+        musicSource.clip = newClip;
+        musicSource.Play();
+
+        // --- FADE IN ---
+        t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            musicSource.volume = Mathf.Lerp(0f, startVolume, t / fadeDuration);
+            yield return null;
+        }
+
+        musicSource.volume = startVolume;
+        currentFade = null;
     }
 }

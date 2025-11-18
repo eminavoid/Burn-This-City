@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Robustness Magazine
   m_EditorClassIdentifier: 
   displayName: Robustness Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 011a1969f84b5974eaed5a1fb92e980f, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

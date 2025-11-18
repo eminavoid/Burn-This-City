@@ -56,10 +56,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1218331015893004601, guid: 52ccdeadcfcbda042bfb6283e13ce8bb, type: 3}
       propertyPath: m_text
-      value: 'The End
-
-
-        Your stady in Diesmark has come to an end'
+      value: "THE CITY GOT THE BETTER OF YOU\n\nYou weren\u2019t strong enough to
+        withstand the city\u2019s challenges. Whether it was the physical exhaustion
+        or the mental strain, your body finally gives in to the pressure. You collapse
+        to the ground, trembling. Deep down, you know no one will come to help. How
+        could they? Everyone\u2019s just one bad day away from ending up like you.
+        Soon, your body will blend into the city\u2019s decaying landscape. You won\u2019t
+        be remembered. "
       objectReference: {fileID: 0}
     - target: {fileID: 8316842900272420574, guid: 52ccdeadcfcbda042bfb6283e13ce8bb, type: 3}
       propertyPath: m_Name

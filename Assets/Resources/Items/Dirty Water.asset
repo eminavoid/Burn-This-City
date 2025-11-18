@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirty Water
   m_EditorClassIdentifier: 
   displayName: Dirty Water
-  icon: {fileID: 1880432458560580560, guid: d381987e6398dfa4cbc0983edaab6c3d, type: 3}
+  icon: {fileID: 21300000, guid: 0818b28ca21946541b468da41174005c, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

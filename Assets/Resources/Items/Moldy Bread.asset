@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Moldy Bread
   m_EditorClassIdentifier: 
   displayName: Moldy Bread
-  icon: {fileID: 21300000, guid: 6bdbe1afc3fcbc7469c47b8ed56c3ba7, type: 3}
+  icon: {fileID: 21300000, guid: 3a3cc7c4a7838404f88b553e28d2dc90, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

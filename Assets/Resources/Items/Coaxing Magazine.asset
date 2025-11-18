@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coaxing Magazine
   m_EditorClassIdentifier: 
   displayName: Coaxing Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7edf2c4a36606ea438c6a37365979d7e, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

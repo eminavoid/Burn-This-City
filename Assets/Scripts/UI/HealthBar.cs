@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        maxRightMask = barRect.rect.width - mask.padding.x - mask.padding.z;
+        maxRightMask = 250f;
         initialRightMask = mask.padding.z;
     }
 

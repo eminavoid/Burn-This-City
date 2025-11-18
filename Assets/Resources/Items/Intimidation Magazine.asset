@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Intimidation Magazine
   m_EditorClassIdentifier: 
   displayName: Intimidation Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 23864108036308644ae64fc3bb82b9fa, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

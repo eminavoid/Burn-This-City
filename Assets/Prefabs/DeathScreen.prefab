@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7631443016354999286}
   - component: {fileID: 59787991710733070}
   - component: {fileID: 4369743672800860366}
-  - component: {fileID: 6052658145144401169}
+  - component: {fileID: 7037530364753755147}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -258,9 +258,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6052658145144401169}
-        m_TargetAssemblyTypeName: NewGameButtonBehaviour, Assembly-CSharp
-        m_MethodName: ResetStatsAndLoadScene
+      - m_Target: {fileID: 7037530364753755147}
+        m_TargetAssemblyTypeName: ButtonLoadScene, Assembly-CSharp
+        m_MethodName: OnClickLoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -270,7 +270,7 @@ MonoBehaviour:
           m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6052658145144401169
+--- !u!114 &7037530364753755147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1232596080527696829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bbc2c36bacb5a3449eee83dc59d481a, type: 3}
+  m_Script: {fileID: 11500000, guid: f0a6d2a78682172499aa3270ef236a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4523998453945338912
