@@ -11,35 +11,51 @@ public class StatAllocatorEntry : MonoBehaviour
     [SerializeField] private Button incrementButton;
     [SerializeField] private Button decrementButton;
 
+    [Header("Settings")]
+    [SerializeField] private int maxStatValue = 12;   
+    [SerializeField] private int minStatValue = 1;    
+
     private void Start()
     {
-        // Asigna el nombre de la stat automáticamente
-        statNameText.text = statType.ToString()+":";
+        statNameText.text = statType.ToString() + ":";
 
-        // Conecta los listeners de los botones
         incrementButton.onClick.AddListener(OnIncrement);
         decrementButton.onClick.AddListener(OnDecrement);
     }
+
     private void OnIncrement()
     {
-        StatManager.Instance.IncrementStat(statType, 1);
+        if (StatManager.Instance.GetStat(statType) < maxStatValue)
+        {
+            StatManager.Instance.IncrementStat(statType, 1);
+        }
     }
 
     private void OnDecrement()
     {
-        StatManager.Instance.IncrementStat(statType, -1);
+        if (StatManager.Instance.GetStat(statType) > minStatValue)
+        {
+            StatManager.Instance.IncrementStat(statType, -1);
+        }
     }
+
     public StatManager.StatType GetStatType()
     {
         return statType;
     }
+
+    public int GetMinValue()     
+    {
+        return minStatValue;
+    }
+
     public void Refresh(int pointsRemaining)
     {
         int currentValue = StatManager.Instance.GetStat(statType);
         statValueText.text = currentValue.ToString();
 
-        incrementButton.interactable = (pointsRemaining > 0);
+        incrementButton.interactable = (pointsRemaining > 0) && (currentValue < maxStatValue);
 
-        decrementButton.interactable = (currentValue > 1);
+        decrementButton.interactable = (currentValue > minStatValue);
     }
 }

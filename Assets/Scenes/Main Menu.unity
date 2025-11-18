@@ -2603,6 +2603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3727860837424789525, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: statsStartingValue
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8764650402190740937, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
       propertyPath: m_Name
       value: StatManager

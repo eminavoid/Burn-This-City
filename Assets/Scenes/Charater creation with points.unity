@@ -274,6 +274,8 @@ MonoBehaviour:
   statValueText: {fileID: 2087242093}
   incrementButton: {fileID: 1542835973}
   decrementButton: {fileID: 914932468}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &31601342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2916,6 +2918,8 @@ MonoBehaviour:
   statValueText: {fileID: 2065322134}
   incrementButton: {fileID: 203579286}
   decrementButton: {fileID: 1006340212}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &810929887
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5557,6 +5561,8 @@ MonoBehaviour:
   statValueText: {fileID: 2019613356}
   incrementButton: {fileID: 1300568108}
   decrementButton: {fileID: 1528367362}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &1212411074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8111,6 +8117,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3727860837424789525, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
+      propertyPath: statsStartingValue
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8764650402190740937, guid: 4bd2393408e650d4b9450313667ee79f, type: 3}
       propertyPath: m_Name
       value: StatManager
@@ -8275,6 +8285,8 @@ MonoBehaviour:
   statValueText: {fileID: 710117569}
   incrementButton: {fileID: 1219520521}
   decrementButton: {fileID: 230895686}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &1596114603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8629,6 +8641,8 @@ MonoBehaviour:
   statValueText: {fileID: 621108644}
   incrementButton: {fileID: 1908088478}
   decrementButton: {fileID: 19109124}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!1 &1747621819
 GameObject:
   m_ObjectHideFlags: 0
@@ -9325,6 +9339,8 @@ MonoBehaviour:
   statValueText: {fileID: 1242385805}
   incrementButton: {fileID: 2133965050}
   decrementButton: {fileID: 1770169228}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &1857395072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9868,6 +9884,8 @@ MonoBehaviour:
   statValueText: {fileID: 820092084}
   incrementButton: {fileID: 461485794}
   decrementButton: {fileID: 1324677184}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &2003423330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9926,6 +9944,8 @@ MonoBehaviour:
   statValueText: {fileID: 713179147}
   incrementButton: {fileID: 1446302504}
   decrementButton: {fileID: 1272045097}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &2011070262
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10392,6 +10412,8 @@ MonoBehaviour:
   statValueText: {fileID: 959678101}
   incrementButton: {fileID: 1434607589}
   decrementButton: {fileID: 1340400584}
+  maxStatValue: 12
+  minStatValue: 1
 --- !u!224 &2117801796
 RectTransform:
   m_ObjectHideFlags: 0

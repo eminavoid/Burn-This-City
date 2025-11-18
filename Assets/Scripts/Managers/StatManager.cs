@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 public class StatManager : MonoBehaviour
 {
+    [SerializeField] int statsStartingValue = 1;
+
     public static StatManager Instance { get; private set; }
 
-    // NUEVA LÍNEA: Declaramos el evento. Avisará qué stat cambió y su nuevo valor.
     public static event System.Action<StatType, int> OnStatChanged;
 
     public enum StatType
@@ -32,22 +33,24 @@ public class StatManager : MonoBehaviour
     private Dictionary<StatType, int> stats = new Dictionary<StatType, int>();
     private void Awake()
     {
-        // Singleton implementation
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Initialize default entries if empty
             if (statEntries.Count == 0)
             {
                 foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
                 {
-                    statEntries.Add(new StatEntry { statType = stat, value = 1 });
+                    statEntries.Add(new StatEntry { statType = stat, value = statsStartingValue });
                 }
             }
 
             SyncDictFromList();
+            foreach (var entry in statEntries)
+            {
+                OnStatChanged?.Invoke(entry.statType, entry.value);
+            }
         }
         else
         {
@@ -98,22 +101,17 @@ public class StatManager : MonoBehaviour
     public void IncrementStat(StatType type, int amount)
     {
         int newValue = Mathf.Max(0, GetStat(type) + amount);
-        SetStat(type, newValue); // SetStat ya dispara el evento, así que no necesitamos hacer nada más.
+        SetStat(type, newValue);             
     }
     public void ResetAllStats()
     {
-        // Iteramos sobre todos los valores posibles del enum StatType
         foreach (StatType stat in System.Enum.GetValues(typeof(StatType)))
         {
-            // Usamos SetStat, que ya se encarga de actualizar todo
-            // y notificar a los listeners (OnStatChanged)
-            SetStat(stat, 1);
+            SetStat(stat, statsStartingValue);
         }
 
-        Debug.Log("Todas las estad�sticas han sido reseteadas a 1.");
+        Debug.Log("Todas las estad�sticas han sido reseteadas a 3.");
     }
-
-    // M�todos para Guardar/Cargar Datos
 
     public List<StatEntry> GetStatEntries()
     {
@@ -125,9 +123,8 @@ public class StatManager : MonoBehaviour
         if (loadedEntries == null) return;
 
         statEntries = new List<StatEntry>(loadedEntries);
-        SyncDictFromList(); // Sincroniza el diccionario interno
+        SyncDictFromList();     
 
-        // Notifica a todos los listeners (UI, etc) del cambio
         foreach (var entry in statEntries)
         {
             OnStatChanged?.Invoke(entry.statType, entry.value);
