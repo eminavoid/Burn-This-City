@@ -31,21 +31,31 @@ public class StatAllocatorUI : MonoBehaviour
     {
         UpdateUI();
     }
+
     private void UpdateUI()
     {
         if (StatManager.Instance == null) return;
 
         int totalSpent = 0;
 
+        const int ABSOLUTE_MIN_VALUE = 1;
+
+        const int INITIAL_ALLOCATION = 18;
+
+        int effectiveTotalPoints = totalPointsToAssign + INITIAL_ALLOCATION;
+
         foreach (var entry in statEntries)
         {
             StatManager.StatType type = entry.GetStatType();
             int currentValue = StatManager.Instance.GetStat(type);
 
-            totalSpent += (currentValue - 1);
+            int spentOnStat = currentValue - ABSOLUTE_MIN_VALUE;
+
+            totalSpent += spentOnStat;
         }
 
-        int pointsRemaining = totalPointsToAssign - totalSpent;
+        int pointsRemaining = effectiveTotalPoints - totalSpent;
+
         pointsRemainingText.text = $"Puntos Restantes: {pointsRemaining}";
 
         startGameButton.interactable = (pointsRemaining == 0);
@@ -55,6 +65,7 @@ public class StatAllocatorUI : MonoBehaviour
             entry.Refresh(pointsRemaining);
         }
     }
+
     public void StartGame()
     {
         if (startGameButton.interactable)
