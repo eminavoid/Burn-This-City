@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: KR 9.1.1.1.1.1.1
+  m_EditorClassIdentifier: 
+  npcName: Karolin Reiter
+  npcText: '"You must ask the receptionist for access to all floors of the building.
+    Once she grants it, proceed to the lowest sublevel: the foundations. Once there,
+    simply place the briefcase against a pillar marked with a yellow ''X'' and press
+    this hidden button."
+
+    Karolin shows you a button concealed in the briefcase''s
+    handle.
+
+
+    "Under no circumstances are you to open the briefcase or press
+    the button before reaching the third column. There shouldn''t be any guards in
+    there. Once you''ve placed it, I strongly recommend you exit the building quickly
+    and put as much distance as possible between yourself and it. Any questions?"
+
+'
+  choices:
+  - playerText: '"Yes, could you repeat it?"'
+    defaultNode: {fileID: 11400000, guid: 7d54fbea60e1c034e885dc8a2035e837, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"No, everything is clear!"'
+    defaultNode: {fileID: 11400000, guid: e32d54572106844499041b453275eb2d, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

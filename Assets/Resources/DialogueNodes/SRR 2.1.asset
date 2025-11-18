@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: SRR 2.1
+  m_EditorClassIdentifier: 
+  npcName: First Right Rubble
+  npcText: SUCCESS With your sharp eyes, you spot some useful items among the debris.
+    But that's not all, you also find some tools in relatively good condition.
+  choices:
+  - playerText: (+1 TOOLS) (+1 Cigar)
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: 3076d4666d91cb4498e5f86eb608d515, type: 2}
+      amount: 1
+    - item: {fileID: 11400000, guid: ec8f21ef7051c9449820d642c3bec4b9, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 11400000, guid: 357276bf6d83265458f1304c4fd43b33, type: 2}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

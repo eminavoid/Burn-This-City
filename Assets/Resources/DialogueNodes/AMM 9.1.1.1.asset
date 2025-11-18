@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 9.1.1.1
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: "SUCCESS You study the strange letters for a moment... Patterns begin
+    to emerge, repeating clusters, symmetrical shifts. It isn\u2019t random; it\u2019s
+    deliberate. A Vigen\xE8re cipher, and the keyword is written plainly in the text
+    itself: \u2018THIRDCOLUMN.\u2019 With that realization, the symbols start to
+    unfold into words, and the message slowly reveals itself.\r\nThe code uses a
+    Vigen\xE8re cipher, a form of letter substitution where each character is shifted
+    along the alphabet by an amount determined by the keyword. In this case, the
+    keyword \u2018THIRDCOLUMN\u2019 is repeated across the message. Each letter of
+    the keyword tells how far to shift the corresponding letter of the text. By reversing
+    those shifts, the jumble of letters resolves into the hidden message.\r\nElementary,
+    really.\r\n"
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: 207198f2f1c34a64a8f7ee4459475764, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

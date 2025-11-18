@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: BMM 3.1
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'SUCCESS You observe the man carefully, analyzing where he''s looking,
+    what seems to hold his attention, and his body language. He seems particularly
+    interested in two things: the man speaking on the crates (the Commissioner) and
+    the movements of the camp guards. While watching him, you also notice a bulge
+    in his pants... a hidden weapon, maybe? Or something else? Your analysis is abruptly
+    cut short when the mysterious man addresses you again.
+
+    "Hey, eyes up here.
+    Or better yet, why don''t you stop staring and go make yourself useful?"
+
+'
+  choices:
+  - playerText: '"It''s a free camp, I can look at whoever I want. And who are you,
+      anyway? What are you doing here?"'
+    defaultNode: {fileID: 11400000, guid: 602fd65d4c91c634b968331f3ff4c7f8, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Alright, fine. I was leaving anyway"'
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

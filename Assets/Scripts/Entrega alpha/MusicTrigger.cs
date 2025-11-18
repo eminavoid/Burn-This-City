@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class MusicTrigger : MonoBehaviour
 {
-    [Header("Referencia al reproductor de música de la escena")]
-    [SerializeField] private AudioSource musicPlayer;
-
     [Header("Nueva canción al entrar")]
     [SerializeField] private AudioClip newClip;
 
@@ -16,11 +13,10 @@ public class MusicTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        if (alreadyPlayed && playOnlyOnce) Destroy(this);
+        if (alreadyPlayed && playOnlyOnce) Destroy(gameObject);
 
-        if (musicPlayer != null && newClip != null && musicPlayer.clip != newClip)
+        if (newClip != null)
         {
-            musicPlayer.clip = newClip;
             AudioManager.Instance.PlayMusic(newClip);
             alreadyPlayed = true;
         }

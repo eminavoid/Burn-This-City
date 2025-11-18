@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: AMM 5.1.1.1
+  m_EditorClassIdentifier: 
+  npcName: Misterious Man
+  npcText: 'SUCCESS Your bluntness catches him off guard. He clears his throat nervously.
+
+    "Heh,
+    guess I had you figured wrong. Not too proud to squeeze a guy, huh? Fine, fine
+    - can''t say I''m not generous. Take this, but that''s it. And don''t even think
+    about talking to the guards... unless you want real problems."
+
+'
+  choices:
+  - playerText: Continue ( +1 Cigar)
+    defaultNode: {fileID: 11400000, guid: 7d053ba0d870c6645be2c25123347e62, type: 2}
+    grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: ec8f21ef7051c9449820d642c3bec4b9, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

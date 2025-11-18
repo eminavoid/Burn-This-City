@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: EI 1.1.1.1.1.4.1
+  m_EditorClassIdentifier: 
+  npcName: Commissioner Elsner
+  npcText: 'The commissioner frowns; you can''t tell if it''s because of his worries
+    or your direct manner of speaking.
+
+    
+
+    "I see, citizen. Please, hand
+    over your papers. After all, I can''t just stamp anything people ask for without
+    checking it first."
+
+    
+
+    He grumbles under his breath, but not so quietly
+    that you can''t hear him.
+
+    
+
+    "What I wouldn''t give for an assistant
+    to handle the ruder ones... or an office where I could do my work in peace."
+
+'
+  choices:
+  - playerText: Hand over the documents
+    defaultNode: {fileID: 11400000, guid: e5beb9f184a69634489671db6144b99e, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

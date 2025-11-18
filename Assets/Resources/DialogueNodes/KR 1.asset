@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: KR 1
+  m_EditorClassIdentifier: 
+  npcName: Karolin Reiter
+  npcText: 'Before you can even fully enter the camp, a woman is already watching
+    you with a severe look and a revolver in her hand. This must be Karolin Reiter,
+    one of the leaders of the insurgency. You stick out like a sore thumb among the
+    camp''s inhabitants, so there''s no hiding from her. She looks you up and down,
+    as if trying to figure you out. When she''s finished, she speaks for the first
+    time.
+
+    "So, what happened to Fritz? The man you were supposed to deliver
+    the letter to? I''m guessing he won''t be showing up down here in the future,
+    eh?"
+
+'
+  choices:
+  - playerText: '"I''m sorry, Fritz is dead."'
+    defaultNode: {fileID: 11400000, guid: 57374de214c45d14a91ec89c8bfb20cc, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Karolin Reiter? I have a letter for you."'
+    defaultNode: {fileID: 11400000, guid: f99dda20283538c469399d518dbe0841, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: '"Huh? Fritz? Lady, I came here to deliver a letter, and I was promised
+      good pay for it!"'
+    defaultNode: {fileID: 11400000, guid: 8303113f24764a94394c4cb217186e89, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

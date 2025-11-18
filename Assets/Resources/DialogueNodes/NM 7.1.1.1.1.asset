@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: NM 7.1.1.1.1
+  m_EditorClassIdentifier: 
+  npcName: Nervous Man
+  npcText: "SUCCESS Karolin Reiter... Karolin Reiter... where do you know that name
+    from? You think for a moment until it hits you\u2014you remember a list of insurgent
+    names published in the newspaper a few weeks ago. Karolin Reiter was on that
+    list, not as a foot soldier, but as one of the movement's high-ranking leaders."
+  choices:
+  - playerText: '"If I''m delivering to someone that important, the reward could
+      be huge!"'
+    defaultNode: {fileID: 11400000, guid: 2ecc33b53d443a3449de061e2aee59db, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

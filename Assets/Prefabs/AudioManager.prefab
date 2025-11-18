@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a542239e039645b40ac7580f4d1e06f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuMusic: {fileID: 8300000, guid: f357af46d6480084b9f4f69927c9b903, type: 3}
   sfxSource: {fileID: 0}
   musicSource: {fileID: 0}
+  fadeDuration: 1.5
   sfxVolume: 1
   musicVolume: 0.5
