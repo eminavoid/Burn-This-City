@@ -36,6 +36,11 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private ContainerGridUI containerGridUI;
     public ContainerGridUI ContainerGridUI => containerGridUI;
 
+    [Header("Tooltip Settings")]
+    [SerializeField] private GameObject tooltipObject;
+    [SerializeField] private TMP_Text tooltipText;
+    [SerializeField] private Vector3 tooltipOffset = new Vector3(15, -15, 0);
+
     public bool IsBackpackOpen => backpackRoot && backpackRoot.activeSelf;
     public bool IsSplitOpen => splitRoot && splitRoot.activeSelf;
     public Container CurrentContainer { get; private set; }
@@ -124,6 +129,10 @@ public class InventoryUI : MonoBehaviour
             {
                 HideActiveConsumeButton();
             }
+        }
+        if (tooltipObject != null && tooltipObject.activeSelf)
+        {
+            tooltipObject.transform.position = Input.mousePosition + tooltipOffset;
         }
     }
 
@@ -286,5 +295,19 @@ public class InventoryUI : MonoBehaviour
     public void ForceContainerRefresh()
     {
         if (containerGridUI != null) containerGridUI.Refresh();
+    }
+
+    public void ShowTooltip(string itemName)
+    {
+        if (tooltipObject == null || tooltipText == null) return;
+
+        tooltipText.text = itemName;
+        tooltipObject.SetActive(true);
+        tooltipObject.transform.SetAsLastSibling();
+    }
+    public void HideTooltip()
+    {
+        if (tooltipObject != null)
+            tooltipObject.SetActive(false);
     }
 }

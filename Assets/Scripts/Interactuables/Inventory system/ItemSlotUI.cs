@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.EventSystems;
 
-public class ItemSlotUI : MonoBehaviour
+public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TMP_Text countText;
@@ -73,4 +74,25 @@ public class ItemSlotUI : MonoBehaviour
     }
 
     public Image IconImage => iconImage;
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (currentItem != null)
+        {
+            // Access the singleton to show the text
+            if (InventoryUI.Instance != null)
+            {
+                InventoryUI.Instance.ShowTooltip(currentItem.displayName);
+            }
+        }
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        // Hide the text when mouse leaves the slot
+        if (InventoryUI.Instance != null)
+        {
+            InventoryUI.Instance.HideActiveConsumeButton(); // (Optional: keep strictly if you want)
+            InventoryUI.Instance.HideTooltip();
+        }
+    }
 }
