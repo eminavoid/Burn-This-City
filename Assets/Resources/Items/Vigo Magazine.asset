@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vigo Magazine
   m_EditorClassIdentifier: 
   displayName: Vigor Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 57a84475e5db54e49bc5e09d637707b0, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

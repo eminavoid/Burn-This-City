@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Perception Magazine
   m_EditorClassIdentifier: 
   displayName: Perception Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 0f2ac1e8ce9b0cc479ed7f3d8aefb16e, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Canned Food
   m_EditorClassIdentifier: 
   displayName: Canned Food
-  icon: {fileID: 21300000, guid: a1b2855c711f6d04b9a2d8c9b73cd9ed, type: 3}
+  icon: {fileID: 21300000, guid: fcf5153f54045ae4f809d60b6b2041d2, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

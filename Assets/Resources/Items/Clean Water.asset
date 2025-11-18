@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clean Water
   m_EditorClassIdentifier: 
   displayName: Clean Water
-  icon: {fileID: -2629967820777023830, guid: fe3a2d0964b35f5488eca2f0379f1ccc, type: 3}
+  icon: {fileID: 21300000, guid: 75cdbbfcfaa854548b663a801d5c45c4, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

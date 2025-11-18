@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trickery Magazine
   m_EditorClassIdentifier: 
   displayName: Trickery Magazine
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ab81cb8d6e239b5479496d661f473cd0, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

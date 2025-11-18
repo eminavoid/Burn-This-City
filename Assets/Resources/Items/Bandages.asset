@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bandages
   m_EditorClassIdentifier: 
   displayName: Bandages
-  icon: {fileID: 21300000, guid: df112d69aad2ca34e9603b5bba7f44fc, type: 3}
+  icon: {fileID: 21300000, guid: d21d941bf65686741958fd54a8c2ef57, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1

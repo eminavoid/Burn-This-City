@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Trash 4
   m_EditorClassIdentifier: 
   displayName: Trash
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8e060cbcbad7d10498358e8ac5ee79b4, type: 3}
   stackable: 0
   maxStack: 1
   isConsumable: 1
