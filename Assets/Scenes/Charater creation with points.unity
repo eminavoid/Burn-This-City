@@ -6473,7 +6473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56a5b0aadd12bb498b684eff40fb301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPointsToAssign: 36
+  totalPointsToAssign: 27
   pointsRemainingText: {fileID: 1093247688}
   startGameButton: {fileID: 944131341}
   statEntries:
