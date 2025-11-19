@@ -17,7 +17,7 @@ MonoBehaviour:
     The captain straightens his back and replies in a much more serious tone than
     before:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: c87e24c7aa36be448a1728753bc65e60, type: 2}
     grantedReward: []
     defaultItemRewards: []

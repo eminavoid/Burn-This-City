@@ -17,7 +17,7 @@ MonoBehaviour:
     to explode, until, suddenly, he calms down in a rather chilling way. Then he
     says:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: a70ab773993ecfd4b92371156d5364d3, type: 2}
     grantedReward: []
     defaultItemRewards: []

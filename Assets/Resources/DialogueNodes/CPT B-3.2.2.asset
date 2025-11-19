@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "Careful, rebel. Wouldn\u2019t want us to mistake you for an insurgent.
     Or maybe you\u2019d like to have a little chat with my friend in black?"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 0910b96e2f6cb224789ed48f46e37660, type: 2}
     grantedReward: []
     defaultItemRewards: []

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: BOMB 3.1S
+  m_EditorClassIdentifier: 
+  npcName: THE ELEPHANT IN THE ROOM
+  npcText: SUCCESS You did it. With extreme care you manage to disconnect the cables.
+    It gave off a few sparks before shutting down, which, if you are honest, made
+    your whole life flash before your eyes. But after that moment of absolute terror,
+    you realize the bomb was successfully disarmed. You let out a breath and fall
+    back, victorious. You feel confident that you could do it again if the opportunity
+    arises, now that you have done it once.
+  choices:
+  - playerText: Onward! (+1 EUREKA!)
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards:
+    - item: {fileID: 11400000, guid: dfd2a1e23c488ef44a658efb2a38791c, type: 2}
+      amount: 1
+    nextStartingNodeDefault: {fileID: 11400000, guid: 357276bf6d83265458f1304c4fd43b33, type: 2}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: Captain Schweinar
   npcText: "I see. Well then, I think we\u2019re done here."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 428cac39b6290db4e8e95167e87e1c44, type: 2}
     grantedReward: []
     defaultItemRewards: []

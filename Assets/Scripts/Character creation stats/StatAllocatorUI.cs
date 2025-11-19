@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StatAllocatorUI : MonoBehaviour
 {
-    [Header("Configuración")]
+    [Header("Configuraciï¿½n")]
     [SerializeField] private int totalPointsToAssign = 18;
 
     [Header("Referencias de UI")]
@@ -56,7 +56,7 @@ public class StatAllocatorUI : MonoBehaviour
 
         int pointsRemaining = effectiveTotalPoints - totalSpent;
 
-        pointsRemainingText.text = $"Puntos Restantes: {pointsRemaining}";
+        pointsRemainingText.text = $"Remaining Points: {pointsRemaining}";
 
         startGameButton.interactable = (pointsRemaining == 0);
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: Capyain Schweinar
   npcText: "I see. Well then, I think we\u2019re done here."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 8e4e5acba9efc0040ae87485edf0ab65, type: 2}
     grantedReward: []
     defaultItemRewards: []

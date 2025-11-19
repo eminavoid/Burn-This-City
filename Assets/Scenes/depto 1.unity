@@ -7194,7 +7194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821d261aeaf01b043b2e7adc93443a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicPlayer: {fileID: 0}
   newClip: {fileID: 8300000, guid: f357af46d6480084b9f4f69927c9b903, type: 3}
   playOnlyOnce: 1
 --- !u!61 &1378571520
@@ -8428,7 +8427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1671943321
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10077,7 +10076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2019954557
 Transform:
   m_ObjectHideFlags: 0

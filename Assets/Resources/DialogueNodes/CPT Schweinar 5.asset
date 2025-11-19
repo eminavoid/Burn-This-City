@@ -18,7 +18,7 @@ MonoBehaviour:
     Diesmark are now called insurgents. \r\nYour reflection is interrupted again
     by the captain.\r"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: ae05204a1dfffcf41baac6d50c25389e, type: 2}
     grantedReward: []
     defaultItemRewards: []

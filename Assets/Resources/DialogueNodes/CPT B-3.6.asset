@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "The captain\u2019s grin widens. He looks at you with sadistic delight,
     and you can\u2019t help but wonder if he enjoys this kind of work a bit too much."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 494184504300e824f8a0d05876801bf7, type: 2}
     grantedReward: []
     defaultItemRewards: []

@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: 
   npcText: "So, a shy one, eh? Cat got your tongue? HAHAHAHAHAHA!\r"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: ce1fc89182c49314e83e090437a95ece, type: 2}
     grantedReward: []
     defaultItemRewards: []

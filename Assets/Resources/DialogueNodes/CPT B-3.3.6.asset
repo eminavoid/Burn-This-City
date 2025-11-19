@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: Lieutenant! Take this insurgent to a detention cell immediately! The factories
     are always in need of fresh meat.
   choices:
-  - playerText: 1. (GAME OVER)
+  - playerText: (GAME OVER)
     defaultNode: {fileID: 11400000, guid: 317e5c0dd28b31c40a434f69e1a7131a, type: 2}
     grantedReward:
     - rewardType: 1

@@ -18,7 +18,7 @@ MonoBehaviour:
     some sort of puzzle. After a few eternal moments, he scoffs, and with an arrogant
     expression, addresses you again."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: df1d8da1d46df2741af4b5a2743db760, type: 2}
     grantedReward: []
     defaultItemRewards: []

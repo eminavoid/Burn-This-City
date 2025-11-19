@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "Mmm, let\u2019s see\u2026 transit visa, eh? What\u2019s the matter, rebel?
     Got tired of your city?"
   choices:
-  - playerText: 1. (Stay silent)
+  - playerText: (Stay silent)
     defaultNode: {fileID: 11400000, guid: d2284a5e9b4c33f4c8313e740934516f, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -35,7 +35,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 2. More like tired of the occupation.
+  - playerText: More like tired of the occupation.
     defaultNode: {fileID: 11400000, guid: 70f590d1f58f469488447b24a83b1a48, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -54,7 +54,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: "3. Things are\u2026 difficult. I need a clean slate."
+  - playerText: "Things are\u2026 difficult. I need a clean slate."
     defaultNode: {fileID: 11400000, guid: 206a7c099b8e77345813bf9f9c7bb353, type: 2}
     grantedReward: []
     defaultItemRewards: []

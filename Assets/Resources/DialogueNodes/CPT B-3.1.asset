@@ -17,7 +17,7 @@ MonoBehaviour:
     he\u2019s searching for a clever reply to what you\u2019ve just said. Then he
     smirks and says:"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 684480229b491c34e8a923147e7eabd7, type: 2}
     grantedReward: []
     defaultItemRewards: []

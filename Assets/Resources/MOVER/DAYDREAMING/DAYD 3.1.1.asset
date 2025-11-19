@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: DAYD 3.1.1
+  m_EditorClassIdentifier: 
+  npcName: DAYDREAMING
+  npcText: Part of you, however, wished you had stayed buried. When you emerged,
+    you could not believe what you were seeing. Your house, your street, your entire
+    district was being bombed. You spent hours trying to dig your family out, even
+    as more explosions tore the ground open only a few meters away. Eventually you
+    found them, or what was left of them. Everything after that is a blur. You wandered
+    through the chaos until you somehow ended up at the refugee camp. And now you
+    are here. You wonder if this nightmare will ever end.
+  choices:
+  - playerText: "Let\u2019s not get our hopes up. What else is there to see?"
+    defaultNode: {fileID: 11400000, guid: 9af77ffd4e977674abae1185d78e7a0e, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

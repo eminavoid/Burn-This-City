@@ -17,7 +17,7 @@ MonoBehaviour:
     forming on his face, satisfied after successfully intimidating an unarmed civilian.\r\nHe
     then turns back to you:\r"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: eb732d833b20e72499db511d492507cc, type: 2}
     grantedReward: []
     defaultItemRewards: []

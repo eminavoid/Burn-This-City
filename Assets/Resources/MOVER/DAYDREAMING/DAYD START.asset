@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: DAYD START
+  m_EditorClassIdentifier: 
+  npcName: DAYDREAMING
+  npcText: "In front of you lies a vast expanse of ruins, factories, and, of course,
+    the pride of Diesmark: the Hoherstahl, the great obelisk that, even after the
+    siege, still stands tall and proud at the center of the city. The landscape feels
+    almost fantastical; how many times did you gaze upon the city\u2019s skyline,
+    losing yourself in its countless nooks and turns? One could spend a lifetime
+    exploring it with their eyes and still leave secrets undiscovered. And now? Now
+    all those secrets, all those stories\u2026 lie buried beneath the ruins of what
+    used to be your home. You catch yourself daydreaming\u2026"
+  choices:
+  - playerText: (K - EASY) What became of the Hoherstahl now that the city has fallen?
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 0
+      comparisonType: 3
+      requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 277ea62a55229f34abcf1e099bcfcf0e, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: e54b8f756d40ee543938d8f0da599e13, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: (K - EASY) The smog from the western factories catches your attention.
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements:
+    - statType: 0
+      comparisonType: 3
+      requiredAmount: 3
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 11400000, guid: 5d8a15b61cfc79f4b933691dde9178f6, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 144fee6f0a026354eb6a689f6e6de399, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0
+  - playerText: Force yourself to look upon the residential district, or what remains
+      of it.
+    defaultNode: {fileID: 11400000, guid: b8932784b3d2820438111b8cb786f5f0, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
     Now then, before I go over your papers, protocol says I have to ask you a few
     questions."
   choices:
-  - playerText: 1. Answer his questions
+  - playerText: Answer his questions
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards: []

@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: 
   npcText: 'Without taking his eyes off you, he shouts:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: b4e8b021c5fc86c4aa3c487d2915ca43, type: 2}
     grantedReward: []
     defaultItemRewards: []

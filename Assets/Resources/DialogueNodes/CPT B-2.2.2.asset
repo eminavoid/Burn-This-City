@@ -16,8 +16,8 @@ MonoBehaviour:
   npcText: "So we\u2019ve got a rebel with guts. Tell me, what good is a rebel who
     hasn\u2019t learned his lesson to the Rauchreich?"
   choices:
-  - playerText: 1. I have no interest in being of use to your empire. I just want
-      to leave this damned city.
+  - playerText: I have no interest in being of use to your empire. I just want to
+      leave this damned city.
     defaultNode: {fileID: 11400000, guid: 8f324eea6405c71478ade2936948dca6, type: 2}
     grantedReward: []
     defaultItemRewards: []

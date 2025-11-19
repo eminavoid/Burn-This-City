@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: Captain Schweinar
   npcText: Hello? Rebel? Anyone in there?
   choices:
-  - playerText: "1. (Rebel, you\u2019re tired of hearing that word)"
+  - playerText: "(Rebel, you\u2019re tired of hearing that word)"
     defaultNode: {fileID: 11400000, guid: 1424dee9bb1f2a546830a63f038a4142, type: 2}
     grantedReward: []
     defaultItemRewards: []
