@@ -116,6 +116,16 @@ public class DoorTeleport : MonoBehaviour, IInteractable
         Debug.Log("¡Teletransportado!");
     }
 
+    public void SceneTeleport(string _sceneToLoad)
+    {
+        if (!string.IsNullOrEmpty(_sceneToLoad))
+        {
+            SceneSpawnManager.NextSpawnPoint = useCustomSpawn ? targetSpawnPointName : null;
+                    
+            ScreenFader.Instance.FadeOutAndLoadScene(_sceneToLoad);
+        }
+    }
+
     private void LateUpdate()
     {
         if (playerInRange)
