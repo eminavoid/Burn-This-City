@@ -4824,7 +4824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 538676468962076333, guid: 76195b91acd73674d85408ad775941f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.275152
+      value: -29.997135
       objectReference: {fileID: 0}
     - target: {fileID: 538676468962076333, guid: 76195b91acd73674d85408ad775941f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11744,12 +11744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'MINE BLAST:                                                 So close,
-        yet so far from finding out what was waiting on the other side. Maybe this
-        Karolin Reiter would have had the answer to all your problems. Or maybe they
-        would have thrown a bag over your head, dragged you into some dark room and
-        executed you on the spot. One thing is certain: none of that matters to a
-        puddle of gore in the middle of the sewers. '
+      value: 'MINE BLAST: So close, yet so far from finding out what was waiting
+        on the other side. Maybe this Karolin Reiter would have had the answer to
+        all your problems. Or maybe they would have thrown a bag over your head,
+        dragged you into some dark room and executed you on the spot. One thing is
+        certain: none of that matters to a puddle of gore in the middle of the sewers. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -12123,12 +12122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'MINE BLAST:                                                 So close,
-        yet so far from finding out what was waiting on the other side. Maybe this
-        Karolin Reiter would have had the answer to all your problems. Or maybe they
-        would have thrown a bag over your head, dragged you into some dark room and
-        executed you on the spot. One thing is certain: none of that matters to a
-        puddle of gore in the middle of the sewers. '
+      value: 'MINE BLAST: So close, yet so far from finding out what was waiting
+        on the other side. Maybe this Karolin Reiter would have had the answer to
+        all your problems. Or maybe they would have thrown a bag over your head,
+        dragged you into some dark room and executed you on the spot. One thing is
+        certain: none of that matters to a puddle of gore in the middle of the sewers. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -19239,7 +19237,7 @@ Transform:
   m_GameObject: {fileID: 725947460}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.308239, y: -0.17724566, z: 0.07089844}
+  m_LocalPosition: {x: -30.030222, y: -0.17724566, z: 0.07089844}
   m_LocalScale: {x: 0.5908204, y: 0.5908204, z: 0.5908204}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35209,12 +35207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'MINE BLAST:                                                 So close,
-        yet so far from finding out what was waiting on the other side. Maybe this
-        Karolin Reiter would have had the answer to all your problems. Or maybe they
-        would have thrown a bag over your head, dragged you into some dark room and
-        executed you on the spot. One thing is certain: none of that matters to a
-        puddle of gore in the middle of the sewers. '
+      value: 'MINE BLAST: So close, yet so far from finding out what was waiting
+        on the other side. Maybe this Karolin Reiter would have had the answer to
+        all your problems. Or maybe they would have thrown a bag over your head,
+        dragged you into some dark room and executed you on the spot. One thing is
+        certain: none of that matters to a puddle of gore in the middle of the sewers. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -37448,7 +37445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9099595789680006516, guid: 16e4838c4f0107945bdad27da5071f23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.496
+      value: 65.274
       objectReference: {fileID: 0}
     - target: {fileID: 9099595789680006516, guid: 16e4838c4f0107945bdad27da5071f23, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41226,7 +41223,7 @@ Transform:
   m_GameObject: {fileID: 1530111325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.272789, y: -0.528194, z: 0.07089844}
+  m_LocalPosition: {x: -29.994772, y: -0.528194, z: 0.07089844}
   m_LocalScale: {x: 0.51519984, y: 0.51519984, z: 0.51519984}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55312,7 +55309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.47
+      value: 65.248
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.y

@@ -6625,16 +6625,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnFailure.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'FALLED TO YOUR DEATH:                         Who would have thought
-        that throwing yourself down a dark hole at the top of a collapsing building
-        might turn out to be a bad idea. Your body lies broken on the cold floor,
-        and as consciousness slips away, a final thought crosses your mind. Did anyone
-        hear the sound of your fall, or will they only find you once your body starts
-        to stink.Who would have thought that throwing yourself down a dark hole at
-        the top of a collapsing building might turn out to be a bad idea. Your body
-        lies broken on the cold floor, and as consciousness slips away, a final thought
-        crosses your mind. Did anyone hear the sound of your fall, or will they only
-        find you once your body starts to stink. '
+      value: 'FALLED TO YOUR DEATH:  Who would have thought that throwing yourself
+        down a dark hole at the top of a collapsing building might turn out to be
+        a bad idea. Your body lies broken on the cold floor, and as consciousness
+        slips away, a final thought crosses your mind. Did anyone hear the sound
+        of your fall, or will they only find you once your body starts to stink.Who
+        would have thought that throwing yourself down a dark hole at the top of
+        a collapsing building might turn out to be a bad idea. Your body lies broken
+        on the cold floor, and as consciousness slips away, a final thought crosses
+        your mind. Did anyone hear the sound of your fall, or will they only find
+        you once your body starts to stink. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -19114,12 +19114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'POKED THE BEAR:               Maybe handling the giant bomb lodged
-        in the floor a bit more delicately would have been the smart move. But it
-        is far too late for that now. Everything ended in the blink of an eye. All
-        you can do is hope the explosion did not take any innocent lives with it,
-        because if there is an afterlife waiting on the other side, then you are
-        in serious trouble. '
+      value: 'POKED THE BEAR: Maybe handling the giant bomb lodged in the floor a
+        bit more delicately would have been the smart move. But it is far too late
+        for that now. Everything ended in the blink of an eye. All you can do is
+        hope the explosion did not take any innocent lives with it, because if there
+        is an afterlife waiting on the other side, then you are in serious trouble. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

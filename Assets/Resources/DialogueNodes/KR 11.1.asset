@@ -21,7 +21,7 @@ MonoBehaviour:
 
 '
   choices:
-  - playerText: '"Onward!" (+1 Explosives)'
+  - playerText: '"Onward!" (+1 Briefcase)'
     defaultNode: {fileID: 0}
     grantedReward: []
     defaultItemRewards:
