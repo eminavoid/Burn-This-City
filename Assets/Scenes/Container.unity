@@ -5092,7 +5092,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: 'Game Over: Why Would You Say That?'
+      value: "YOU WERE DRAGGED TO THE FACTORIES Maybe antagonizing a Rauchreich officer
+        wasn\u2019t the best idea. That\u2019s the last thought that crosses your
+        mind before they shove you into a truck bound for the industrial district.
+        It was once the pride and joy of Diesmark. Now it\u2019s an industrial hellscape
+        where you\u2019ll work endless shifts from sunrise to sunset until your body
+        breaks and they toss it into the great smelting furnaces. A fate worse than
+        death awaits you."
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
