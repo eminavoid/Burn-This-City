@@ -58,3 +58,24 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
+  - playerText: Have you seen this kind of device before? (EUREKA)
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements:
+    - item: {fileID: 11400000, guid: dfd2a1e23c488ef44a658efb2a38791c, type: 2}
+      amount: 1
+    consumeRequirementsOnSuccess: 1
+    successNode: {fileID: 11400000, guid: faf3110eff5ede8418c6eb43e73c76ad, type: 2}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 11400000, guid: 91a9dcb9cdf71584db29ef7e90a4b5cb, type: 2}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

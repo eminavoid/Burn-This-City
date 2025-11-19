@@ -4650,7 +4650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045633897904665037, guid: 2a2547cc802fcec4bbabef868f782164, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4045633897904665037, guid: 2a2547cc802fcec4bbabef868f782164, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -6625,7 +6625,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnFailure.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: gameover 8
+      value: 'FALLED TO YOUR DEATH:                         Who would have thought
+        that throwing yourself down a dark hole at the top of a collapsing building
+        might turn out to be a bad idea. Your body lies broken on the cold floor,
+        and as consciousness slips away, a final thought crosses your mind. Did anyone
+        hear the sound of your fall, or will they only find you once your body starts
+        to stink.Who would have thought that throwing yourself down a dark hole at
+        the top of a collapsing building might turn out to be a bad idea. Your body
+        lies broken on the cold floor, and as consciousness slips away, a final thought
+        crosses your mind. Did anyone hear the sound of your fall, or will they only
+        find you once your body starts to stink. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6641,7 +6650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.037562
+      value: 8.4
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8606,6 +8615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3700901411451703148, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4455579208380078519, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -8840,7 +8853,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 1c1e833d648efc64e8b9c47bf5d2dfe2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10717,15 +10730,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40784314, g: 0.40784314, b: 0.40784314, a: 0.392}
+  m_Color: {r: 0.62352943, g: 0.62352943, b: 0.62352943, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3b2ab8337c9d77b4884dc1a294bacae8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11227,17 +11240,53 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 40f80336d99e5484b8b3bd167e5783fd, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 611442474}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.9448435
+      value: 2.0077944
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6818
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6818
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.94
+      value: 6.84
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.03
+      value: 34.75
       objectReference: {fileID: 0}
     - target: {fileID: 7765003792306835811, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18857,7 +18906,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: gameover 9
+      value: 'POKED THE BEAR:               Maybe handling the giant bomb lodged
+        in the floor a bit more delicately would have been the smart move. But it
+        is far too late for that now. Everything ended in the blink of an eye. All
+        you can do is hope the explosion did not take any innocent lives with it,
+        because if there is an afterlife waiting on the other side, then you are
+        in serious trouble. '
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

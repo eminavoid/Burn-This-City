@@ -4251,15 +4251,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.40784314, g: 0.40784314, b: 0.40784314, a: 0.392}
+  m_Color: {r: 0.62352943, g: 0.62352943, b: 0.62352943, a: 0.88235295}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3b2ab8337c9d77b4884dc1a294bacae8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5247,21 +5247,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: "ENDING A: AN EXPLOSIVE ENDING Tick. Tick. Boom! The briefcase erupts
-        in a massive explosion that devours everything around it. If you\u2019d had
-        a moment to feel surprise before being vaporized, you might have noticed
-        how enormous the blast was for such a small case. Those insurgents really
-        knew what they were doing. Too bad you won\u2019t live long enough to return
-        the favor. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
-      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: "ENDING D: THE RAUCHREICH\u2019S REWARD In the end, allying yourself
         with the Rauchreich was not such a great idea. But what did you expect? That
         they would actually help you? Really? The totalitarian government whose favorite
         pastime is crushing its own citizens? The interrogator never intended to
         help you. From the moment you stepped into his office, you became his plaything.
-        Sadistic bastard. Let\u2019s just hope it ends quickly. "
+        Sadistic bastard. Let\u2019s just hope it ends quickly."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: "ENDING A: AN EXPLOSIVE ENDING Tick. Tick. Boom! The briefcase erupts
+        in a massive explosion that devours everything around it. If you\u2019d had
+        a moment to feel surprise before being vaporized, you might have noticed
+        how enormous the blast was for such a small case. Those insurgents really
+        knew what they were doing. Too bad you won\u2019t live long enough to return
+        the favor."
       objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -19730,11 +19730,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3894066997095321541, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -24.99878
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4443449605405327771, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_Name
       value: Dialogue UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443449605405327771, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4727530723440073092, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -19806,7 +19810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892760161978104419, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 608
+      value: 645
       objectReference: {fileID: 0}
     - target: {fileID: 7892760161978104419, guid: c1f2d2f7079b04b42830fad812cfc719, type: 3}
       propertyPath: m_AnchoredPosition.y

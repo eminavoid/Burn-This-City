@@ -36,7 +36,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 2. Wait a moment! I was joking. Please, let's continue with the process
+  - playerText: Wait a moment! I was joking. Please, let's continue with the process
     defaultNode: {fileID: 11400000, guid: 1ba42964df7de064e8360141be9a36b9, type: 2}
     grantedReward: []
     defaultItemRewards: []

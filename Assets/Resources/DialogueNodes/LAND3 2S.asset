@@ -25,14 +25,17 @@ MonoBehaviour:
     defaultItemRewards: []
     nextStartingNodeDefault: {fileID: 0}
     raiseOnTalked: 0
-    statRequirements: []
+    statRequirements:
+    - statType: 0
+      comparisonType: 0
+      requiredAmount: 0
     itemRequirements: []
     consumeRequirementsOnSuccess: 0
     successNode: {fileID: 0}
     successRewards: []
     successItemRewards: []
     nextStartingNodeSuccess: {fileID: 0}
-    raiseOnSuccess: 0
+    raiseOnSuccess: 1
     failureNode: {fileID: 0}
     failureRewards: []
     failureItemRewards: []

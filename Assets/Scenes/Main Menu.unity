@@ -1615,6 +1615,7 @@ GameObject:
   - component: {fileID: 221501365}
   - component: {fileID: 221501364}
   - component: {fileID: 221501363}
+  - component: {fileID: 221501366}
   m_Layer: 5
   m_Name: exi
   m_TagString: Untagged
@@ -1685,9 +1686,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1152811770}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: ExitGame
+      - m_Target: {fileID: 221501366}
+        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
+        m_MethodName: OnClickExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1735,6 +1736,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221501361}
   m_CullTransparentMesh: 1
+--- !u!114 &221501366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221501361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b7a53094236034e81feda7bcb78194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &277738863
 GameObject:
   m_ObjectHideFlags: 0
@@ -4024,17 +4037,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107630412}
   m_CullTransparentMesh: 1
---- !u!114 &1152811770 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4784631625443969856, guid: a8a149d26859b5f46a43553151e3fdd3, type: 3}
-  m_PrefabInstance: {fileID: 1695033636}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a03d74d257988cc4db4046a05fc96933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1309343567
 GameObject:
   m_ObjectHideFlags: 0

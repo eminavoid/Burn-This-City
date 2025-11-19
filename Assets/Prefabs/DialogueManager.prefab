@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
-  successSFX: {fileID: 0}
-  failureSFX: {fileID: 0}
+  successSFX: {fileID: 8300000, guid: c2a53c0dc4950244697a2fee3e4cb2a1, type: 3}
+  failureSFX: {fileID: 8300000, guid: 8d58384c029931e4bb778ba4dcb00d2d, type: 3}
   nextDialogueSFX: {fileID: 8300000, guid: 668d106a4e6e33649a02547b3aabc273, type: 3}
   endDialogueSFX: {fileID: 8300000, guid: 8311ccfd91ee31d41a0c82f2ad26fea0, type: 3}
   current: {fileID: 0}
