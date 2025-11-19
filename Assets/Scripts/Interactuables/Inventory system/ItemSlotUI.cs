@@ -37,8 +37,13 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void Click()
     {
         onClick?.Invoke();
+
         if (InventoryUI.Instance != null)
         {
+            // NEW: Esconde el Tooltip inmediatamente al hacer click
+            InventoryUI.Instance.HideTooltip();
+
+            // Llama a la lógica que muestra/oculta el botón de consumir
             InventoryUI.Instance.ShowConsumeButtonFor(this);
         }
     }
@@ -77,10 +82,10 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (currentItem != null)
+        if (currentItem != null && InventoryUI.Instance != null)
         {
-            // Access the singleton to show the text
-            if (InventoryUI.Instance != null)
+            // Solo muestra el Tooltip si el Botón Consumir NO está visible para este slot
+            if (InventoryUI.Instance.GetCurrentSlotForConsume() != this)
             {
                 InventoryUI.Instance.ShowTooltip(currentItem.displayName);
             }
@@ -88,10 +93,11 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        // Hide the text when mouse leaves the slot
+        // El Tooltip debe ocultarse siempre que el puntero salga,
+        // a menos que el botón de consumir esté activo (pero la lógica del Tooltip ya lo oculta)
         if (InventoryUI.Instance != null)
         {
-            InventoryUI.Instance.HideActiveConsumeButton(); // (Optional: keep strictly if you want)
+            // Esto asegura que el Tooltip desaparezca cuando el mouse se mueve hacia el botón consumir
             InventoryUI.Instance.HideTooltip();
         }
     }

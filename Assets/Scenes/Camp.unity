@@ -1612,10 +1612,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1458276173}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: disabledAlpha
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: tooltipObject
       value: 
       objectReference: {fileID: 1276684775}
@@ -1624,49 +1620,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1178789212}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: splitCloseButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: pocketButtonsRoot
       value: 
       objectReference: {fileID: 176578919}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: splitLootAllButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: consumeButtonPrefab
       value: 
       objectReference: {fileID: 287400813}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: containerGridParent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: containerSlotPrefab
-      value: 
-      objectReference: {fileID: 228302823}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: backpackSoloGridParent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: backpackSoloSlotPrefab
-      value: 
-      objectReference: {fileID: 228302823}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: backpackSoloCloseButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: backpackSplitGridParent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: backpackSplitSlotPrefab
-      value: 
-      objectReference: {fileID: 228302823}
     - target: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
       propertyPath: 'pocketPanels.Array.data[0]'
       value: 
@@ -1739,51 +1699,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8246020287544242007, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8246020287544242007, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 7235225633858825212, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2430722819513980881, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 228302824}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
---- !u!1 &228302822 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2430722819513980881, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
-  m_PrefabInstance: {fileID: 228302821}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &228302823 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6684623273960776364, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
   m_PrefabInstance: {fileID: 228302821}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228302822}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f878018fb5439224792451860bf71797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &228302824
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228302822}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &228302825 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1553635922640616510, guid: aedd68fe8d654864599338f9b9368fe9, type: 3}
@@ -6778,7 +6709,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8770463498292967911, guid: d6d1d22a3c6049e4f8572cc299051d45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1276684780}
   m_SourcePrefab: {fileID: 100100000, guid: d6d1d22a3c6049e4f8572cc299051d45, type: 3}
 --- !u!114 &1276684773 stripped
 MonoBehaviour:
@@ -6801,6 +6735,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8770463498292967911, guid: d6d1d22a3c6049e4f8572cc299051d45, type: 3}
   m_PrefabInstance: {fileID: 1276684772}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1276684780
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276684775}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!4 &1277962158 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 538676468962076333, guid: 76195b91acd73674d85408ad775941f5, type: 3}

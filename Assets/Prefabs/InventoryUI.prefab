@@ -61,11 +61,11 @@ MonoBehaviour:
   - {fileID: 0}
   disabledAlpha: 0.2
   consumeButtonPrefab: {fileID: 0}
-  consumeButtonOffset: {x: 90, y: 0}
+  consumeButtonOffset: {x: 85, y: 0}
   containerGridUI: {fileID: 0}
   tooltipObject: {fileID: 0}
   tooltipText: {fileID: 0}
-  tooltipOffset: {x: 150, y: -12, z: 0}
+  tooltipOffset: {x: 75, y: 12, z: 0}
 --- !u!1001 &5926994782777910453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,14 +180,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8357348148531901284, guid: 69386ce66dd723148a276cc66476f668, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2845884545264271621}
+      addedObject: {fileID: 9035382613439721342}
   m_SourcePrefab: {fileID: 100100000, guid: 69386ce66dd723148a276cc66476f668, type: 3}
 --- !u!1 &2430722819513980881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8357348148531901284, guid: 69386ce66dd723148a276cc66476f668, type: 3}
   m_PrefabInstance: {fileID: 5926994782777910453}
   m_PrefabAsset: {fileID: 0}
---- !u!225 &2845884545264271621
+--- !u!225 &9035382613439721342
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
