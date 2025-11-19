@@ -50,7 +50,7 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Player"))
         {
-            icon.SetActive(true);
+            if (icon != null) icon.SetActive(true);
         }
     }
 
@@ -58,7 +58,7 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Player"))
         {
-            icon.SetActive(false);
+            if (icon != null) icon.SetActive(false);
         }
     }
 

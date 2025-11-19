@@ -218,10 +218,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: stats menu
       objectReference: {fileID: 0}
-    - target: {fileID: 8940752997173597427, guid: 5dc29d798af1f5b43911ba6b638e4240, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8957817209058028448, guid: 5dc29d798af1f5b43911ba6b638e4240, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2853,10 +2849,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 599630504}
     m_Modifications:
+    - target: {fileID: 487223130727910044, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487223130727910044, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2d2217ac073350409ca327917d01127, type: 3}
+    - target: {fileID: 2138443232935388161, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138443232935388161, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2d2217ac073350409ca327917d01127, type: 3}
     - target: {fileID: 2608579470869949526, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
       propertyPath: slotPrefab
       value: 
       objectReference: {fileID: 228302823}
+    - target: {fileID: 2673831129046057630, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946259721227790312, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3946259721227790312, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2d2217ac073350409ca327917d01127, type: 3}
     - target: {fileID: 4059509659787761451, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
       propertyPath: slotPrefab
       value: 
@@ -2865,10 +2889,30 @@ PrefabInstance:
       propertyPath: slotPrefab
       value: 
       objectReference: {fileID: 228302823}
+    - target: {fileID: 5346343860800362221, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5384965009646446636, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
       propertyPath: slotPrefab
       value: 
       objectReference: {fileID: 228302823}
+    - target: {fileID: 5908461633402070536, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6233431051684616890, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349301300875368855, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6349301300875368855, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2d2217ac073350409ca327917d01127, type: 3}
     - target: {fileID: 8994153431846546731, guid: 347bf16a7159bd54bb97771bc4158a21, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6887,6 +6931,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 599630504}
     m_Modifications:
+    - target: {fileID: 194756479279370073, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 264512023096967310, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6967,9 +7015,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 678163607712224270, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3251106783738320728, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700901411451703148, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455579208380078519, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059905466963234903, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
