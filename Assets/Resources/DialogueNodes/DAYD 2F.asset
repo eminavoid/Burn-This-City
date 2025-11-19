@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: DAYD 2F
+  m_EditorClassIdentifier: 
+  npcName: DAYDREAMING
+  npcText: "FAILURE The industrial district\u2026 once the heart of Diesmark, its
+    factories fed the insatiable hunger of the Rauchreich for generations, and during
+    the rebellion it was the main advantage the VLC had in the fight. When Diesmark
+    fell, the VLC collapsed. How can a war be won without rifles or ammunition? The
+    factories are still running, but for what purpose? You heard rumors, though you
+    never paid them much mind. One thing is certain, their production now belongs
+    to the Rauchreich."
+  choices:
+  - playerText: What else is there to see?
+    defaultNode: {fileID: 11400000, guid: d62fc5951545d344db37dc79c10bdc3f, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: HOLE 3.1F
+  m_EditorClassIdentifier: 
+  npcName: THE HOLE
+  npcText: FAILURE You are not fast enough to avoid taking a nasty hit. You drop
+    at high speed and feel a crack when your body slams against the metal at the
+    bottom. The pain is blinding, everything turns blurry, but you survive the initial
+    impact.
+  choices:
+  - playerText: Crash landing (-3 HP)
+    defaultNode: {fileID: 0}
+    grantedReward:
+    - rewardType: 1
+      statType: 0
+      amount: -3
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 1
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

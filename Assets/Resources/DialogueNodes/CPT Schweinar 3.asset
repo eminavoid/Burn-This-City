@@ -19,7 +19,7 @@ MonoBehaviour:
     you something, something you didn\u2019t hear. With a loud, deliberate cough,
     he drags you back to reality."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: ea8680e180738b9449c1bd4156d6e729, type: 2}
     grantedReward: []
     defaultItemRewards: []

@@ -16,8 +16,8 @@ MonoBehaviour:
   npcText: Ha! Difficult, you say? I bet in hindsight your little rebellion must
     look like a real stroke of genius!
   choices:
-  - playerText: "1. It wasn\u2019t stupid! Diesmark fought for a just cause. Even
-      outnumbered and outgunned, we fought bravely to the last man!"
+  - playerText: "It wasn\u2019t stupid! Diesmark fought for a just cause. Even outnumbered
+      and outgunned, we fought bravely to the last man!"
     defaultNode: {fileID: 11400000, guid: b686a36d57b4af043aec7a3136bcd388, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -36,8 +36,8 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: "2. I suppose so. If it hadn\u2019t been for this damned war\u2026
-      my family would still be alive."
+  - playerText: "I suppose so. If it hadn\u2019t been for this damned war\u2026 my
+      family would still be alive."
     defaultNode: {fileID: 11400000, guid: f67e89ef3a068794bb99e1c2a17bb84f, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -56,7 +56,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 3. (Stay silent)
+  - playerText: (Stay silent)
     defaultNode: {fileID: 11400000, guid: 79d68b4b82ae262409ed81ac12e92f53, type: 2}
     grantedReward: []
     defaultItemRewards: []

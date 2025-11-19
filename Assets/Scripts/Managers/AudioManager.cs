@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
     [Header("Default Volumes")] 
     [Range(0f, 1f)] [SerializeField] private float sfxVolume = 1f;
     [Range(0f, 1f)] [SerializeField] private float musicVolume = 0.5f;
+    
+    public float MusicVolume => musicVolume;
+    public float SFXVolume => sfxVolume;
 
     private Dictionary<string, AudioClip> sfxLibrary = new Dictionary<string, AudioClip>();
 
@@ -73,6 +76,8 @@ public class AudioManager : MonoBehaviour
             musicSource = go.AddComponent<AudioSource>();
             musicSource.loop = true;
         }
+        
+        LoadSavedVolumes();
         
         sfxSource.volume = sfxVolume;
         musicSource.volume = musicVolume;
@@ -149,5 +154,28 @@ public class AudioManager : MonoBehaviour
 
         musicSource.volume = startVolume;
         currentFade = null;
+    }
+    
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+        musicSource.volume = value;
+        PlayerPrefs.SetFloat("MusicVolume", value);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        sfxVolume = value;
+        sfxSource.volume = value;
+        PlayerPrefs.SetFloat("SFXVolume", value);
+    }
+    
+    private void LoadSavedVolumes()
+    {
+        if (PlayerPrefs.HasKey("MusicVolume"))
+            musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+
+        if (PlayerPrefs.HasKey("SFXVolume"))
+            sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
     }
 }

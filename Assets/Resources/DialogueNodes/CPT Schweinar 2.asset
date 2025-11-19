@@ -22,7 +22,7 @@ MonoBehaviour:
     intimidating thing about them are their helmets, particularly the prominent blood-red
     visor."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 9a14c66456ce60643be8b4f96fa76a82, type: 2}
     grantedReward: []
     defaultItemRewards: []

@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "The captain frowns, stares at you for a few seconds in disbelief, mutters
     a curse under his breath, and replies\r"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 1c47c99c71f4650418bd98e999b4014d, type: 2}
     grantedReward: []
     defaultItemRewards: []

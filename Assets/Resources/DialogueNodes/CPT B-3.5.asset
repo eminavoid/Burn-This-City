@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "The captain closes his eyes and pulls a face that can only be described
     as disgust, as though you\u2019ve just spoiled his moment."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: b6a7c9cd1a5cd224ab9135e8fbc96f15, type: 2}
     grantedReward: []
     defaultItemRewards: []

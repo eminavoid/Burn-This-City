@@ -23,7 +23,7 @@ MonoBehaviour:
     on the frontlines. A man like this would\u2019ve been cannon fodder during the
     rebellion."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 1dfe6c6b158068942be51c7c5f91e00b, type: 2}
     grantedReward: []
     defaultItemRewards: []

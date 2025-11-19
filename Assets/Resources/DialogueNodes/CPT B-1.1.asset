@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "The officer waits a moment for your reply, and when he realises he won\u2019t
     get one, he says:"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 234fe99cd97227e42ba8bd2df046acc5, type: 2}
     grantedReward: []
     defaultItemRewards: []

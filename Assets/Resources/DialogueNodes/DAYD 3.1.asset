@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: DAYD 3.1
+  m_EditorClassIdentifier: 
+  npcName: DAYDREAMING
+  npcText: "You open your eyes\u2026 and the memories hit you like a slap to the
+    face. It was morning. You were having breakfast with your family when suddenly
+    there was an explosion in the distance, then another, and another. You had grown
+    used to those sounds by then, but this time it was different, closer. Before
+    you could even react, everything went dark. The blast left you dazed, and the
+    debris buried you alive. You could barely breathe or move, but whether it was
+    divine intervention or pure chance, a second explosion blew away just enough
+    rubble for you to crawl out."
+  choices:
+  - playerText: Continue
+    defaultNode: {fileID: 11400000, guid: ef97d698b14895d40a6aa11b6ab66f65, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

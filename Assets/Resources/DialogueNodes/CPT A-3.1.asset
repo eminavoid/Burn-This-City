@@ -17,7 +17,7 @@ MonoBehaviour:
     shifts, first anger, then confusion, and finally exasperation. He breaks eye
     contact and says
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 9b442bef903dcad4d8fcbfb1b77452f5, type: 2}
     grantedReward: []
     defaultItemRewards: []

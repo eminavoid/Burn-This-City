@@ -17,7 +17,7 @@ MonoBehaviour:
     severity. The captain straightens his back and answers in a tone far more serious
     than before:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: c35b8a0fd4e5f2e429732ff8846df226, type: 2}
     grantedReward: []
     defaultItemRewards: []

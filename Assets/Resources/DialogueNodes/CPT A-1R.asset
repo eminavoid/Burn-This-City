@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: Captain Schweinar
   npcText: The documents, you idiot! I need to see your documents!
   choices:
-  - playerText: 1. Hand over your documents
+  - playerText: Hand over your documents
     defaultNode: {fileID: 11400000, guid: 68d8fda7144a0574192c317082ffefe0, type: 2}
     grantedReward: []
     defaultItemRewards: []

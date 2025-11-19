@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "Oh perfect, another imbecile from the refugee camp. Let me repeat it
     for you, nice and slow. I\u2013NEED\u2013TO\u2013SEE\u2013YOUR\u2013DO\u2013CU\u2013MENTS."
   choices:
-  - playerText: 1. Hand over your documents
+  - playerText: Hand over your documents
     defaultNode: {fileID: 11400000, guid: 68d8fda7144a0574192c317082ffefe0, type: 2}
     grantedReward: []
     defaultItemRewards: []

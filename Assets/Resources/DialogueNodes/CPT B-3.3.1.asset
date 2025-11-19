@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: 'His expression shifts again, this time to fury. He growls under his breath
     before responding:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: 7e04fa3fcaf727940882e4bb6fca848f, type: 2}
     grantedReward: []
     defaultItemRewards: []

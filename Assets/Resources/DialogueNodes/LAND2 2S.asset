@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: LAND2 2S
+  m_EditorClassIdentifier: 
+  npcName: SECOND LANDMINE
+  npcText: SUCCESS You successfully identify and navigate a relatively stable path
+    across the sewer debris. Despite the overpowering stench and noxious conditions,
+    your focus on maintaining a steady pace. The crossing is nerve-racking. You pass
+    throug uneven uneven terrain that puts you at risk of falling. But ultimately,
+    your vigilance paid off. You cleared the treacherous obstruction efficiently,
+    emerging unscathed and unstuck on the other side. The immediate, profound relief
+    marked a small victory, and the way forward is now open.
+  choices:
+  - playerText: Onward!
+    defaultNode: {fileID: 0}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

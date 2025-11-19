@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 237f5bc073a545746915ffe635632efc, type: 3}
+  m_Name: DAYD 1F
+  m_EditorClassIdentifier: 
+  npcName: DAYDREAMING
+  npcText: FAILURE Everything that happened after the siege is a blur to you. Once
+    the siege ended, you quickly relocated to the refugee camp. Once there, you managed
+    to keep a low profile, staying away from the news. At the time it seemed like
+    a good idea. What sense was there in overwhelming yourself with the humiliation
+    of your city? But now, looking back, you feel like a fish out of water.
+  choices:
+  - playerText: What else is there to see?
+    defaultNode: {fileID: 11400000, guid: 37ee3b6b636f3ea49917d24a27ec55ad, type: 2}
+    grantedReward: []
+    defaultItemRewards: []
+    nextStartingNodeDefault: {fileID: 0}
+    raiseOnTalked: 0
+    statRequirements: []
+    itemRequirements: []
+    consumeRequirementsOnSuccess: 0
+    successNode: {fileID: 0}
+    successRewards: []
+    successItemRewards: []
+    nextStartingNodeSuccess: {fileID: 0}
+    raiseOnSuccess: 0
+    failureNode: {fileID: 0}
+    failureRewards: []
+    failureItemRewards: []
+    nextStartingNodeFailure: {fileID: 0}
+    raiseOnFailure: 0

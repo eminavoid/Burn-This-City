@@ -38,7 +38,7 @@ public class DialogueUI : MonoBehaviour
     private void Update()
     {
         // Permite saltar el efecto de tipeo presionando espacio o clic izquierdo
-        if (isTyping && (Input.GetKeyDown(KeyCode.Space)))
+        if (isTyping && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
         {
             SkipTyping();
         }

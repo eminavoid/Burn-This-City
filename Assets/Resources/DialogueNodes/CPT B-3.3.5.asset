@@ -15,7 +15,7 @@ MonoBehaviour:
   npcName: 
   npcText: 'Without breaking eye contact, he shouts:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: c993d019cf94d894ca234b16a4ce9982, type: 2}
     grantedReward: []
     defaultItemRewards: []

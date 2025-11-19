@@ -16,8 +16,8 @@ MonoBehaviour:
   npcText: "So, we\u2019ve got a rebel with a bit of backbone. Tell me, what use
     is a rebel who never learned his lesson to the Rauchreich?"
   choices:
-  - playerText: "1. I\u2019ve no interest in being of use to your empire. I just
-      want to leave this damned city."
+  - playerText: "I\u2019ve no interest in being of use to your empire. I just want
+      to leave this damned city."
     defaultNode: {fileID: 11400000, guid: 44a2d1c40198a764598f8cc9b3b7b9bc, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -36,8 +36,8 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: "2. Wait a second! I was just thinking out loud, didn\u2019t mean
-      anything by it. Please, let\u2019s continue."
+  - playerText: "Wait a second! I was just thinking out loud, didn\u2019t mean anything
+      by it. Please, let\u2019s continue."
     defaultNode: {fileID: 11400000, guid: 242b351c14d5cb54da1aa67aa5b861f5, type: 2}
     grantedReward: []
     defaultItemRewards: []

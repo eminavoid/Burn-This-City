@@ -21,7 +21,7 @@ MonoBehaviour:
     think you\u2019ll have to explain why an officer of the Rauchmacht died choking
     right in front of you, the captain gasps for air, and colour returns to his face."
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: d2cac0aaa224e204e83549da85ca4fba, type: 2}
     grantedReward: []
     defaultItemRewards: []

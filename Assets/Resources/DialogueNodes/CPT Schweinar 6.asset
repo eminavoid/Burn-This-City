@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: "Don\u2019t tell me you queued all this time just to waste mine. Well?
     What are you waiting for? An invitation from the Kaiser!?"
   choices:
-  - playerText: 1. Uh, excuse me, what did you ask?
+  - playerText: Uh, excuse me, what did you ask?
     defaultNode: {fileID: 11400000, guid: 1597174ecf78fe5498bb4465ead88751, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -35,7 +35,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: "2. Eh, no, I\u2019m on it already!"
+  - playerText: "Eh, no, I\u2019m on it already!"
     defaultNode: {fileID: 11400000, guid: 3cc06be855b186246b22291b7fdaa6bf, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -54,7 +54,7 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 3. (Stare directly into his eyes without saying anything)
+  - playerText: (Stare directly into his eyes without saying anything)
     defaultNode: {fileID: 11400000, guid: 5e7f8928719edd747a5531a175e75d1e, type: 2}
     grantedReward: []
     defaultItemRewards: []

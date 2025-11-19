@@ -17,7 +17,7 @@ MonoBehaviour:
     ready to explode, until suddenly\u2026 he calms down, in a way that\u2019s almost
     unsettling. Then he says:"
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: ab06824be0f28d44fbe9532b5bae4e2b, type: 2}
     grantedReward: []
     defaultItemRewards: []

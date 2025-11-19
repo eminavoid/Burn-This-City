@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: He points towards the Korp standing behind him, still as a statue, its
     crimson visor locked onto you.
   choices:
-  - playerText: "1. Sorry, I\u2026 got carried away. Please, let\u2019s continue."
+  - playerText: "Sorry, I\u2026 got carried away. Please, let\u2019s continue."
     defaultNode: {fileID: 11400000, guid: 4f16015a02752ff4ab08df743b531ca1, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -35,8 +35,8 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 2. After everything I saw during the war, do you really think your
-      threats can scare me?
+  - playerText: After everything I saw during the war, do you really think your threats
+      can scare me?
     defaultNode: {fileID: 11400000, guid: aaf5c561688ed6f438555e1515971c0d, type: 2}
     grantedReward: []
     defaultItemRewards: []

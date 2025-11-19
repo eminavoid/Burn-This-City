@@ -16,7 +16,7 @@ MonoBehaviour:
   npcText: He gestures towards the Korp standing behind him, motionless as a statue,
     its blood-red eyes fixed on you.
   choices:
-  - playerText: "1. Sorry. I didn\u2019t mean to offend. Please, let\u2019s continue."
+  - playerText: "Sorry. I didn\u2019t mean to offend. Please, let\u2019s continue."
     defaultNode: {fileID: 11400000, guid: 5168d32fd44e2af4099e0875425e4a26, type: 2}
     grantedReward: []
     defaultItemRewards: []
@@ -35,8 +35,8 @@ MonoBehaviour:
     failureItemRewards: []
     nextStartingNodeFailure: {fileID: 0}
     raiseOnFailure: 0
-  - playerText: 2. After everything i saw during the war, do you really think your
-      threats can scare me?
+  - playerText: After everything i saw during the war, do you really think your threats
+      can scare me?
     defaultNode: {fileID: 11400000, guid: 6de433ce8df3cc44fa8e373cab050a73, type: 2}
     grantedReward: []
     defaultItemRewards: []

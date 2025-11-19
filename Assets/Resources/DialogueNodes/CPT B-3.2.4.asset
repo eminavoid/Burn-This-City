@@ -20,7 +20,7 @@ MonoBehaviour:
     He
     then speaks again:'
   choices:
-  - playerText: 1. Continue
+  - playerText: Continue
     defaultNode: {fileID: 11400000, guid: eb732d833b20e72499db511d492507cc, type: 2}
     grantedReward: []
     defaultItemRewards: []
