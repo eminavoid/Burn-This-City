@@ -10568,6 +10568,153 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1875683874
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 241045716460108854, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 241045716460108854, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 241045716460108854, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803085674858110630, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.8483276
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625943815356049119, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.734375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993439205156918888, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993439205156918888, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4371067993850204832, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Name
+      value: Starting Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4949874606955631158, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097629131586093350, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097629131586093350, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8524852734325049906, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
+      propertyPath: m_text
+      value: 'CONTROLS:
+
+
+        A and D - Movement
+
+        E- Interact
+
+        I
+        - Toggle Inventory
+
+        SPACE and Left Click - Skip dialogue animation'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4130bb47e43ba384dac7f76f29a6583d, type: 3}
 --- !u!1 &1881275218
 GameObject:
   m_ObjectHideFlags: 0
@@ -12446,6 +12593,7 @@ SceneRoots:
   - {fileID: 1218253642}
   - {fileID: 1465658992}
   - {fileID: 146576108}
+  - {fileID: 1875683874}
   - {fileID: 579392847}
   - {fileID: 599630504}
   - {fileID: 4457924117483748191}

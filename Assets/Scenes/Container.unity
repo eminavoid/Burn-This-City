@@ -2913,7 +2913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 628529508268182557, guid: b09fb27ca3e0d294bbc2a298780c2668, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2580875808717648220, guid: b09fb27ca3e0d294bbc2a298780c2668, type: 3}
       propertyPath: m_Enabled
@@ -5034,6 +5034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gordo
       objectReference: {fileID: 0}
+    - target: {fileID: 3134561776042987216, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: m_Size.x
+      value: 9.09
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: startingNode
       value: 
@@ -5155,8 +5159,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1828221389625802284, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1760518628}
   m_SourcePrefab: {fileID: 100100000, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+--- !u!1 &1760518627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1828221389625802284, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+  m_PrefabInstance: {fileID: 1760518626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1760518628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760518627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2432b65719b5fc3429e5e1dd2bfa7b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerOnce: 1
+  delayBeforeStart: 0
 --- !u!1 &1816174676
 GameObject:
   m_ObjectHideFlags: 0
