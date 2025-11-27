@@ -4,6 +4,14 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class RuntimeNpcState
+{
+    public DialogueNode currentNode;
+    public bool hasTalked;
+    public bool hasSucceeded;
+    public bool hasFailed;
+}
+
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
@@ -14,16 +22,16 @@ public class SaveManager : MonoBehaviour
     [SerializeField] public string saveFileBaseName = "save";
 
     [Header("AutoSave Settings")]
-    public System.Collections.Generic.List<string> noAutoSaveScenes = new System.Collections.Generic.List<string>();
+    public List<string> noAutoSaveScenes = new List<string>();
 
     private string saveFilePath_SAV;
     private string saveFilePath_PNG;
 
     private GameObject savingIndicator;
 
-    private Dictionary<int, DialogueNode> sceneDialogueState = new Dictionary<int, DialogueNode>();
-
     private GameData dataToLoad = null;
+
+    private Dictionary<int, RuntimeNpcState> sceneNpcData = new Dictionary<int, RuntimeNpcState>();
 
     public void RegisterSavingIndicator(GameObject indicator)
     {
@@ -49,30 +57,29 @@ public class SaveManager : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-    private void Update()
-    {
-        totalPlaytimeInSeconds += Time.deltaTime;
-    }
+    private void Update() => totalPlaytimeInSeconds += Time.deltaTime;
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
 
-    public void UpdateNpcNode(int npcID, DialogueNode node)
+    public void UpdateNpcState(int npcID, DialogueNode node, bool talked, bool success, bool failed)
     {
-        if (node != null)
+        if (!sceneNpcData.ContainsKey(npcID))
         {
-            sceneDialogueState[npcID] = node;
+            sceneNpcData[npcID] = new RuntimeNpcState();
         }
+
+        if (node != null) sceneNpcData[npcID].currentNode = node;
+
+        sceneNpcData[npcID].hasTalked = talked;
+        sceneNpcData[npcID].hasSucceeded = success;
+        sceneNpcData[npcID].hasFailed = failed;
     }
 
-    // DialogueTrigger Start()
-    public DialogueNode GetNpcNode(int npcID)
+    public RuntimeNpcState GetNpcNode(int npcID)
     {
-        if (sceneDialogueState.TryGetValue(npcID, out DialogueNode node))
+        if (sceneNpcData.TryGetValue(npcID, out RuntimeNpcState state))
         {
-            return node;
+            return state;
         }
         return null;
     }
@@ -170,12 +177,15 @@ public class SaveManager : MonoBehaviour
 
         // 12. Diálogos
         gameData.dialogueData.nodeStates = new List<NpcDialogueState>();
-        foreach (var kvp in sceneDialogueState)
+        foreach (var kvp in sceneNpcData)
         {
             gameData.dialogueData.nodeStates.Add(new NpcDialogueState
             {
                 npcID = kvp.Key,
-                nodeID = (kvp.Value != null) ? kvp.Value.name : null
+                nodeID = (kvp.Value.currentNode != null) ? kvp.Value.currentNode.name : null,
+                hasTalked = kvp.Value.hasTalked,
+                hasSucceeded = kvp.Value.hasSucceeded,
+                hasFailed = kvp.Value.hasFailed
             });
         }
 
@@ -308,21 +318,25 @@ public class SaveManager : MonoBehaviour
         inv.ForceRefresh();
 
         // 4. Aplicar Estado de Diálogos
-        sceneDialogueState.Clear();
+        sceneNpcData.Clear();
         foreach (var npcState in dataToLoad.dialogueData.nodeStates)
         {
+            RuntimeNpcState newState = new RuntimeNpcState();
+
+            // Cargar bools
+            newState.hasTalked = npcState.hasTalked;
+            newState.hasSucceeded = npcState.hasSucceeded;
+            newState.hasFailed = npcState.hasFailed;
+
+            // Cargar nodo
             if (!string.IsNullOrEmpty(npcState.nodeID))
             {
                 DialogueNode node = Resources.Load<DialogueNode>("DialogueNodes/" + npcState.nodeID);
-                if (node != null)
-                {
-                    sceneDialogueState[npcState.npcID] = node;
-                }
-                else
-                {
-                    Debug.LogWarning($"No se pudo cargar el nodo con ID: {npcState.nodeID}");
-                }
+                if (node != null) newState.currentNode = node;
+                else Debug.LogWarning($"No se pudo cargar nodo: {npcState.nodeID}");
             }
+
+            sceneNpcData[npcState.npcID] = newState;
         }
         // 5. Aplicar Estado de Contenedores
         if (dataToLoad.containerData != null && dataToLoad.containerData.Count > 0)
@@ -361,10 +375,10 @@ public class SaveManager : MonoBehaviour
     }
     public void ResetSessionData()
     {
-        sceneDialogueState.Clear();
+        sceneNpcData.Clear();
 
         totalPlaytimeInSeconds = 0f;
-
+            
         Debug.Log("SaveManager: Datos de sesión reseteados para 'New Game'.");
     }
     public void DeleteSavedData()

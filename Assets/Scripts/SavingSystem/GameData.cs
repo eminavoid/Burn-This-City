@@ -66,10 +66,14 @@ public class InventoryData
 public struct NpcDialogueState
 {
     public int npcID;
-    public string nodeID; // Usaremos DialogueNode.name
+    public string nodeID;
+
+    public bool hasTalked;
+    public bool hasSucceeded;
+    public bool hasFailed;
 }
 
-[Serializable]
+    [Serializable]
 public class DialogueData
 {
     public List<NpcDialogueState> nodeStates = new List<NpcDialogueState>();

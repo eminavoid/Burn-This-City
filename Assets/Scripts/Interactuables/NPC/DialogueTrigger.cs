@@ -20,6 +20,14 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public UnityEvent OnSucces;
     public UnityEvent OnFailure;
 
+    private bool hasTalked;
+    private bool hasSucceeded;
+    private bool hasFailed;
+
+    [Header("Persistence Settings")]
+    [Tooltip("Si es true, al cargar la partida se volverán a disparar los eventos (ej. OnSuccess) si ya ocurrieron. Útil para mantener puertas abiertas, objetos borrados, etc.")]
+    [SerializeField] private bool triggerEventsOnLoad = true;
+
     [SerializeField] public GameObject icon;
 
     public string InteractionPrompt => "Talk";
@@ -31,19 +39,40 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
         if (runner == null)
             Debug.LogError($"{name}: No DialogueRunner instance found!");
 
-        // Consultamos al SaveManager si hay un estado guardado para este NPC
-        var savedNode = SaveManager.Instance?.GetNpcNode(npcID);
-        if (savedNode != null)
+        var savedState = SaveManager.Instance?.GetNpcNode(npcID);
+        if (savedState != null)
         {
-            currentNode = savedNode;
+            // Restaurar nodo
+            currentNode = savedState.currentNode;
+
+            // Restaurar flags
+            hasTalked = savedState.hasTalked;
+            hasSucceeded = savedState.hasSucceeded;
+            hasFailed = savedState.hasFailed;
+
+            // OPCIONAL: Re-disparar eventos si queremos persistencia visual en el mundo
+            if (triggerEventsOnLoad)
+            {
+                if (hasTalked) OnTalked?.Invoke();
+                if (hasSucceeded) OnSucces?.Invoke();
+                if (hasFailed) OnFailure?.Invoke();
+            }
         }
         else
         {
-            // Si no hay nada guardado, usamos el de inspector
+            // Estado inicial por defecto
             currentNode = startingNode;
-            // Y registramos este estado inicial en el manager
-            SaveManager.Instance?.UpdateNpcNode(npcID, currentNode);
+            hasTalked = false;
+            hasSucceeded = false;
+            hasFailed = false;
+
+            UpdateSaveManager();
         }
+    }
+
+    private void UpdateSaveManager()
+    {
+        SaveManager.Instance?.UpdateNpcState(npcID, currentNode, hasTalked, hasSucceeded, hasFailed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -73,20 +102,26 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     public void SetStartingNode(DialogueNode newNode)
     {
         currentNode = newNode;
-        SaveManager.Instance?.UpdateNpcNode(npcID, currentNode);
+        UpdateSaveManager();
     }
 
     // Llamado por el runner cuando un choice marca el flag
     public void RaiseOnTalked()
     {
+        hasTalked = true;
         OnTalked?.Invoke();
+        UpdateSaveManager();
     }
     public void RaiseOnSucces()
     {
+        hasSucceeded = true;
         OnSucces?.Invoke();
+        UpdateSaveManager() ;
     }
     public void RaiseOnFailure()
     {
+        hasFailed = true;
         OnFailure?.Invoke();
+        UpdateSaveManager() ;
     }
 }
