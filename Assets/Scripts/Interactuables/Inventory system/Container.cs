@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public class Container : MonoBehaviour, IInteractable
 {
+    [Header("Configuración")]
+    [Tooltip("Distancia máxima a la que el jugador puede alejarse antes de que se cierre la UI.")]
+    public float maxDistanceToClose = 3.0f;
+
     [Header("Save System")]
     [Tooltip("ID Único para guardar el estado. Haz clic derecho en el componente -> Generate ID")]
     public string containerID;
@@ -55,6 +59,10 @@ public class Container : MonoBehaviour, IInteractable
         if (other.CompareTag("Player"))
         {
             icon.SetActive(false);
+            if (InventoryUI.Instance != null && InventoryUI.Instance.CurrentContainer == this)
+            {
+                InventoryUI.Instance.CloseAll();
+            }
         }
     }
     
