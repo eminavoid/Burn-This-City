@@ -6,6 +6,7 @@ public class Container : MonoBehaviour, IInteractable
     [Header("Configuración")]
     [Tooltip("Distancia máxima a la que el jugador puede alejarse antes de que se cierre la UI.")]
     public float maxDistanceToClose = 3.0f;
+    public int capacity = 6;
 
     [Header("Save System")]
     [Tooltip("ID Único para guardar el estado. Haz clic derecho en el componente -> Generate ID")]
@@ -31,7 +32,6 @@ public class Container : MonoBehaviour, IInteractable
 
     public void Interact(StatManager stats)
     {
-        // Log para ver qué tiene el cofre al momento de abrir
         Debug.Log($"[Container] Abrir split. Items en contents: {contents?.Count ?? -1}");
         if (contents != null)
         {
@@ -65,14 +65,25 @@ public class Container : MonoBehaviour, IInteractable
             }
         }
     }
-    
+
     public void LootOne(int index)
     {
         if (contents == null || index < 0 || index >= contents.Count) return;
         var ia = contents[index];
         if (ia == null || ia.item == null || ia.amount <= 0) return;
-        InventoryManager.Instance.Add(ia.item, ia.amount);
-        contents.RemoveAt(index);
+
+        int leftOver = InventoryManager.Instance.Add(ia.item, ia.amount);
+
+        if (leftOver == 0)
+        {
+            contents.RemoveAt(index);
+        }
+        else if (leftOver < ia.amount)
+        {
+            ia.amount = leftOver;
+            contents[index] = ia;       
+
+        }
         NotifyChanged();
     }
     public bool LootPartial(int index, int amount)
@@ -81,27 +92,40 @@ public class Container : MonoBehaviour, IInteractable
         var ia = contents[index];
         if (ia == null || ia.item == null || ia.amount <= 0) return false;
 
-        int take = Mathf.Clamp(amount, 1, ia.amount);
-        InventoryManager.Instance.Add(ia.item, take);
-        ia.amount -= take;
-        if (ia.amount <= 0) contents.RemoveAt(index);
-        else contents[index] = ia;
+        int wantToTake = Mathf.Clamp(amount, 1, ia.amount);
 
-        NotifyChanged();
-        return true;
+        int leftOver = InventoryManager.Instance.Add(ia.item, wantToTake);
+
+        int actuallyTaken = wantToTake - leftOver;
+
+        if (actuallyTaken > 0)
+        {
+            ia.amount -= actuallyTaken;
+
+            if (ia.amount <= 0) contents.RemoveAt(index);
+            else contents[index] = ia;
+
+            NotifyChanged();
+            return true;
+        }
+
+        return false;       
     }
     public void LootAll()
     {
         if (contents == null || contents.Count == 0) return;
-        InventoryManager.Instance.AddMany(contents);
-        contents.Clear();
+
+        for (int i = contents.Count - 1; i >= 0; i--)
+        {
+            LootOne(i);
+        }
+
         NotifyChanged();
     }
     public void AddItem(InventoryItem item, int amount)
     {
         if (item == null || amount <= 0) return;
 
-        // ¿ya había un stack del mismo item?
         for (int i = 0; i < contents.Count; i++)
         {
             if (contents[i]?.item == item)
@@ -121,7 +145,7 @@ public class Container : MonoBehaviour, IInteractable
     public bool TryReceiveFromInventory(InventoryItem item, int amount)
     {
         if (!InventoryManager.Instance.Remove(item, amount)) return false;
-        AddItem(item, amount); // AddItem ya hace NotifyChanged()
+        AddItem(item, amount);     
         return true;
     }
     public bool RemoveAt(int index, int amount)
@@ -138,27 +162,58 @@ public class Container : MonoBehaviour, IInteractable
         NotifyChanged();
         return true;
     }
-    public void AddItemDirect(InventoryItem item, int amount)
+    public int AddItemDirect(InventoryItem item, int amount)
     {
         if (contents == null) contents = new List<ItemAmount>();
-        if (item == null || amount <= 0) { Debug.LogWarning("[Container] AddItemDirect ignorado (item null o amount <= 0)"); return; }
+        if (item == null || amount <= 0) return amount;
 
-        int idx = contents.FindIndex(x => x != null && x.item == item);
-        contents.Add(new ItemAmount { item = item, amount = amount });
-        Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
+        int remaining = amount;
 
+        if (item.stackable)      
+        {
+            for (int i = 0; i < contents.Count; i++)
+            {
+                if (contents[i].item == item)
+                {
+                    int spaceInStack = item.maxStack - contents[i].amount;
 
-        //if (idx >= 0)
-        //{
-        //    contents[idx].amount += amount;
-        //    Debug.Log($"[Container] AddItemDirect MERGE '{item.name}' +{amount} -> stack={contents[idx].amount}; stacks={contents.Count}");
-        //}
-        //else
-        //{
-        //    contents.Add(new ItemAmount { item = item, amount = amount });
-        //    Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
-        //}
+                    if (spaceInStack > 0)
+                    {
+                        int toAdd = Mathf.Min(remaining, spaceInStack);
+
+                        contents[i].amount += toAdd;
+                        remaining -= toAdd;
+
+                        Debug.Log($"[Container] Merged {toAdd} of {item.name}. Remaining: {remaining}");
+
+                        if (remaining <= 0)
+                        {
+                            NotifyChanged();
+                            return 0;   
+                        }
+                    }
+                }
+            }
+        }
+
+        while (remaining > 0)
+        {
+            if (contents.Count < capacity)
+            {
+                int amountForNewSlot = item.stackable ? Mathf.Min(remaining, item.maxStack) : 1;
+
+                contents.Add(new ItemAmount { item = item, amount = amountForNewSlot });
+                remaining -= amountForNewSlot;
+            }
+            else
+            {
+                Debug.LogWarning("[Container] Lleno. Devolviendo sobrante.");
+                NotifyChanged();        
+                return remaining;
+            }
+        }
 
         NotifyChanged();
+        return 0;
     }
 }

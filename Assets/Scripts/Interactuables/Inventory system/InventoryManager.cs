@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
 
-    [Header("Módulos (M0..M3)")]
+    [Header("Módulos")]
     public List<InventoryModuleDef> moduleDefs = new();  // asigná los 4 defs en el inspector
 
     [SerializeField] private List<ModuleState> modules = new();
@@ -48,24 +48,37 @@ public class InventoryManager : MonoBehaviour
         return total;
     }
 
-    public void Add(InventoryItem item, int amount)
+    public int Add(InventoryItem item, int amount)
     {
-        if (!item || amount <= 0) return;
+        if (!item || amount <= 0) return amount;
         int left = amount;
 
-        // apilar
         foreach (var m in modules)
+        {
             for (int i = 0; i < m.slots.Count && left > 0; i++)
                 if (m.slots[i].item == item && item.stackable && m.slots[i].amount < item.maxStack)
-                { int can = Mathf.Min(item.maxStack - m.slots[i].amount, left); m.slots[i].amount += can; left -= can; }
-
-        // slots vacíos
+                {
+                    int can = Mathf.Min(item.maxStack - m.slots[i].amount, left);
+                    m.slots[i].amount += can;
+                    left -= can;
+                }
+        }
         foreach (var m in modules)
+        {
             for (int i = 0; i < m.slots.Count && left > 0; i++)
                 if (m.slots[i].item == null)
-                { int put = item.stackable ? Mathf.Min(item.maxStack, left) : 1; m.slots[i].item = item; m.slots[i].amount = put; left -= put; }
-
-        OnInventoryChanged?.Invoke();
+                {
+                    int put = item.stackable ? Mathf.Min(item.maxStack, left) : 1;
+                    m.slots[i].item = item;
+                    m.slots[i].amount = put;
+                    left -= put;
+                }
+        }
+        if (left < amount)
+        {
+            OnInventoryChanged?.Invoke();
+        }
+        return left;
     }
 
     public bool Remove(InventoryItem item, int amount)

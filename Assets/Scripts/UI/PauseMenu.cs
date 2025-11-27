@@ -38,7 +38,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             container.SetActive(true);
-            Time.timeScale = 1;
+            Time.timeScale = 0;
         }
     }
 }

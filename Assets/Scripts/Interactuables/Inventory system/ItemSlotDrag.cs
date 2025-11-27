@@ -143,8 +143,17 @@ public class ItemSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
                     if (taken > 0)
                     {
-                        container.AddItemDirect(srcItem, taken); // usa el helper directo del Container
-                                                                 // Fuerza refresh por si algún evento se pierde
+                        int rejected = container.AddItemDirect(srcItem, taken);
+
+                        if (rejected > 0)
+                        {
+                            // Devolvemos lo que el cofre escupió
+                            InventoryManager.Instance.Add(srcItem, rejected);
+
+                            // Feedback visual (opcional)
+                            Debug.Log($"El cofre rechazó {rejected} items. Devueltos al inventario.");
+                        }
+
                         if (InventoryUI.Instance && InventoryUI.Instance.ContainerGridUI)
                             InventoryUI.Instance.ContainerGridUI.Refresh();
                     }
