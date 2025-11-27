@@ -78,11 +78,19 @@ public class DoorTeleport : MonoBehaviour, IInteractable
             {
                 if (useSceneTransition && !string.IsNullOrEmpty(sceneToLoad))
                 {
-                    Debug.Log($"Cargando escena: {sceneToLoad}");
+                    SceneChangeConfirm.Instance.Show(
+                        confirm: () =>
+                        {
 
-                    SceneSpawnManager.NextSpawnPoint = useCustomSpawn ? targetSpawnPointName : null;
-                    
-                    ScreenFader.Instance.FadeOutAndLoadScene(sceneToLoad);
+                            SceneSpawnManager.NextSpawnPoint = useCustomSpawn ? targetSpawnPointName : null;
+                            ScreenFader.Instance.FadeOutAndLoadScene(sceneToLoad);
+                        },
+                        cancel: () =>
+                        {
+
+                            Debug.Log("Canceló el cambio de escena.");
+                        }
+                    );
                 }
                 else if (teleportDestination != null)
                 {
