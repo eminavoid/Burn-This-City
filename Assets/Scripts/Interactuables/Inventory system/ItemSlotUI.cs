@@ -8,16 +8,24 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     [SerializeField] private Image iconImage;
     [SerializeField] private TMP_Text countText;
+
+    private int moduleIndex;
+    private int slotIndex;
+
     private InventoryItem currentItem;
     private int currentAmount;
     private Action onClick;
 
     public InventoryItem CurrentItem => currentItem;
 
-    public void Set(InventoryItem item, int amount, Action onClick)
+    public void Set(InventoryItem item, int amount, int modIdx, int slotIdx, Action onClick)
     {
         this.currentItem = item;
         this.currentAmount = amount;
+
+        this.moduleIndex = modIdx;
+        this.slotIndex = slotIdx;
+
         this.onClick = onClick;
 
         if (item != null && item.icon != null)
@@ -40,11 +48,11 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         if (InventoryUI.Instance != null)
         {
-            // NEW: Esconde el Tooltip inmediatamente al hacer click
             InventoryUI.Instance.HideTooltip();
-
-            // Llama a la lógica que muestra/oculta el botón de consumir
-            InventoryUI.Instance.ShowConsumeButtonFor(this);
+            if (moduleIndex >= 0)
+            {
+                InventoryUI.Instance.ShowConsumeButtonFor(this);
+            }
         }
     }
 
@@ -71,7 +79,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         }
 
         // Remover el ítem del inventario
-        InventoryManager.Instance.TryConsume(currentItem,1);
+        InventoryManager.Instance.ConsumeFromSlot(moduleIndex, slotIndex, 1);
         if (InventoryUI.Instance != null)
         {
             InventoryUI.Instance.HideActiveConsumeButton();
@@ -84,20 +92,16 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (currentItem != null && InventoryUI.Instance != null)
         {
-            // Solo muestra el Tooltip si el Botón Consumir NO está visible para este slot
             if (InventoryUI.Instance.GetCurrentSlotForConsume() != this)
             {
-                InventoryUI.Instance.ShowTooltip(currentItem.displayName);
+                InventoryUI.Instance.ShowTooltip(currentItem);
             }
         }
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        // El Tooltip debe ocultarse siempre que el puntero salga,
-        // a menos que el botón de consumir esté activo (pero la lógica del Tooltip ya lo oculta)
         if (InventoryUI.Instance != null)
         {
-            // Esto asegura que el Tooltip desaparezca cuando el mouse se mueve hacia el botón consumir
             InventoryUI.Instance.HideTooltip();
         }
     }

@@ -48,6 +48,7 @@ MonoBehaviour:
   toggleInventory: {fileID: 8285553064123968111, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   backpackRoot: {fileID: 0}
   splitRoot: {fileID: 0}
+  containerBackgroundDropTarget: {fileID: 0}
   pocketButtonsRoot: {fileID: 0}
   pocketButtons:
   - {fileID: 0}
@@ -65,7 +66,7 @@ MonoBehaviour:
   containerGridUI: {fileID: 0}
   tooltipObject: {fileID: 0}
   tooltipText: {fileID: 0}
-  tooltipOffset: {x: 75, y: 12, z: 0}
+  tooltipOffset: {x: 75, y: 0, z: 0}
 --- !u!1001 &5926994782777910453
 PrefabInstance:
   m_ObjectHideFlags: 0

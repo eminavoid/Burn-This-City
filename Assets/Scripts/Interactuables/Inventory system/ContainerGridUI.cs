@@ -28,24 +28,20 @@ public class ContainerGridUI : MonoBehaviour
         if (current != null) current.OnChanged -= Refresh;
         current = c;
         if (current != null) current.OnChanged += Refresh;
-        Debug.Log($"[ContainerGridUI] SetContainer -> {(current ? current.name : "null")}");
         Refresh();
     }
 
     public void Refresh()
     {
-        if (gridParent == null) { Debug.LogWarning("[ContainerGridUI] gridParent null"); return; }
+        if (gridParent == null) return;
 
         for (int i = gridParent.childCount - 1; i >= 0; i--) Destroy(gridParent.GetChild(i).gameObject);
 
         if (current == null || current.contents == null || current.contents.Count == 0)
         {
-            Debug.Log("[ContainerGridUI] vacío");
             ForceLayout();
             return;
         }
-
-        Debug.Log($"[ContainerGridUI] Pintando stacks={current.contents.Count}");
 
         for (int i = 0; i < current.contents.Count; i++)
         {
@@ -55,7 +51,7 @@ public class ContainerGridUI : MonoBehaviour
             var slot = Instantiate(slotPrefab, gridParent);
             int capturedIndex = i;
 
-            slot.Set(ia.item, ia.amount, onClick: () =>
+            slot.Set(ia.item, ia.amount, -1, capturedIndex, onClick: () =>
             {
                 bool ctrl = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
                 if (ctrl && current.contents[capturedIndex].amount > 1) current.LootPartial(capturedIndex, 1);

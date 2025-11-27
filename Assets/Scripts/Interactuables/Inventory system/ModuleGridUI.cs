@@ -50,13 +50,18 @@ public class ModuleGridUI : MonoBehaviour
 
     public void Refresh()
     {
-        var man = InventoryManager.Instance; if (!built || man == null) return;
-        var mod = man.GetModule(moduleIndex); if (mod == null) return;
+        var man = InventoryManager.Instance; 
+        if (!built || man == null) return;
+
+        var mod = man.GetModule(moduleIndex); 
+        if (mod == null) return;
 
         for (int i = 0; i < def.Capacity; i++)
         {
-            var s = mod.slots[i]; var ui = slots[i];
-            ui.Set(s.item, s.amount, null);
+            var s = mod.slots[i]; 
+            var ui = slots[i];
+
+            ui.Set(s.item, s.amount,moduleIndex, i, null);
 
             var drag = ui.GetComponent<ItemSlotDrag>();
             drag.InitFromInventoryModule(moduleIndex, i, s.item, s.amount, ui.IconImage);

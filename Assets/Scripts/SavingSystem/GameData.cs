@@ -11,6 +11,7 @@ public class GameData
     public StatsData statsData = new StatsData();
     public InventoryData inventoryData = new InventoryData();
     public DialogueData dialogueData = new DialogueData();
+    public List<ContainerData> containerData = new List<ContainerData>();
 }
 
 [Serializable]
@@ -72,4 +73,11 @@ public struct NpcDialogueState
 public class DialogueData
 {
     public List<NpcDialogueState> nodeStates = new List<NpcDialogueState>();
+}
+
+[Serializable]
+public class ContainerData
+{
+    public string containerID; // El ID único del cofre en la escena
+    public List<SerializableSlotState> items = new List<SerializableSlotState>();
 }

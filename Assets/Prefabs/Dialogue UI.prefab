@@ -473,6 +473,9 @@ MonoBehaviour:
   typingSFX: {fileID: 8300000, guid: c6f9248cd485b694ab61aa34029e790d, type: 3}
   stopTypingSFX: {fileID: 8300000, guid: ebdf002e7a9ce164a8d881c626e9d7c2, type: 3}
   audioSource: {fileID: 0}
+  choice1Input: {fileID: -4352537183941422324, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+  choice2Input: {fileID: 6195772986925629541, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+  choice3Input: {fileID: -3278710606553249023, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
 --- !u!1 &7435969067445757499
 GameObject:
   m_ObjectHideFlags: 0

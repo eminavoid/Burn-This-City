@@ -149,11 +149,6 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    // === SHIMS de COMPATIBILIDAD con código viejo ===
-
-    // ========== REQS MÚLTIPLES (p.ej. recetas / diálogo) ==========
-
-// ¿Alcanza para TODOS los requisitos? (no consume)
 public bool CanConsume(System.Collections.Generic.IEnumerable<ItemAmount> requirements)
 {
     if (requirements == null) return true;
@@ -298,6 +293,13 @@ public void AddMany(System.Collections.Generic.List<ItemAmount> items)
     public void ForceRefresh()
     {
         OnInventoryChanged?.Invoke();
+    }
+
+    public bool ConsumeFromSlot(int moduleIndex, int slotIndex, int amount = 1)
+    {
+        int removedAmount = RemoveFromSlot(moduleIndex, slotIndex, amount);
+
+        return removedAmount > 0;
     }
 }
 

@@ -1,9 +1,10 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -28,13 +29,34 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private AudioClip typingSFX;
     [SerializeField] private AudioClip stopTypingSFX;
     [SerializeField] private AudioSource audioSource;
-    
+
+    [Header("Input System")]
+    [SerializeField] private InputActionReference choice1Input;
+    [SerializeField] private InputActionReference choice2Input;
+    [SerializeField] private InputActionReference choice3Input;
+
     // Estado interno
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     private string fullText;
     private List<(string optionText, int optionIndex)> _options;
-    
+
+    private void OnEnable()
+    {
+        // Suscribir eventos
+        if (choice1Input != null) { choice1Input.action.Enable(); choice1Input.action.performed += _ => OnChoiceInput(0); }
+        if (choice2Input != null) { choice2Input.action.Enable(); choice2Input.action.performed += _ => OnChoiceInput(1); }
+        if (choice3Input != null) { choice3Input.action.Enable(); choice3Input.action.performed += _ => OnChoiceInput(2); }
+    }
+
+    private void OnDisable()
+    {
+        // Limpiar eventos para evitar errores
+        if (choice1Input != null) { choice1Input.action.performed -= _ => OnChoiceInput(0); choice1Input.action.Disable(); }
+        if (choice2Input != null) { choice2Input.action.performed -= _ => OnChoiceInput(1); choice2Input.action.Disable(); }
+        if (choice3Input != null) { choice3Input.action.performed -= _ => OnChoiceInput(2); choice3Input.action.Disable(); }
+    }
+
     private void Update()
     {
         // Permite saltar el efecto de tipeo presionando espacio o clic izquierdo
@@ -156,6 +178,24 @@ public class DialogueUI : MonoBehaviour
         {
             AudioManager.Instance.StopSFX();
             AudioManager.Instance.PlaySFX(stopTypingSFX, .5f);
+        }
+    }
+
+    private void OnChoiceInput(int index)
+    {
+        if (!gameObject.activeSelf || isTyping) return;
+
+        ProcessInput(index);
+    }
+
+    private void ProcessInput(int index)
+    {
+        if (index < 0 || index >= choiceButtons.Length) return;
+
+        var btn = choiceButtons[index];
+        if (btn.gameObject.activeSelf && btn.interactable)
+        {
+            btn.onClick.Invoke();
         }
     }
 }

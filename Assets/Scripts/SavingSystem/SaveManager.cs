@@ -15,9 +15,19 @@ public class SaveManager : MonoBehaviour
     private string saveFilePath_SAV;
     private string saveFilePath_PNG;
 
+    private GameObject savingIndicator;
+
     private Dictionary<int, DialogueNode> sceneDialogueState = new Dictionary<int, DialogueNode>();
 
     private GameData dataToLoad = null;
+
+    public void RegisterSavingIndicator(GameObject indicator)
+    {
+        this.savingIndicator = indicator;
+
+        if (this.savingIndicator != null)
+            this.savingIndicator.SetActive(false);
+    }
 
     private void Awake()
     {
@@ -103,15 +113,24 @@ public class SaveManager : MonoBehaviour
         Destroy(thumbnailTexture); // Ya no necesitamos la pequeña
         File.WriteAllBytes(saveFilePath_PNG, screenshotBytes);
 
-        // 5. RECOLECTAR Y GUARDAR DATOS (JSON)
+        // 5. MOSTRAR INDICADOR DE GUARDADO
+        if (savingIndicator != null)
+        {
+            savingIndicator.SetActive(true);
+        }
+
+        yield return null;
+
+
+        // 6. RECOLECTAR Y GUARDAR DATOS (JSON)
         GameData gameData = new GameData();
 
-        // 6. Metadata
+        // 7. Metadata
         gameData.metaData.saveTimestamp = System.DateTime.Now.ToString("o");
         gameData.metaData.totalPlaytimeInSeconds = this.totalPlaytimeInSeconds;
         gameData.metaData.gameVersion = Application.version;
 
-        // 7. Escena y Jugador
+        // 8. Escena y Jugador
         gameData.sceneName = SceneManager.GetActiveScene().name;
         PlayerMovement2D player = FindFirstObjectByType<PlayerMovement2D>();
         if (player != null)
@@ -120,14 +139,14 @@ public class SaveManager : MonoBehaviour
             gameData.playerData.playerPosY = player.transform.position.y;
         }
 
-        // 8. Survivability
+        // 9. Survivability
         gameData.playerData.currentHP = SurvivabilityManager.Instance.Get(SurvivabilityStat.HP);
         gameData.playerData.currentSanity = SurvivabilityManager.Instance.Get(SurvivabilityStat.Sanity);
 
-        // 9. Stats
+        // 10. Stats
         gameData.statsData.statEntries = StatManager.Instance.GetStatEntries();
 
-        // 10. Inventario (Traducción Item -> ItemID)
+        // 11. Inventario (Traducción Item -> ItemID)
         gameData.inventoryData.modules = new List<SerializableModuleState>();
         foreach (var module in InventoryManager.Instance.Modules)
         {
@@ -145,7 +164,7 @@ public class SaveManager : MonoBehaviour
             gameData.inventoryData.modules.Add(newSavedModule);
         }
 
-        // 11. Diálogos
+        // 12. Diálogos
         gameData.dialogueData.nodeStates = new List<NpcDialogueState>();
         foreach (var kvp in sceneDialogueState)
         {
@@ -156,13 +175,53 @@ public class SaveManager : MonoBehaviour
             });
         }
 
-        // 12. Serializar
+        // 13. Contenedores
+        gameData.containerData = new List<ContainerData>();
+        Container[] allContainers = FindObjectsByType<Container>(FindObjectsSortMode.None);
+
+        foreach (var container in allContainers)
+        {
+            // Si no tiene ID, warning
+            if (string.IsNullOrEmpty(container.containerID))
+            {
+                Debug.LogWarning($"El container '{container.name}' no tiene ID y no se guardará.");
+                continue;
+            }
+
+            ContainerData cData = new ContainerData();
+            cData.containerID = container.containerID;
+
+            if (container.contents != null)
+            {
+                foreach (var itemAmount in container.contents)
+                {
+                    if (itemAmount.item != null && itemAmount.amount > 0)
+                    {
+                        cData.items.Add(new SerializableSlotState
+                        {
+                            itemID = itemAmount.item.name,
+                            amount = itemAmount.amount
+                        });
+                    }
+                }
+            }
+            gameData.containerData.Add(cData);
+        }
+
+        // 14. Serializar
         string json = JsonUtility.ToJson(gameData, true);
         string protectedJson = SaveDataProtector.Protect(json);
 
-        // 13. Escribir en disco 
+        // 15. Escribir en disco 
         File.WriteAllText(saveFilePath_SAV, protectedJson);
         Debug.Log($"Partida y Screenshot guardados en: {Application.persistentDataPath}");
+
+        // 16. Esconder indicador de save
+        yield return new WaitForSeconds(0.5f);
+        if (savingIndicator != null)
+        {
+            savingIndicator.SetActive(false);
+        }
     }
 
     public void LoadGame()
@@ -258,6 +317,35 @@ public class SaveManager : MonoBehaviour
                 else
                 {
                     Debug.LogWarning($"No se pudo cargar el nodo con ID: {npcState.nodeID}");
+                }
+            }
+        }
+        // 5. Aplicar Estado de Contenedores
+        if (dataToLoad.containerData != null && dataToLoad.containerData.Count > 0)
+        {
+            Dictionary<string, ContainerData> savedContainersMap = new Dictionary<string, ContainerData>();
+            foreach (var cData in dataToLoad.containerData)
+            {
+                if (!savedContainersMap.ContainsKey(cData.containerID))
+                    savedContainersMap.Add(cData.containerID, cData);
+            }
+
+            Container[] sceneContainers = FindObjectsByType<Container>(FindObjectsSortMode.None);
+
+            foreach (var container in sceneContainers)
+            {
+                if (!string.IsNullOrEmpty(container.containerID) && savedContainersMap.TryGetValue(container.containerID, out ContainerData loadedData))
+                {
+                    container.contents.Clear();
+
+                    foreach (var slotData in loadedData.items)
+                    {
+                        InventoryItem item = Resources.Load<InventoryItem>("Items/" + slotData.itemID);
+                        if (item != null)
+                        {
+                            container.AddItemDirect(item, slotData.amount);
+                        }
+                    }
                 }
             }
         }

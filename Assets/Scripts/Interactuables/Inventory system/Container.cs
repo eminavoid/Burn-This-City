@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public class Container : MonoBehaviour, IInteractable
 {
+    [Header("Save System")]
+    [Tooltip("ID Único para guardar el estado. Haz clic derecho en el componente -> Generate ID")]
+    public string containerID;
+
     [Header("Contenidos del cofre")]
     public List<ItemAmount> contents = new List<ItemAmount>();
 
@@ -13,6 +17,13 @@ public class Container : MonoBehaviour, IInteractable
 
     public event System.Action OnChanged;
     private void NotifyChanged() => OnChanged?.Invoke();
+
+    [ContextMenu("Generate ID")]
+    private void GenerateID()
+    {
+        containerID = System.Guid.NewGuid().ToString();
+        Debug.Log($"Generated ID for {gameObject.name}: {containerID}");
+    }
 
     public void Interact(StatManager stats)
     {
@@ -125,16 +136,20 @@ public class Container : MonoBehaviour, IInteractable
         if (item == null || amount <= 0) { Debug.LogWarning("[Container] AddItemDirect ignorado (item null o amount <= 0)"); return; }
 
         int idx = contents.FindIndex(x => x != null && x.item == item);
-        if (idx >= 0)
-        {
-            contents[idx].amount += amount;
-            Debug.Log($"[Container] AddItemDirect MERGE '{item.name}' +{amount} -> stack={contents[idx].amount}; stacks={contents.Count}");
-        }
-        else
-        {
-            contents.Add(new ItemAmount { item = item, amount = amount });
-            Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
-        }
+        contents.Add(new ItemAmount { item = item, amount = amount });
+        Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
+
+
+        //if (idx >= 0)
+        //{
+        //    contents[idx].amount += amount;
+        //    Debug.Log($"[Container] AddItemDirect MERGE '{item.name}' +{amount} -> stack={contents[idx].amount}; stacks={contents.Count}");
+        //}
+        //else
+        //{
+        //    contents.Add(new ItemAmount { item = item, amount = amount });
+        //    Debug.Log($"[Container] AddItemDirect NEW '{item.name}' +{amount}; stacks={contents.Count}");
+        //}
 
         NotifyChanged();
     }

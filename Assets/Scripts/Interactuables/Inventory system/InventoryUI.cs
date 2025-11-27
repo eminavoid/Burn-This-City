@@ -16,6 +16,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private GameObject backpackRoot;
     [SerializeField] private GameObject splitRoot;
 
+    [Header("Drop Targets")]
+    [SerializeField] private ContainerDropTarget containerBackgroundDropTarget;
+
     [Header("Pocket Buttons (selector estético)")]
     [SerializeField] private GameObject pocketButtonsRoot;
     [SerializeField] private UnityEngine.UI.Button[] pocketButtons = new UnityEngine.UI.Button[4];
@@ -68,7 +71,7 @@ public class InventoryUI : MonoBehaviour
 
             Canvas btnCanvas = consumeButtonInstance.gameObject.AddComponent<Canvas>();
             btnCanvas.overrideSorting = true;
-            btnCanvas.sortingOrder = 10; // Dibujar encima de todo
+            btnCanvas.sortingOrder = 10;     
             consumeButtonInstance.gameObject.AddComponent<GraphicRaycaster>();
 
             consumeButtonInstance.gameObject.SetActive(false);
@@ -92,13 +95,11 @@ public class InventoryUI : MonoBehaviour
             toggleInventory.action.Disable();
         }
         HideActiveConsumeButton();
+        HideTooltip();
     }
 
     private void Update()
     {
-        // --- Lógica del Botón Consumir ---
-
-        // Detecta clic fuera del botón o fuera de un slot (asumiendo que Click() en el slot llama ShowConsumeButtonFor)
         if (Input.GetMouseButtonDown(0))
         {
             if (consumeButtonInstance != null && consumeButtonInstance.gameObject.activeSelf)
@@ -115,41 +116,36 @@ public class InventoryUI : MonoBehaviour
 
                 foreach (var result in results)
                 {
-                    // Detectar si se hizo clic en el botón
                     if (result.gameObject == consumeButtonInstance.gameObject)
                     {
                         clickedOnButton = true;
                         break;
                     }
 
-                    // Detectar si se hizo clic en el slot que tiene el botón activo
                     if (currentSlotForConsume != null && result.gameObject == currentSlotForConsume.gameObject)
                     {
                         clickedOnActiveSlot = true;
-                        // NO romper el loop, aún necesitamos revisar si el botón está encima.
                     }
                 }
 
-                // Ocultar si el clic no fue ni en el botón ni en el slot (o si se hizo clic en otro slot/UI)
-                // Si haces clic en otro lado (o en el mismo slot por segunda vez), oculta el botón.
                 if (!clickedOnButton && !clickedOnActiveSlot)
                 {
                     HideActiveConsumeButton();
                 }
             }
-            // Asegura que, si no hay botón activo, el Tooltip tampoco lo esté.
             else if (tooltipObject.activeSelf)
             {
-                // Esto es una medida de seguridad, HideTooltip() ya se debería llamar en OnPointerExit
                 HideTooltip();
             }
         }
 
-        // --- Lógica del Tooltip (Seguir al Mouse) ---
-
         if (tooltipObject != null && tooltipObject.activeSelf)
         {
-            tooltipObject.transform.position = Input.mousePosition + tooltipOffset;
+            RectTransform rect = tooltipObject.GetComponent<RectTransform>();
+            float currentHeight = rect.sizeDelta.y;
+            float dynamicY = tooltipOffset.y + (currentHeight / 2f);
+            Vector3 finalOffset = new Vector3(tooltipOffset.x, dynamicY, 0);
+            tooltipObject.transform.position = Input.mousePosition + finalOffset;
         }
     }
 
@@ -167,7 +163,6 @@ public class InventoryUI : MonoBehaviour
             OpenBackpack();
     }
 
-    // --------- Abrir/Cerrar modos ---------
     public void OpenBackpack()
     {
         CurrentContainer = null;
@@ -195,6 +190,16 @@ public class InventoryUI : MonoBehaviour
             containerGridUI.Refresh();
         }
 
+        if (containerBackgroundDropTarget != null)
+        {
+            containerBackgroundDropTarget.Bind(c);
+        }
+        else
+        {
+            var dropTarget = splitRoot.GetComponentInChildren<ContainerDropTarget>();
+            if (dropTarget != null) dropTarget.Bind(c);
+        }
+
         if (pocketButtonsRoot) pocketButtonsRoot.SetActive(true);
         SetAllPockets(false);
         UpdatePocketButtonsVisuals();
@@ -210,16 +215,18 @@ public class InventoryUI : MonoBehaviour
         if (containerGridUI) containerGridUI.SetContainer(null);
         UpdatePocketButtonsVisuals();
         HideActiveConsumeButton();
+        HideTooltip();
+        if (containerBackgroundDropTarget != null)
+            containerBackgroundDropTarget.Bind(null);
     }
 
-    // --------- Pockets (abrir/cerrar individual) ---------
     public void TogglePocket(int index)
     {
         if (!IsValidPocket(index)) return;
         bool next = !pocketPanels[index].activeSelf;
         pocketPanels[index].SetActive(next);
 
-        if (!next) // Si se acaba de CERRAR el pocket
+        if (!next)        
         {
             HideActiveConsumeButton();
         }
@@ -249,7 +256,7 @@ public class InventoryUI : MonoBehaviour
             if (pocketPanels[i] != null)
                 pocketPanels[i].SetActive(active);
 
-        if (!active) // Si se están CERRANDO todos los pockets
+        if (!active)        
         {
             HideActiveConsumeButton();
         }
@@ -288,29 +295,20 @@ public class InventoryUI : MonoBehaviour
         currentSlotForConsume = slot;
         consumeButtonInstance.gameObject.SetActive(true);
 
-        // --- LÓGICA CORREGIDA PARA SCREEN SPACE - OVERLAY ---
 
-        // 1. Aseguramos que el botón permanezca como hijo de backpackRoot para evitar la interrupción de eventos
         if (consumeButtonInstance.transform.parent != backpackRoot.transform)
         {
-            // Usamos 'false' para no preservar la posición en el mundo, sino solo la local
             consumeButtonInstance.transform.SetParent(backpackRoot.transform, false);
         }
 
         RectTransform slotRect = slot.GetComponent<RectTransform>();
         RectTransform buttonRect = consumeButtonInstance.GetComponent<RectTransform>();
 
-        // 2. Calculamos la posición local del slot dentro del backpackRoot.
-        // Convertimos la posición del slot (que es un punto en el canvas/pantalla)
-        // a coordenadas locales dentro del RectTransform del backpackRoot.
         Vector2 localPos;
 
-        // Intentamos obtener el canvas. Si es overlay, pasamos 'null' como cámara/canvas.
         Canvas canvas = GetComponentInParent<Canvas>();
         if (canvas == null || canvas.renderMode == RenderMode.ScreenSpaceOverlay)
         {
-            // Para Overlay, usamos null en la cámara/canvas.
-            // La posición del slot ya está en coordenadas de pantalla.
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                backpackRoot.GetComponent<RectTransform>(),
                slotRect.position,
@@ -319,7 +317,6 @@ public class InventoryUI : MonoBehaviour
         }
         else
         {
-            // Si por alguna razón no es overlay (aunque dijiste que sí), volvemos al método con cámara.
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 backpackRoot.GetComponent<RectTransform>(),
                 slotRect.position,
@@ -328,10 +325,7 @@ public class InventoryUI : MonoBehaviour
         }
 
 
-        // 3. Aplicamos la posición local más el offset
         buttonRect.anchoredPosition = localPos + consumeButtonOffset;
-
-        // --- FIN DE LÓGICA CORREGIDA ---
 
         consumeButtonInstance.onClick.RemoveAllListeners();
         consumeButtonInstance.onClick.AddListener(slot.OnConsumeClicked);
@@ -347,7 +341,6 @@ public class InventoryUI : MonoBehaviour
         currentSlotForConsume = null;
     }
 
-    // Helpers de compatibilidad
     public static void RefreshIfAnyOpen() { }
     public void RefreshContainer(Container _) { }
     public void ForceContainerRefresh()
@@ -355,22 +348,65 @@ public class InventoryUI : MonoBehaviour
         if (containerGridUI != null) containerGridUI.Refresh();
     }
 
-    public void ShowTooltip(string itemName)
+    public void ShowTooltip(InventoryItem item)
     {
-        if (tooltipObject == null || tooltipText == null) return;
+        if (tooltipObject == null || tooltipText == null || item == null) return;
 
-        tooltipText.text = itemName;
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        sb.Append($"<b>{item.displayName}</b>");
+
+        if (item.isConsumable && item.consumableEffects != null && item.consumableEffects.Count > 0)
+        {
+            sb.Append("\n<size=80%>");
+
+            List<string> effectsText = new List<string>();
+
+            foreach (var effect in item.consumableEffects)
+            {
+                string label = "";
+
+                switch (effect.type)
+                {
+                    case ConsumableType.Health:
+                        label = "HP";
+                        break;
+                    case ConsumableType.Sanity:
+                        label = "SA";
+                        break;
+                    case ConsumableType.Stat:
+                        label = effect.statType.ToString();
+                        break;
+                }
+
+                string sign = (effect.amount > 0) ? "+" : "";
+
+                effectsText.Add($"{label}{sign}{effect.amount}");
+            }
+
+            sb.Append(string.Join(", ", effectsText));
+
+            sb.Append("</size>");
+        }
+
+        tooltipText.text = sb.ToString();
+
+        tooltipText.ForceMeshUpdate();
+        RectTransform backgroundRect = tooltipObject.GetComponent<RectTransform>();
+        if (backgroundRect != null)
+        {
+
+            float padding = 5f;
+            float newHeight = tooltipText.preferredHeight + padding;
+
+            backgroundRect.sizeDelta = new Vector2(backgroundRect.sizeDelta.x, newHeight);
+        }
+
+
         tooltipObject.SetActive(true);
         tooltipObject.transform.SetAsLastSibling();
 
-        // NEW FIX: Ensure the tooltip does not block mouse clicks on other UI elements.
         CanvasGroup canvasGroup = tooltipObject.GetComponent<CanvasGroup>();
-        if (canvasGroup == null)
-        {
-            canvasGroup = tooltipObject.AddComponent<CanvasGroup>();
-        }
-
-        // This is the key line: tells the system to ignore the tooltip for raycasts.
+        if (canvasGroup == null) canvasGroup = tooltipObject.AddComponent<CanvasGroup>();
         canvasGroup.blocksRaycasts = false;
     }
     public void HideTooltip()
