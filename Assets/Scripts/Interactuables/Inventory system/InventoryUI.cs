@@ -207,6 +207,8 @@ public class InventoryUI : MonoBehaviour
 
     public void CloseAll()
     {
+        bool wasOpen = IsBackpackOpen || IsSplitOpen;
+
         if (backpackRoot) backpackRoot.SetActive(false);
         if (splitRoot) splitRoot.SetActive(false);
         if (pocketButtonsRoot) pocketButtonsRoot.SetActive(false);
@@ -218,6 +220,15 @@ public class InventoryUI : MonoBehaviour
         HideTooltip();
         if (containerBackgroundDropTarget != null)
             containerBackgroundDropTarget.Bind(null);
+
+        if (wasOpen)
+        {
+            if (AutoSaver.Instance != null)
+            {
+                Debug.Log("[InventoryUI] Inventario cerrado. Guardando partida...");
+                AutoSaver.Instance.TriggerAutoSave();
+            }
+        }
     }
 
     public void TogglePocket(int index)

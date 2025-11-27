@@ -63,6 +63,13 @@ public class DialogueRunner : MonoBehaviour
 
             ui.Hide();
             DialogueEnded?.Invoke();
+
+            if (AutoSaver.Instance != null)
+            {
+                Debug.Log("[DialogueRunner] Conversación finalizada. Guardando...");
+                AutoSaver.Instance.TriggerAutoSave();
+            }
+
             return;
         }
 

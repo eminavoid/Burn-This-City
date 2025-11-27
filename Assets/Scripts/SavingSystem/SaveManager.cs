@@ -12,6 +12,10 @@ public class SaveManager : MonoBehaviour
 
     [Tooltip("El nombre base para los archivos de guardado, sin extensión.")]
     [SerializeField] public string saveFileBaseName = "save";
+
+    [Header("AutoSave Settings")]
+    public System.Collections.Generic.List<string> noAutoSaveScenes = new System.Collections.Generic.List<string>();
+
     private string saveFilePath_SAV;
     private string saveFilePath_PNG;
 
@@ -217,7 +221,7 @@ public class SaveManager : MonoBehaviour
         Debug.Log($"Partida y Screenshot guardados en: {Application.persistentDataPath}");
 
         // 16. Esconder indicador de save
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         if (savingIndicator != null)
         {
             savingIndicator.SetActive(false);
