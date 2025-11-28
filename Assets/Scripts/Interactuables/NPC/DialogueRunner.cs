@@ -45,13 +45,13 @@ public class DialogueRunner : MonoBehaviour
     private void HandleOnSucces()
     {
         if (AudioManager.Instance != null && successSFX != null)
-            AudioManager.Instance.PlaySFX(successSFX);
+            AudioManager.Instance.PlayUIFeedback(successSFX);
     }
 
     private void HandleOnFailure()
     {
         if (AudioManager.Instance != null && failureSFX != null)
-            AudioManager.Instance.PlaySFX(failureSFX);
+            AudioManager.Instance.PlayUIFeedback(failureSFX);
     }
 
     private void Advance()
@@ -164,6 +164,9 @@ public class DialogueRunner : MonoBehaviour
 
             if (choice.nextStartingNodeSuccess != null && currentTrigger != null)
                 currentTrigger.SetStartingNode(choice.nextStartingNodeSuccess);
+            
+            if (AudioManager.Instance != null && successSFX != null)
+                AudioManager.Instance.PlayUIFeedback(successSFX);
 
             current = choice.successNode;
         }
@@ -185,6 +188,9 @@ public class DialogueRunner : MonoBehaviour
             if (choice.nextStartingNodeFailure != null && currentTrigger != null)
                 currentTrigger.SetStartingNode(choice.nextStartingNodeFailure);
 
+            if (AudioManager.Instance != null && failureSFX != null)
+                AudioManager.Instance.PlayUIFeedback(failureSFX);
+            
             current = choice.failureNode;
         }
 

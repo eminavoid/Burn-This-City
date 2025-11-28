@@ -8801,6 +8801,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5242655555432711716, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 1465198231}
     - target: {fileID: 9059905466963234903, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -3550,6 +3550,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: e55b85db-1c2a-4a34-9b10-9d4b7afe4076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -10519,6 +10523,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1365598851}
     m_Modifications:
     - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: containerID
+      value: cc7e97ee-3b7c-4517-80ec-165e3ef218ad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
       propertyPath: contents.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -14073,6 +14081,10 @@ PrefabInstance:
       value: Bolsa Variant (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
+      propertyPath: containerID
+      value: 8b459700-7671-4a19-ac25-14650fd50d8a
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
       propertyPath: contents.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -14863,6 +14875,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 5477e9c3834f6b2479e7781b66f003fa, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: triggerEventsOnLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -16670,6 +16686,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 4a72d3d244ac7d142a3ff7fc2134bed8, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: triggerEventsOnLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -21228,6 +21248,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5242655555432711716, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 1376892967}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29111,6 +29135,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 15768b1014adc9f4983b42a32d54e4b9, type: 2}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: triggerEventsOnLoad
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -30247,6 +30275,10 @@ PrefabInstance:
     - target: {fileID: 3942610375352263773, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
       propertyPath: m_Name
       value: Bolsa Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
+      propertyPath: containerID
+      value: cb6af08c-2a07-4f73-bc52-6da01856977a
       objectReference: {fileID: 0}
     - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
       propertyPath: contents.Array.size
@@ -31955,6 +31987,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1365598851}
     m_Modifications:
     - target: {fileID: 291098623411942177, guid: 136b53e9fbbc6cf44b695f9b1aff10b6, type: 3}
+      propertyPath: containerID
+      value: c510cc34-d12d-40b3-8df0-75b4e44176eb
+      objectReference: {fileID: 0}
+    - target: {fileID: 291098623411942177, guid: 136b53e9fbbc6cf44b695f9b1aff10b6, type: 3}
       propertyPath: contents.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -32166,6 +32202,10 @@ PrefabInstance:
       value: Bolsa
       objectReference: {fileID: 0}
     - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
+      propertyPath: containerID
+      value: 2ec6aad3-d0f5-47f8-a339-e0475216ae58
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261236650962994121, guid: 4e4e5a4f259354b4cb5de8ca3e64e290, type: 3}
       propertyPath: contents.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -32211,6 +32251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1365598851}
     m_Modifications:
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: containerID
+      value: ccd5386c-c993-4c1a-8d6b-129be9d226e4
+      objectReference: {fileID: 0}
     - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
       propertyPath: contents.Array.size
       value: 6
@@ -32370,6 +32414,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6610200736435875127, guid: 86ef56cbd3f196c4c83dc2a2a623f368, type: 3}
+      propertyPath: containerID
+      value: f5f3c41b-09db-4eb9-a92a-8029d4fcf42b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610200736435875127, guid: 86ef56cbd3f196c4c83dc2a2a623f368, type: 3}
       propertyPath: contents.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -32478,6 +32526,10 @@ PrefabInstance:
     - target: {fileID: 4001930171833600506, guid: 9b1a5cc2129b0184fa2aab3089e0df37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354141113950433093, guid: 9b1a5cc2129b0184fa2aab3089e0df37, type: 3}
+      propertyPath: containerID
+      value: a5172fa7-eea8-4b4c-a125-ed8ed4b8c8f1
       objectReference: {fileID: 0}
     - target: {fileID: 6354141113950433093, guid: 9b1a5cc2129b0184fa2aab3089e0df37, type: 3}
       propertyPath: contents.Array.size

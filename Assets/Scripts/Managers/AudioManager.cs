@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Sources")] 
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource musicSource;
+    public AudioSource uiFeedbackSource;
     
     [Header("Fade Settings")]
     public float fadeDuration = 1.5f;
@@ -87,6 +88,12 @@ public class AudioManager : MonoBehaviour
     {
         if (clip == null) return;
         sfxSource.PlayOneShot(clip, volumeScale * sfxVolume);
+    }
+    
+    public void PlayUIFeedback(AudioClip clip, float volumeScale = 1f)
+    {
+        if (clip == null) return;
+        uiFeedbackSource.PlayOneShot(clip, volumeScale * sfxVolume);
     }
     
     public void PlaySFX(string clipKey, float volumeScale = 1f)

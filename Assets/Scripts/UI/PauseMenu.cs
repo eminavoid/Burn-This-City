@@ -4,15 +4,25 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject container;
-    
-    
-    // Update is called once per frame
+    public GameObject inventoryUI;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))   
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            HandleEscape();
         }
+    }
+
+    private void HandleEscape()
+    {
+        if (inventoryUI.activeSelf)
+        {
+            InventoryUI.Instance.ToggleInventory();
+            return;
+        }
+
+        TogglePause();
     }
 
     public void ResumeButton()
@@ -38,7 +48,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             container.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
     }
 }

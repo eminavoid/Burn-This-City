@@ -1530,6 +1530,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: 0f999cb1-8207-44b3-ad79-b8124aa8b3d8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6131,6 +6135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5242655555432711716, guid: 8b0239b4e9def804489bd43f7992fd4f, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 1334249724}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8551,6 +8559,10 @@ PrefabInstance:
     - target: {fileID: 3764619055997063072, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: 70f1d688-8841-461c-85e7-551a59c999f6
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
@@ -20412,6 +20424,10 @@ PrefabInstance:
     - target: {fileID: 3764619055997063072, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: ddad926d-6c27-4ba3-a507-86a27352f1fa
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
