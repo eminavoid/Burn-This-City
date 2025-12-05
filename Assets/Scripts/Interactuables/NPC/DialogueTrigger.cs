@@ -30,6 +30,9 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
 
     [SerializeField] public GameObject icon;
 
+    [Tooltip("Si es TRUE, este NPC NUNCA actualizará el SaveManager.")]
+    [SerializeField] private bool disableAutoSave = false;
+
     public string InteractionPrompt => "Talk";
     public bool CanInteract(StatManager stats) => true;
 
@@ -72,6 +75,11 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
 
     private void UpdateSaveManager()
     {
+        if (disableAutoSave)
+        {
+            Debug.Log($"Autoguardado prevenido para el NPC: {name}");
+            return;
+        }
         SaveManager.Instance?.UpdateNpcState(npcID, currentNode, hasTalked, hasSucceeded, hasFailed);
     }
 
