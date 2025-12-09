@@ -67,6 +67,7 @@ MonoBehaviour:
   tooltipObject: {fileID: 0}
   tooltipText: {fileID: 0}
   tooltipOffset: {x: 75, y: 0, z: 0}
+  consumeSfx: {fileID: 8300000, guid: 80ebd86140ecc9e40a531b0bdf603f50, type: 3}
 --- !u!1001 &5926994782777910453
 PrefabInstance:
   m_ObjectHideFlags: 0

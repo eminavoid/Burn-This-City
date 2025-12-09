@@ -5174,6 +5174,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0d7965bbf15311b40839516c56ef8f97, type: 2}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5829,6 +5833,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1ac7c10141b2e77468a3f0bed1ecc151, type: 2}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6152,6 +6160,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 951517585}
     m_Modifications:
+    - target: {fileID: 673866357672011315, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -12.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 673866357672011315, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 673866357672011315, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.30574036
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444293678604841076, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 417.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444293678604841076, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 109.15842
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444293678604841076, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000058174
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444293678604841076, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.242676
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460527743935729170, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_margin.w
+      value: 0.53037643
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460527743935729170, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_margin.x
+      value: 0.48931882
+      objectReference: {fileID: 0}
+    - target: {fileID: 2460527743935729170, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_margin.z
+      value: -1.2943573
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113854933887085761, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -12.84148
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113854933887085761, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113854933887085761, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30576038
+      objectReference: {fileID: 0}
     - target: {fileID: 5668537549629575367, guid: eb039b59702c6624ca6080219ce6c458, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16393,6 +16453,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 7b62f7c388835ab478c60aa28964b9b7, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.size
       value: 2

@@ -44,6 +44,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TMP_Text tooltipText;
     [SerializeField] private Vector3 tooltipOffset = new Vector3(15, -15, 0);
 
+    [SerializeField] private AudioClip consumeSfx;
+    
+
     public bool IsBackpackOpen => backpackRoot && backpackRoot.activeSelf;
     public bool IsSplitOpen => splitRoot && splitRoot.activeSelf;
     public Container CurrentContainer { get; private set; }
@@ -119,6 +122,7 @@ public class InventoryUI : MonoBehaviour
                     if (result.gameObject == consumeButtonInstance.gameObject)
                     {
                         clickedOnButton = true;
+                        AudioManager.Instance.PlaySFX(consumeSfx);
                         break;
                     }
 

@@ -11647,6 +11647,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1553c3261e4be7d488eea1195e2f322a, type: 2}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -12048,6 +12052,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 91f54ce3c6d7cc84d816635e60cb1e78, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -29748,6 +29756,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[0].item
+      value: 
+      objectReference: {fileID: 11400000, guid: d5cc82c02cb945e4e98e07a1717e1342, type: 2}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[1].item
+      value: 
+      objectReference: {fileID: 11400000, guid: b374457d56bba9547957a5adbe0de020, type: 2}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[2].item
+      value: 
+      objectReference: {fileID: 11400000, guid: 91a846fdc3fb7c941aa9c5f51cd9c53e, type: 2}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[0].amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[1].amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388586883756434969, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
+      propertyPath: contents.Array.data[2].amount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7849806643802915213, guid: ffc5987f642a73e43b6ff7e9f6a56dbd, type: 3}
       propertyPath: m_Name
       value: Tacho Variant (1)
@@ -35362,6 +35398,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: 8e6be34497aede34f88e72ab42121bd8, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnSucces.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -55641,6 +55681,10 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: e187b30ac1a66d64580015abba577820, type: 2}
+    - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
+      propertyPath: disableAutoSave
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6345425998274759644, guid: 1808574dcdd43ac43953b06a10aefba2, type: 3}
       propertyPath: OnTalked.m_PersistentCalls.m_Calls.Array.size
       value: 2
