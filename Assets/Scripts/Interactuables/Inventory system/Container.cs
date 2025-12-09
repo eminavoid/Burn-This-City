@@ -209,6 +209,19 @@ public class Container : MonoBehaviour, IInteractable
         NotifyChanged();
         return 0;
     }
+    public void SwapItemAt(int index, InventoryItem newItem, int newAmount)
+    {
+        if (contents != null && index >= 0 && index < contents.Count)
+        {
+            contents[index] = new ItemAmount { item = newItem, amount = newAmount };
+            NotifyChanged();              
+        }
+        else
+        {
+            Debug.LogWarning($"[Container] Intento de Swap inválido en índice {index}. Agregando como nuevo.");
+            AddItemDirect(newItem, newAmount);
+        }
+    }
 
 #if UNITY_EDITOR
     private void Reset()

@@ -65,28 +65,58 @@ public class ItemSlotDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
             // ======== CONTAINER -> MÓDULO ========
 
-            // a) soltando sobre SLOT exacto
+            void HandleContainerToInventory(int targetModuleIdx, int targetSlotIdx)
+            {
+                InventoryManager.Instance.PeekSlot(targetModuleIdx, targetSlotIdx, out var destItem, out var destAmount);
+
+                int moveAmount = ctrl ? 1 : amount;
+
+                if (destItem == null || (destItem == item && item.stackable))
+                {
+                    bool placed = InventoryManager.Instance.PlaceIntoSlot(
+                        targetModuleIdx, targetSlotIdx, item, moveAmount, allowMerge: true, allowSwap: false
+                    );
+                    if (placed) sourceContainer.RemoveAt(sourceIndex, moveAmount);
+                }
+                else
+                {
+
+                    int removedAmt = InventoryManager.Instance.RemoveFromSlot(targetModuleIdx, targetSlotIdx, destAmount);
+
+                    if (removedAmt > 0)
+                    {
+                        InventoryManager.Instance.PlaceIntoSlot(targetModuleIdx, targetSlotIdx, item, moveAmount);
+
+
+                        if (moveAmount >= amount)
+                        {
+                            sourceContainer.SwapItemAt(sourceIndex, destItem, removedAmt);
+                        }
+                        else
+                        {
+                            sourceContainer.RemoveAt(sourceIndex, moveAmount);
+                            int returned = sourceContainer.AddItemDirect(destItem, removedAmt);
+
+                            if (returned > 0) Debug.LogWarning("El cofre estaba lleno, se perdieron items en el swap parcial.");
+                        }
+                    }
+                }
+            }
+
+            // a) Soltando sobre SLOT exacto
             if (sourceContainer != null && slot != null)
             {
-                int move = ctrl ? 1 : amount;
-                bool placed = InventoryManager.Instance.PlaceIntoSlot(
-                    slot.moduleIndex, slot.slotIndex, item, move, allowMerge: true, allowSwap: true
-                );
-                if (placed) sourceContainer.RemoveAt(sourceIndex, move);
+                HandleContainerToInventory(slot.moduleIndex, slot.slotIndex);
                 return;
             }
 
-            // b) soltando sobre ÁREA del módulo (elige slot más cercano)
+            // b) Soltando sobre ÁREA del módulo (busca el más cercano)
             if (sourceContainer != null && gridDrop != null)
             {
-                int move = ctrl ? 1 : amount;
                 int nearest = gridDrop.FindNearestSlotIndex(ModuleGridDropTarget.LastDropScreenPos);
                 if (nearest >= 0)
                 {
-                    bool placed = InventoryManager.Instance.PlaceIntoSlot(
-                        gridDrop.moduleIndex, nearest, item, move, allowMerge: true, allowSwap: true
-                    );
-                    if (placed) sourceContainer.RemoveAt(sourceIndex, move);
+                    HandleContainerToInventory(gridDrop.moduleIndex, nearest);
                 }
                 return;
             }
