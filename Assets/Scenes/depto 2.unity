@@ -8327,6 +8327,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: eed69ff0-a3c8-4207-a053-878f500dc504
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -9764,6 +9768,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: e924523c-b208-4540-88ae-2bc86341c66e
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -10159,6 +10167,10 @@ PrefabInstance:
     - target: {fileID: 3764619055997063072, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: 5924dd20-45ee-417c-b04b-1274d81bd419
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size
@@ -18233,6 +18245,10 @@ PrefabInstance:
     - target: {fileID: 3764619055997063072, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
+      propertyPath: containerID
+      value: 3122d2b7-30bf-4e7d-8e50-e48c429b7c0d
       objectReference: {fileID: 0}
     - target: {fileID: 6600406721144301855, guid: 93f357518ed5b1a4982fc5f966eaedea, type: 3}
       propertyPath: contents.Array.size

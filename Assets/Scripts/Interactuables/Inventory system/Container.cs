@@ -23,13 +23,6 @@ public class Container : MonoBehaviour, IInteractable
     public event System.Action OnChanged;
     private void NotifyChanged() => OnChanged?.Invoke();
 
-    [ContextMenu("Generate ID")]
-    private void GenerateID()
-    {
-        containerID = System.Guid.NewGuid().ToString();
-        Debug.Log($"Generated ID for {gameObject.name}: {containerID}");
-    }
-
     public void Interact(StatManager stats)
     {
         Debug.Log($"[Container] Abrir split. Items en contents: {contents?.Count ?? -1}");
@@ -216,4 +209,37 @@ public class Container : MonoBehaviour, IInteractable
         NotifyChanged();
         return 0;
     }
+
+#if UNITY_EDITOR
+    private void Reset()
+    {
+        if (string.IsNullOrEmpty(containerID))
+        {
+            GenerateID();
+        }
+    }
+
+    private void OnValidate()
+    {
+        if (string.IsNullOrEmpty(containerID))
+        {
+            GenerateID();
+        }
+    }
+
+    [ContextMenu("Generate ID")]
+    private void GenerateID()
+    {
+        containerID = System.Guid.NewGuid().ToString();
+
+        UnityEditor.EditorUtility.SetDirty(this);
+
+        if (!Application.isPlaying)
+        {
+            UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(gameObject.scene);
+        }
+
+        Debug.Log($"[Container] Generated ID for {gameObject.name}: {containerID}");
+    }
+#endif
 }

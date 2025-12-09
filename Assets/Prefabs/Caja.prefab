@@ -235,5 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95212e631946dec40b2722ebff04f105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxDistanceToClose: 3
+  capacity: 6
+  containerID: f159d526-4dc7-41cc-95e4-405552d89459
   contents: []
   icon: {fileID: 766180166322617762}
